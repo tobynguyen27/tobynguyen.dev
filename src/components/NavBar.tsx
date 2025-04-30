@@ -4,12 +4,12 @@ export default function NavBar() {
 	return (
 		<nav className='w-full h-24 flex justify-center items-center'>
 			<div className='w-full h-full flex items-center justify-between gap-12'>
-				<div className=''>
+				<div className='pl-12'>
 					<p className='text-white text-3xl font-mono'>
 						Toby Nguyen_
 					</p>
 				</div>
-				<div className='flex gap-8 items-center h-full'>
+				<div className='flex gap-8 items-center h-full pr-12'>
 					<Link to='/'>
 						<p className='text-gray-300 hover:text-white duration-300 text-xl'>
 							Home

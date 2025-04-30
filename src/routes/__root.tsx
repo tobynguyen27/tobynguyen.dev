@@ -6,11 +6,9 @@ import Footer from "../components/Footer"
 export const Route = createRootRoute({
 	component: () => (
 		<>
-			<div className='container mx-auto'>
-				<NavBar />
-				<Outlet />
-				<Footer />
-			</div>
+			<NavBar />
+			<Outlet />
+			<Footer />
 			<TanStackRouterDevtools />
 		</>
 	),

@@ -10,85 +10,104 @@
 
 // Import Routes
 
-import { Route as rootRoute } from "./routes/__root"
-import { Route as IndexImport } from "./routes/index"
-import { Route as BlogIndexImport } from "./routes/blog/index"
+import { Route as rootRoute } from './routes/__root'
+import { Route as IndexImport } from './routes/index'
+import { Route as ProjectsIndexImport } from './routes/projects/index'
+import { Route as BlogIndexImport } from './routes/blog/index'
 
 // Create/Update Routes
 
 const IndexRoute = IndexImport.update({
-	id: "/",
-	path: "/",
-	getParentRoute: () => rootRoute,
+  id: '/',
+  path: '/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const ProjectsIndexRoute = ProjectsIndexImport.update({
+  id: '/projects/',
+  path: '/projects/',
+  getParentRoute: () => rootRoute,
 } as any)
 
 const BlogIndexRoute = BlogIndexImport.update({
-	id: "/blog/",
-	path: "/blog/",
-	getParentRoute: () => rootRoute,
+  id: '/blog/',
+  path: '/blog/',
+  getParentRoute: () => rootRoute,
 } as any)
 
 // Populate the FileRoutesByPath interface
 
-declare module "@tanstack/react-router" {
-	interface FileRoutesByPath {
-		"/": {
-			id: "/"
-			path: "/"
-			fullPath: "/"
-			preLoaderRoute: typeof IndexImport
-			parentRoute: typeof rootRoute
-		}
-		"/blog/": {
-			id: "/blog/"
-			path: "/blog"
-			fullPath: "/blog"
-			preLoaderRoute: typeof BlogIndexImport
-			parentRoute: typeof rootRoute
-		}
-	}
+declare module '@tanstack/react-router' {
+  interface FileRoutesByPath {
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/blog/': {
+      id: '/blog/'
+      path: '/blog'
+      fullPath: '/blog'
+      preLoaderRoute: typeof BlogIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/projects/': {
+      id: '/projects/'
+      path: '/projects'
+      fullPath: '/projects'
+      preLoaderRoute: typeof ProjectsIndexImport
+      parentRoute: typeof rootRoute
+    }
+  }
 }
 
 // Create and export the route tree
 
 export interface FileRoutesByFullPath {
-	"/": typeof IndexRoute
-	"/blog": typeof BlogIndexRoute
+  '/': typeof IndexRoute
+  '/blog': typeof BlogIndexRoute
+  '/projects': typeof ProjectsIndexRoute
 }
 
 export interface FileRoutesByTo {
-	"/": typeof IndexRoute
-	"/blog": typeof BlogIndexRoute
+  '/': typeof IndexRoute
+  '/blog': typeof BlogIndexRoute
+  '/projects': typeof ProjectsIndexRoute
 }
 
 export interface FileRoutesById {
-	__root__: typeof rootRoute
-	"/": typeof IndexRoute
-	"/blog/": typeof BlogIndexRoute
+  __root__: typeof rootRoute
+  '/': typeof IndexRoute
+  '/blog/': typeof BlogIndexRoute
+  '/projects/': typeof ProjectsIndexRoute
 }
 
 export interface FileRouteTypes {
-	fileRoutesByFullPath: FileRoutesByFullPath
-	fullPaths: "/" | "/blog"
-	fileRoutesByTo: FileRoutesByTo
-	to: "/" | "/blog"
-	id: "__root__" | "/" | "/blog/"
-	fileRoutesById: FileRoutesById
+  fileRoutesByFullPath: FileRoutesByFullPath
+  fullPaths: '/' | '/blog' | '/projects'
+  fileRoutesByTo: FileRoutesByTo
+  to: '/' | '/blog' | '/projects'
+  id: '__root__' | '/' | '/blog/' | '/projects/'
+  fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
-	IndexRoute: typeof IndexRoute
-	BlogIndexRoute: typeof BlogIndexRoute
+  IndexRoute: typeof IndexRoute
+  BlogIndexRoute: typeof BlogIndexRoute
+  ProjectsIndexRoute: typeof ProjectsIndexRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
-	IndexRoute: IndexRoute,
-	BlogIndexRoute: BlogIndexRoute,
+  IndexRoute: IndexRoute,
+  BlogIndexRoute: BlogIndexRoute,
+  ProjectsIndexRoute: ProjectsIndexRoute,
 }
 
 export const routeTree = rootRoute
-	._addFileChildren(rootRouteChildren)
-	._addFileTypes<FileRouteTypes>()
+  ._addFileChildren(rootRouteChildren)
+  ._addFileTypes<FileRouteTypes>()
 
 /* ROUTE_MANIFEST_START
 {
@@ -97,7 +116,8 @@ export const routeTree = rootRoute
       "filePath": "__root.tsx",
       "children": [
         "/",
-        "/blog/"
+        "/blog/",
+        "/projects/"
       ]
     },
     "/": {
@@ -105,6 +125,9 @@ export const routeTree = rootRoute
     },
     "/blog/": {
       "filePath": "blog/index.tsx"
+    },
+    "/projects/": {
+      "filePath": "projects/index.tsx"
     }
   }
 }
