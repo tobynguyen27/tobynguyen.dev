@@ -1,4 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router"
+import ProjectItem, { ProjectItemProps } from "../../components/ProjectItem"
+
+import projects from "../../assets/data/projects.json"
 
 export const Route = createFileRoute("/projects/")({
 	component: RouteComponent,
@@ -10,7 +13,7 @@ function RouteComponent() {
 			<div className='mt-12 w-full'>
 				<p className='text-white text-center text-3xl'>My Projects</p>
 			</div>
-			<div className='flex gap-2 w-full justify-center items-center h-full my-3'>
+			<div className='flex flex-wrap gap-2 w-full justify-center items-center h-full my-3'>
 				<a
 					href='https://github.com/tobynguyen27'
 					className='group flex items-center gap-1 hover:cursor-pointer border border-gray-300 p-2 rounded-md
@@ -38,6 +41,16 @@ function RouteComponent() {
 						Modrinth
 					</p>
 				</a>
+			</div>
+			<div className='mt-12 w-full h-full grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3 place-items-center'>
+				{(projects as ProjectItemProps[]).map(project => (
+					<ProjectItem
+						icon={project.icon}
+						name={project.name}
+						description={project.description}
+						url={project.url}
+					/>
+				))}
 			</div>
 		</div>
 	)
