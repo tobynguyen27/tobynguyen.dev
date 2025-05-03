@@ -8,7 +8,9 @@ export const Route = createFileRoute("/")({
 function Index() {
 	return (
 		<div className='mx-auto w-3/4 md:w-3/5 lg:w-1/2'>
-			<h1 className='text-white text-3xl font-mono'>Toby Nguyen</h1>
+			<h1 className='text-white text-3xl font-mono hidden sm:block'>
+				Toby Nguyen
+			</h1>
 
 			<p className='text-gray-300 mt-8 text-lg'>
 				Hi there 👋 I am Toby Nguyen. I am a self-taught web developer.
