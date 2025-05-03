@@ -11,7 +11,9 @@
       },
       "devDependencies": {
         "@eslint/js": "^9.22.0",
+        "@iconify-json/devicon": "^1.2.23",
         "@iconify-json/lucide": "^1.2.39",
+        "@iconify-json/vscode-icons": "^1.2.20",
         "@tanstack/router-plugin": "^1.117.2",
         "@types/react": "^19.0.10",
         "@types/react-dom": "^19.0.4",
@@ -153,7 +155,11 @@
 
     "@humanwhocodes/retry": ["@humanwhocodes/retry@0.4.2", "", {}, "sha512-xeO57FpIu4p1Ri3Jq/EXq4ClRm86dVF2z/+kvFnyqVYRavTZmaFaUBbWCOuuTh0o/g7DSsk6kc2vrS4Vl5oPOQ=="],
 
+    "@iconify-json/devicon": ["@iconify-json/devicon@1.2.23", "", { "dependencies": { "@iconify/types": "*" } }, "sha512-JpDWec56q5FKZINnK6iewDIfZulmNw6K2StlxhTLcBAPGRqX/8/o/W3yx0W9Yy0VYt2rtku6sLMqHoIBiNXB7g=="],
+
     "@iconify-json/lucide": ["@iconify-json/lucide@1.2.39", "", { "dependencies": { "@iconify/types": "*" } }, "sha512-1BKCamEZRvArR7PErYCP4SZo9pAANJy6iQWpynI3GM8QKSQtWQgvw6usqGIFCQeJwFZHPOn2OcbDR4P56DyEaQ=="],
+
+    "@iconify-json/vscode-icons": ["@iconify-json/vscode-icons@1.2.20", "", { "dependencies": { "@iconify/types": "*" } }, "sha512-xuWqr/SrckUoFi6kpSH/NrNGK+CuZ8LNnBY8qkRdkQvHmhirXvwsLfTKHoFndTsOlxfsHahlOLVCCb523kdqMA=="],
 
     "@iconify/types": ["@iconify/types@2.0.0", "", {}, "sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg=="],
 
