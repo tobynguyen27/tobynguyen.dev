@@ -1,6 +1,6 @@
 import React from "react"
 
-export interface BadgeProps {
+interface BadgeProps {
 	icon: React.JSX.Element
 	text: string
 	url: string

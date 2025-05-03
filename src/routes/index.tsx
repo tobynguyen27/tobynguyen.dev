@@ -78,7 +78,9 @@ function Index() {
 					noBackground
 				/>
 				<Badge
-					icon={<i className='i-ic-baseline-discord text-gray-300' />}
+					icon={
+						<i className='i-simple-icons-discord text-gray-300' />
+					}
 					text='Discord'
 					url='https://discord.com/users/1365300051932352655'
 					noBackground

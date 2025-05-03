@@ -1,5 +1,16 @@
 import { Link } from "@tanstack/react-router"
 
+interface NavBarItem {
+	name: string
+	url: string
+}
+
+const navbarItems: NavBarItem[] = [
+	{ name: "Home", url: "/" },
+	{ name: "Blog", url: "/blog" },
+	{ name: "Projects", url: "/projects" },
+]
+
 export default function NavBar() {
 	return (
 		<nav className='w-full h-36 sm:h-24 flex justify-center items-center'>
@@ -10,21 +21,18 @@ export default function NavBar() {
 					</p>
 				</div>
 				<div className='w-full h-full flex gap-8 items-center justify-center sm:justify-end h-full sm:pr-12'>
-					<Link to='/'>
-						<p className='text-gray-300 hover:text-white duration-300 text-xl'>
-							Home
-						</p>
-					</Link>
-					<Link to='/blog'>
-						<p className='text-gray-300 hover:text-white duration-300 text-xl'>
-							Blog
-						</p>
-					</Link>
+					{navbarItems.map(item => (
+						<Link to={item.url}>
+							<p className='text-gray-300 hover:text-white duration-300 text-xl'>
+								{item.name}
+							</p>
+						</Link>
+					))}
 					<a
 						href={"https://github.com/tobynguyen27"}
 						target='_blank'
 						className='hidden sm:block'>
-						<button className='i-lucide-github text-xl text-gray-300 hover:text-white hover:cursor-pointer' />
+						<button className='i-simple-icons-github text-xl text-gray-300 hover:text-white hover:cursor-pointer' />
 					</a>
 				</div>
 			</div>
