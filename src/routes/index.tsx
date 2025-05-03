@@ -66,6 +66,24 @@ function Index() {
 				video games. I also keen on learning new things, so I am
 				currently learning Mathematics (Analysis).
 			</p>
+
+			<div className='flex flex-wrap gap-2 items-center w-full h-full my-5'>
+				<span className='text-lg text-gray-300 text-nowrap'>
+					You can find me via:
+				</span>
+				<Badge
+					icon={<i className='i-ic-baseline-mail text-gray-300' />}
+					text='Email'
+					url='mailto:hi@tobynguyen.dev'
+					noBackground
+				/>
+				<Badge
+					icon={<i className='i-ic-baseline-discord text-gray-300' />}
+					text='Discord'
+					url='https://discord.com/users/1365300051932352655'
+					noBackground
+				/>
+			</div>
 		</div>
 	)
 }

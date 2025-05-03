@@ -12,6 +12,7 @@
       "devDependencies": {
         "@eslint/js": "^9.22.0",
         "@iconify-json/devicon": "^1.2.23",
+        "@iconify-json/ic": "^1.2.2",
         "@iconify-json/lucide": "^1.2.39",
         "@iconify-json/vscode-icons": "^1.2.20",
         "@tanstack/router-plugin": "^1.117.2",
@@ -158,6 +159,8 @@
     "@humanwhocodes/retry": ["@humanwhocodes/retry@0.4.2", "", {}, "sha512-xeO57FpIu4p1Ri3Jq/EXq4ClRm86dVF2z/+kvFnyqVYRavTZmaFaUBbWCOuuTh0o/g7DSsk6kc2vrS4Vl5oPOQ=="],
 
     "@iconify-json/devicon": ["@iconify-json/devicon@1.2.23", "", { "dependencies": { "@iconify/types": "*" } }, "sha512-JpDWec56q5FKZINnK6iewDIfZulmNw6K2StlxhTLcBAPGRqX/8/o/W3yx0W9Yy0VYt2rtku6sLMqHoIBiNXB7g=="],
+
+    "@iconify-json/ic": ["@iconify-json/ic@1.2.2", "", { "dependencies": { "@iconify/types": "*" } }, "sha512-QmjwS3lYiOmVWgTCEOTFyGODaR/+689+ajep/VsrCcsUN0Gdle5PmIcibDsdmRyrOsW/E77G41UUijdbjQUofw=="],
 
     "@iconify-json/lucide": ["@iconify-json/lucide@1.2.39", "", { "dependencies": { "@iconify/types": "*" } }, "sha512-1BKCamEZRvArR7PErYCP4SZo9pAANJy6iQWpynI3GM8QKSQtWQgvw6usqGIFCQeJwFZHPOn2OcbDR4P56DyEaQ=="],
 
