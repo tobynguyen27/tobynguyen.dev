@@ -16,9 +16,11 @@ export default function NavBar() {
 		<nav className='w-full h-32 sm:h-18 flex justify-center items-center sm:(border border-b-gray-300/30)'>
 			<div className='w-full h-full flex flex-col sm:flex-row items-center justify-between sm:gap-12'>
 				<div className='sm:pl-12 w-full h-full flex justify-center sm:justify-start items-center'>
-					<p className='text-white text-3xl font-mono text-center'>
-						Toby Nguyen_
-					</p>
+					<Link to='/'>
+						<p className='text-white text-3xl font-mono text-center'>
+							Toby Nguyen_
+						</p>
+					</Link>
 				</div>
 				<div className='w-full h-full flex gap-8 items-center justify-center sm:justify-end h-full sm:pr-12'>
 					{navbarItems.map(item => (
