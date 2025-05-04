@@ -4,11 +4,13 @@ import UnoCSS from "unocss/vite"
 import { TanStackRouterVite } from "@tanstack/router-plugin/vite"
 import { browserslistToTargets } from "lightningcss"
 import browserslist from "browserslist"
+import Markdown from "vite-plugin-markdown"
 
 export default defineConfig({
 	plugins: [
 		TanStackRouterVite({ target: "react", autoCodeSplitting: true }),
 		react(),
+		Markdown(),
 		UnoCSS(),
 	],
 	build: {
