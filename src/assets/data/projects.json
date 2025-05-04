@@ -1,5 +1,11 @@
 [
 	{
+		"name": "Astral Generators",
+		"description": "A mod that adds more ways to craft items and producing energy for Create: Astral",
+		"url": "https://www.curseforge.com/minecraft/mc-mods/astral-generators-for-create-astral",
+		"icon": "https://cdn.jsdelivr.net/gh/astral-community/astral-generators@main/src/main/resources/assets/astralgenerators/icon.png"
+	},
+	{
 		"name": "CodeBebeLib",
 		"description": "A fork of CodeChickenLib for Fabric.",
 		"url": "https://www.curseforge.com/minecraft/mc-mods/codebebelib",
