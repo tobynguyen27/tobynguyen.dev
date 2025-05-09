@@ -14,7 +14,7 @@
         "@tanstack/react-router-devtools": "^1.117.1",
         "@uiw/react-markdown-preview": "^5.1.4",
         "dayjs": "^1.11.13",
-        "gray-matter": "^4.0.3",
+        "front-matter": "^4.0.2",
         "react": "^19.0.0",
         "react-dom": "^19.0.0"
     },

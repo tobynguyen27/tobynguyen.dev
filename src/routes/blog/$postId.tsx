@@ -1,5 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router"
-import matter from "gray-matter"
+import fm from "front-matter"
 import MarkdownPreview from "@uiw/react-markdown-preview"
 
 const posts = import.meta.glob("../../assets/posts/*.md", {
@@ -16,8 +16,8 @@ export const Route = createFileRoute("/blog/$postId")({
 
 		if (!rawPost) throw notFound()
 
-		const post = matter(rawPost)
-		const postContent = post.content.toString()
+		const post = fm(rawPost)
+		const postContent = post.body.toString()
 
 		return { postContent }
 	},

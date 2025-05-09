@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router"
 import matter from "gray-matter"
 import PostItem from "../../components/PostItem"
 import dayjs from "dayjs"
+import fm from "front-matter"
 import PostMetadata from "../../types/PostMetadata"
 
 export const Route = createFileRoute("/blog/")({
@@ -23,9 +24,9 @@ function Index() {
 			<div className=''>
 				{Object.keys(posts).map(key => {
 					const rawPost = posts[key] as string
-					const post = matter(rawPost)
+					const post = fm(rawPost)
 					const { id, title, description, date } =
-						post.data as PostMetadata
+						post.attributes as PostMetadata
 
 					return (
 						<PostItem
