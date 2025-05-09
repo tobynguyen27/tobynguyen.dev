@@ -14,11 +14,15 @@ export default defineConfig({
 		nodePolyfills({
 			globals: {
 				Buffer: true,
+				process: false,
+				global: false,
 			},
+			protocolImports: true,
 		}),
 	],
 	build: {
 		cssMinify: "lightningcss",
+		minify: "esbuild",
 	},
 	css: {
 		transformer: "lightningcss",
