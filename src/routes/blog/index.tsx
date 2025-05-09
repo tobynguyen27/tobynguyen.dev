@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router"
-import matter from "gray-matter"
 import PostItem from "../../components/PostItem"
 import dayjs from "dayjs"
 import fm from "front-matter"
