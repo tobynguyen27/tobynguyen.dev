@@ -24,7 +24,7 @@ export default function NavBar() {
 				</div>
 				<div className='w-full h-full flex gap-8 items-center justify-center sm:justify-end h-full sm:pr-12'>
 					{navbarItems.map(item => (
-						<Link to={item.url}>
+						<Link to={item.url} key={item.name}>
 							<p className='text-gray-300 p-2 rounded-md hover:text-white duration-300 text-xl'>
 								{item.name}
 							</p>
