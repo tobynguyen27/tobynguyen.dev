@@ -46,7 +46,7 @@ function Index() {
 			/>
 			<Link to='/blog'>
 				{" "}
-				<button className='text-gray-300 mt-12 text-xl p-2 rounded-md hover:(bg-stone/15 cursor-pointer)'>
+				<button className='text-gray-300 mt-12 text-xl p-2 rounded-md hover:(bg-stone/15 cursor-pointer) duration-300'>
 					cd ../
 				</button>
 			</Link>
