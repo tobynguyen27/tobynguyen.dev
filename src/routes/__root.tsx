@@ -5,12 +5,12 @@ import Footer from "../components/Footer"
 
 export const Route = createRootRoute({
 	component: () => (
-		<>
+		<div className='antialiased'>
 			<NavBar />
 			<Outlet />
 			<Footer />
 			<TanStackRouterDevtools />
-		</>
+		</div>
 	),
 	notFoundComponent: () => {
 		return (
