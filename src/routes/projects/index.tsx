@@ -18,7 +18,7 @@ function RouteComponent() {
 					href='https://github.com/tobynguyen27'
 					className='group flex items-center gap-1 hover:cursor-pointer border border-gray-300 p-2 rounded-md duration-300
 				 hover:(bg-white/20 text-white border-white)'>
-					<i className='i-simple-icons-curseforge text-gray-300 group-hover:text-white duration-300' />
+					<i className='i-simple-icons-github text-gray-300 group-hover:text-white duration-300' />
 					<p className='text-gray-300 group-hover:text-white duration-300'>
 						GitHub
 					</p>
