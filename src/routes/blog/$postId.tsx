@@ -24,7 +24,17 @@ export const Route = createFileRoute("/blog/$postId")({
 	notFoundComponent: () => {
 		return (
 			<div className='w-full h-screen flex flex-col items-center justify-center'>
-				<p className='text-white text-5xl'>Page Not Found</p>
+				<p className='text-white text-8xl font-light text-center'>
+					404
+				</p>
+				<p className='text-gray-300 text-5xl text-center'>
+					Post Not Found
+				</p>
+				<Link to='/'>
+					<p className='text-gray-300 text-xl hover:(cursor-pointer) p-2 mt-3 text-center'>
+						cd ../
+					</p>
+				</Link>
 			</div>
 		)
 	},
@@ -51,7 +61,6 @@ function Index() {
 				/>
 			</Suspense>
 			<Link to='/blog'>
-				{" "}
 				<button className='text-gray-300 mt-12 text-xl p-2 rounded-md hover:(bg-stone/15 cursor-pointer) duration-300'>
 					cd ../
 				</button>
