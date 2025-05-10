@@ -3,6 +3,9 @@ import fm from "front-matter"
 import { lazy, Suspense } from "react"
 import PostMetadata from "../../types/PostMetadata"
 import dayjs from "dayjs"
+import remarkGfm from "remark-gfm"
+//import SyntaxHighlighter from "react-syntax-highlighter"
+//import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism"
 
 const postModules = import.meta.glob("../../assets/posts/*.md", {
 	eager: false,
@@ -45,7 +48,7 @@ export const Route = createFileRoute("/blog/$postId")({
 	},
 })
 
-const Markdown = lazy(() => import("markdown-to-jsx"))
+const Markdown = lazy(() => import("react-markdown"))
 
 function Index() {
 	const { postContent, postMetadata } = Route.useLoaderData()
@@ -68,7 +71,10 @@ function Index() {
 					</span>
 				</div>
 				<article className='prose mx-auto prose-white font-sans'>
-					<Markdown>{postContent}</Markdown>
+					<Markdown
+						remarkPlugins={[remarkGfm]}
+						children={postContent}
+					/>
 				</article>
 			</Suspense>
 			<div className='prose mx-auto'>
