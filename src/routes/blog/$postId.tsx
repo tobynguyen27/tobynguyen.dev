@@ -3,9 +3,6 @@ import fm from "front-matter"
 import { lazy, Suspense } from "react"
 import PostMetadata from "../../types/PostMetadata"
 import dayjs from "dayjs"
-import remarkGfm from "remark-gfm"
-//import SyntaxHighlighter from "react-syntax-highlighter"
-//import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism"
 
 const postModules = import.meta.glob("../../assets/posts/*.md", {
 	eager: false,
@@ -48,7 +45,7 @@ export const Route = createFileRoute("/blog/$postId")({
 	},
 })
 
-const Markdown = lazy(() => import("react-markdown"))
+const Markdown = lazy(() => import("@uiw/react-markdown-preview"))
 
 function Index() {
 	const { postContent, postMetadata } = Route.useLoaderData()
@@ -60,7 +57,7 @@ function Index() {
 					<p className='text-white text-lg'>Loading content...</p>
 				}>
 				<div className='prose mx-auto'>
-					<span className='text-5xl text-white font-semibold'>
+					<span className='text-3xl lg:text-5xl text-white font-semibold'>
 						{postMetadata.title}
 					</span>
 					<br />
@@ -72,14 +69,17 @@ function Index() {
 				</div>
 				<article className='prose mx-auto prose-white font-sans'>
 					<Markdown
-						remarkPlugins={[remarkGfm]}
-						children={postContent}
+						source={postContent}
+						style={{ backgroundColor: "black" }}
+						wrapperElement={{
+							"data-color-mode": "dark",
+						}}
 					/>
 				</article>
 			</Suspense>
 			<div className='prose mx-auto'>
 				<Link to='/blog'>
-					<button className='text-gray-300 mt-12 text-xl p-2 rounded-md hover:(cursor-pointer text-white) duration-300'>
+					<button className='text-gray-300 mt-8 text-xl p-2 rounded-md hover:(cursor-pointer text-white) duration-300'>
 						cd ../
 					</button>
 				</Link>
