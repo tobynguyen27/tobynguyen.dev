@@ -1,6 +1,8 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router"
 import fm from "front-matter"
 import { lazy, Suspense } from "react"
+import PostMetadata from "../../types/PostMetadata"
+import dayjs from "dayjs"
 
 const postModules = import.meta.glob("../../assets/posts/*.md", {
 	eager: false,
@@ -16,9 +18,12 @@ export const Route = createFileRoute("/blog/$postId")({
 		if (!resolver) throw notFound()
 
 		const raw = (await resolver()) as string
-		const { body } = fm(raw)
+		const { body, attributes } = fm(raw)
 
-		return { postContent: body.toString() }
+		return {
+			postContent: body.toString(),
+			postMetadata: attributes as PostMetadata,
+		}
 	},
 	component: Index,
 	notFoundComponent: () => {
@@ -40,31 +45,39 @@ export const Route = createFileRoute("/blog/$postId")({
 	},
 })
 
-const MarkdownPreview = lazy(() => import("@uiw/react-markdown-preview"))
+const Markdown = lazy(() => import("markdown-to-jsx"))
 
 function Index() {
-	const { postContent } = Route.useLoaderData()
+	const { postContent, postMetadata } = Route.useLoaderData()
 
 	return (
-		<div className='w-full px-3 py-6 sm:px-12 md:px-24 lg:px-36 xl:px-48 font-mono h-full'>
+		<div className='w-full px-3 py-6 sm:px-12 md:px-24 lg:px-36 xl:px-48 h-full'>
 			<Suspense
 				fallback={
 					<p className='text-white text-lg'>Loading content...</p>
 				}>
-				<MarkdownPreview
-					source={postContent}
-					className='w-full h-full'
-					wrapperElement={{
-						"data-color-mode": "dark",
-					}}
-					style={{ backgroundColor: "black" }}
-				/>
+				<div className='prose mx-auto'>
+					<span className='text-5xl text-white font-semibold'>
+						{postMetadata.title}
+					</span>
+					<br />
+					<span className='text-gray-300/80 text-lg'>
+						{dayjs(postMetadata.date, "YYYY-MM-DD").format(
+							"MMMM D, YYYY",
+						)}
+					</span>
+				</div>
+				<article className='prose mx-auto prose-white font-sans'>
+					<Markdown>{postContent}</Markdown>
+				</article>
 			</Suspense>
-			<Link to='/blog'>
-				<button className='text-gray-300 mt-12 text-xl p-2 rounded-md hover:(bg-stone/15 cursor-pointer) duration-300'>
-					cd ../
-				</button>
-			</Link>
+			<div className='prose mx-auto'>
+				<Link to='/blog'>
+					<button className='text-gray-300 mt-12 text-xl p-2 rounded-md hover:(cursor-pointer text-white) duration-300'>
+						cd ../
+					</button>
+				</Link>
+			</div>
 		</div>
 	)
 }

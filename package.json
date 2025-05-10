@@ -12,9 +12,9 @@
     "dependencies": {
         "@tanstack/react-router": "^1.120.3",
         "@tanstack/react-router-devtools": "^1.120.3",
-        "@uiw/react-markdown-preview": "^5.1.4",
         "dayjs": "^1.11.13",
         "front-matter": "^4.0.2",
+        "markdown-to-jsx": "^7.7.6",
         "react": "^19.1.0",
         "react-dom": "^19.1.0"
     },

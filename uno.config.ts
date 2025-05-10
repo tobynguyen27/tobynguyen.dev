@@ -4,6 +4,7 @@ import {
 	presetIcons,
 	presetWebFonts,
 	presetWind4,
+	presetTypography,
 	transformerVariantGroup,
 } from "unocss"
 
@@ -20,12 +21,14 @@ export default defineConfig({
 			},
 		}),
 		presetWebFonts({
-			provider: "bunny",
+			themeKey: "font",
+			provider: "fontsource",
 			fonts: {
-				sans: "Inter",
+				sans: "Geist",
 				mono: "JetBrains Mono",
 			},
 		}),
+		presetTypography(),
 	],
 	transformers: [transformerVariantGroup()],
 })
