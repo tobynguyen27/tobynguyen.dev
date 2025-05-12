@@ -1,8 +1,9 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router"
 import fm from "front-matter"
-import { lazy, Suspense } from "react"
+import { Suspense } from "react"
 import PostMetadata from "../../types/PostMetadata"
 import dayjs from "dayjs"
+import MarkdownPreview from "../../components/MarkdownPreview"
 
 const postModules = import.meta.glob("../../assets/posts/*.md", {
 	eager: false,
@@ -45,8 +46,6 @@ export const Route = createFileRoute("/blog/$postId")({
 	},
 })
 
-const Markdown = lazy(() => import("@uiw/react-markdown-preview"))
-
 function Index() {
 	const { postContent, postMetadata } = Route.useLoaderData()
 
@@ -68,13 +67,7 @@ function Index() {
 					</span>
 				</div>
 				<article className='prose mx-auto prose-white font-sans'>
-					<Markdown
-						source={postContent}
-						style={{ backgroundColor: "black" }}
-						wrapperElement={{
-							"data-color-mode": "dark",
-						}}
-					/>
+					<MarkdownPreview source={postContent} />
 				</article>
 			</Suspense>
 			<div className='prose mx-auto'>
