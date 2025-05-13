@@ -1,9 +1,9 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router"
 import fm from "front-matter"
 import { Suspense } from "react"
-import PostMetadata from "../../types/PostMetadata"
+import PostMetadata from "@/types/PostMetadata"
 import dayjs from "dayjs"
-import MarkdownPreview from "../../components/MarkdownPreview"
+import MarkdownPreview from "@/components/MarkdownPreview"
 
 const postModules = import.meta.glob("../../assets/posts/*.md", {
 	eager: false,

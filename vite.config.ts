@@ -6,6 +6,7 @@ import { browserslistToTargets } from "lightningcss"
 import browserslist from "browserslist"
 import { nodePolyfills } from "vite-plugin-node-polyfills"
 import { visualizer } from "rollup-plugin-visualizer"
+import path from "path"
 
 export default defineConfig({
 	plugins: [
@@ -30,6 +31,11 @@ export default defineConfig({
 		transformer: "lightningcss",
 		lightningcss: {
 			targets: browserslistToTargets(browserslist(">= 0.25%")),
+		},
+	},
+	resolve: {
+		alias: {
+			"@": path.resolve(__dirname, "./src"),
 		},
 	},
 	server: {

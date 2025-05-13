@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router"
-import ProjectItem, { ProjectItemProps } from "../../components/ProjectItem"
+import ProjectItem, { ProjectItemProps } from "@/components/ProjectItem"
 
-import projects from "../../assets/data/projects.json"
+import projects from "@/assets/data/projects.json"
 
 export const Route = createFileRoute("/projects/")({
 	component: RouteComponent,

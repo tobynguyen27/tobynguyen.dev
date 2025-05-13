@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router"
-import Badge from "../components/Badge"
+import Badge from "@/components/Badge"
 
 export const Route = createFileRoute("/")({
 	component: Index,
