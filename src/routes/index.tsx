@@ -72,6 +72,12 @@ function Index() {
 					You can find me via:
 				</span>
 				<Badge
+					icon={<i className='i-simple-icons-github text-gray-300' />}
+					text='GitHub'
+					url='https://github.com/tobynguyen27'
+					noBackground
+				/>
+				<Badge
 					icon={<i className='i-ic-baseline-mail text-gray-300' />}
 					text='Email'
 					url='mailto:hi@tobynguyen.dev'
