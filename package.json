@@ -12,6 +12,7 @@
     "dependencies": {
         "@tanstack/react-router": "^1.120.3",
         "@uiw/react-markdown-preview": "^5.1.4",
+        "@vercel/speed-insights": "^1.2.0",
         "dayjs": "^1.11.13",
         "front-matter": "^4.0.2",
         "react": "^19.1.0",
