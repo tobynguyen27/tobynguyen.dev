@@ -50,32 +50,47 @@ function Index() {
 	const { postContent, postMetadata } = Route.useLoaderData()
 
 	return (
-		<div className='w-full px-3 py-6 sm:px-12 md:px-24 lg:px-36 xl:px-48 h-full'>
-			<Suspense
-				fallback={
-					<p className='text-white text-lg'>Loading content...</p>
-				}>
-				<div className='prose mx-auto'>
-					<span className='text-3xl lg:text-5xl text-white font-semibold'>
-						{postMetadata.title}
-					</span>
-					<br />
-					<span className='text-gray-300/80 text-lg'>
-						{dayjs(postMetadata.date, "YYYY-MM-DD").format(
-							"MMMM D, YYYY",
-						)}
-					</span>
+		<div className='mx-auto p-3 sm:px-12 md:px-24 lg:px-36 xl:px-48 sm:py-12'>
+			<div className=''>
+				<div className='border border-gray-300/30 rounded-md p-6'>
+					<Suspense
+						fallback={
+							<p className='text-white text-lg'>
+								Loading content...
+							</p>
+						}>
+						<span className='text-3xl lg:text-5xl text-white font-semibold'>
+							{postMetadata.title}
+						</span>
+						<br />
+						<span className='text-gray-300/80 text-lg'>
+							{dayjs(postMetadata.date, "YYYY-MM-DD").format(
+								"MMMM D, YYYY",
+							)}
+						</span>
+						<article className='mx-auto font-sans'>
+							<MarkdownPreview source={postContent} />
+						</article>
+					</Suspense>
 				</div>
-				<article className='prose mx-auto prose-white font-sans'>
-					<MarkdownPreview source={postContent} />
-				</article>
-			</Suspense>
-			<div className='prose mx-auto'>
-				<Link to='/blog'>
-					<button className='text-gray-300 mt-8 text-xl p-2 rounded-md hover:(cursor-pointer text-white) duration-300'>
-						cd ../
-					</button>
-				</Link>
+				<div className='mx-auto flex flex-col mt-8'>
+					<Link to='/blog'>
+						<button className='text-gray-300/80 text-xl rounded-md hover:(cursor-pointer text-white) duration-300 group'>
+							<i className='i-ic-baseline-keyboard-arrow-right' />{" "}
+							<span className='group-hover:(underline underline-offset-4) duration-300'>
+								cd /blog
+							</span>
+						</button>
+					</Link>
+					<Link to='/'>
+						<button className='text-gray-300/80 text-xl rounded-md hover:(cursor-pointer text-white) duration-300 group'>
+							<i className='i-ic-baseline-keyboard-arrow-right' />{" "}
+							<span className='group-hover:(underline underline-offset-4) duration-300'>
+								cd /home
+							</span>
+						</button>
+					</Link>
+				</div>
 			</div>
 		</div>
 	)

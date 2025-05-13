@@ -17,7 +17,7 @@ export default function NavBar() {
 			<div className='w-full h-full flex flex-col sm:flex-row items-center justify-between sm:gap-12'>
 				<div className='sm:pl-12 w-full h-full flex justify-center sm:justify-start items-center'>
 					<Link to='/'>
-						<p className='text-white text-3xl font-mono text-center'>
+						<p className='text-white text-3xl font-mono text-center text-nowrap'>
 							Toby Nguyen_
 						</p>
 					</Link>
