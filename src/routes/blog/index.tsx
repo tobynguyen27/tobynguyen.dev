@@ -13,15 +13,20 @@ export const Route = createFileRoute("/blog/")({
 		})
 
 		const posts = await Promise.all(
-			Object.entries(modules).map(async ([, resolver]) => {
+			Object.entries(modules).map(async ([key, resolver]) => {
 				const rawPost = (await resolver()) as string
 				const { attributes } = fm(rawPost)
-				return attributes as PostMetadata
+				const postId = key.split("/").pop()!.replace(".md", "") // Filename is post id
+
+				return {
+					...(attributes as PostMetadata),
+					postId,
+				}
 			}),
 		)
 
 		posts.sort((a, b) => {
-			return dayjs(b.date).isBefore(dayjs(a.date)) ? 1 : -1
+			return dayjs(b.date).isAfter(dayjs(a.date)) ? 1 : -1
 		})
 
 		return { posts }
@@ -44,13 +49,13 @@ function Index() {
 					fallback={
 						<p className='text-white text-lg'>Loading posts...</p>
 					}>
-					{posts.map(({ id, title, description, date }) => (
+					{posts.map(({ postId, title, description, date }) => (
 						<PostItem
-							key={id}
+							key={postId}
 							title={title}
 							date={dayjs(date, "YYYY-MM-DD").toDate()}
 							description={description}
-							link={`/blog/${id}`}
+							link={`/blog/${postId}`}
 						/>
 					))}
 				</Suspense>

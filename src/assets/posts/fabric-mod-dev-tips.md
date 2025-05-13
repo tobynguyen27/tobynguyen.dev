@@ -1,5 +1,4 @@
 ---
-id: fabric-mod-dev-tips
 title: Fabric mod development tips
 description: A collection of tips and tricks for mod developers.
 date: 2025-05-10
