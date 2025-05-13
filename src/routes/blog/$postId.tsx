@@ -52,7 +52,7 @@ function Index() {
 	return (
 		<div className='mx-auto p-3 sm:px-12 md:px-24 lg:px-36 xl:px-48 sm:py-12'>
 			<div className=''>
-				<div className='border border-gray-300/30 rounded-md p-6'>
+				<div className='border border-gray-300/30 rounded-md p-6 sm:p-8 md:p-12 lg:p-18'>
 					<Suspense
 						fallback={
 							<p className='text-white text-lg'>
