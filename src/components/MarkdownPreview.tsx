@@ -1,5 +1,5 @@
 import { lazy } from "react"
-
+import "../styles/markdown.css"
 interface MarkdownPreviewProps {
 	source: string
 }
