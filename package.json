@@ -24,6 +24,7 @@
         "@iconify-json/devicon": "^1.2.23",
         "@iconify-json/ic": "^1.2.2",
         "@iconify-json/simple-icons": "^1.2.34",
+        "@million/lint": "^1.0.14",
         "@tanstack/router-plugin": "^1.120.3",
         "@types/react": "^19.1.4",
         "@types/react-dom": "^19.1.4",

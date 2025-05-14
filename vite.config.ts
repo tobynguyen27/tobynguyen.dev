@@ -7,6 +7,7 @@ import browserslist from "browserslist"
 import { nodePolyfills } from "vite-plugin-node-polyfills"
 import { visualizer } from "rollup-plugin-visualizer"
 import path from "path"
+import MillionLint from "@million/lint"
 
 export default defineConfig({
 	plugins: [
@@ -22,6 +23,7 @@ export default defineConfig({
 			protocolImports: true,
 		}),
 		visualizer() as PluginOption,
+		MillionLint.vite(),
 	],
 	build: {
 		cssMinify: "lightningcss",
