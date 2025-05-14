@@ -4,6 +4,7 @@ import { Suspense } from "react"
 import PostMetadata from "@/types/PostMetadata"
 import dayjs from "dayjs"
 import MarkdownPreview from "@/components/MarkdownPreview"
+import NotFoundPage from "@/components/NotFoundPage"
 
 const postModules = import.meta.glob("../../assets/posts/*.md", {
 	eager: false,
@@ -29,19 +30,11 @@ export const Route = createFileRoute("/blog/$postId")({
 	component: Index,
 	notFoundComponent: () => {
 		return (
-			<div className='w-full h-screen flex flex-col items-center justify-center'>
-				<p className='text-white text-8xl font-light text-center'>
-					404
-				</p>
-				<p className='text-gray-300 text-5xl text-center'>
-					Post Not Found
-				</p>
-				<Link to='/'>
-					<p className='text-gray-300 text-xl hover:(cursor-pointer) p-2 mt-3 text-center'>
-						cd ../
-					</p>
-				</Link>
-			</div>
+			<NotFoundPage
+				description={"Post Not Found"}
+				buttonLabel={"cd ../"}
+				buttonUrl={"/blog"}
+			/>
 		)
 	},
 })
