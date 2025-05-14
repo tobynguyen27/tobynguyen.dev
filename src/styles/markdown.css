@@ -9,3 +9,7 @@
 .prose code::after {
 	content: "";
 }
+
+.prose pre {
+	padding: 0;
+}
