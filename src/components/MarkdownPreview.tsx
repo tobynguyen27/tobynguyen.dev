@@ -1,6 +1,10 @@
 import { lazy, ReactNode } from "react"
 import "@/styles/markdown.css"
 import ShikiHighlighter, { Element, isInlineCode } from "react-shiki"
+import cn from "@/utils/cn"
+import remarkGfm from "remark-gfm"
+import rehypeRaw from "rehype-raw"
+import rehypeIgnore from "rehype-ignore"
 
 interface MarkdownPreviewProps {
 	source: string
@@ -9,7 +13,14 @@ interface MarkdownPreviewProps {
 const Markdown = lazy(() => import("react-markdown"))
 
 export default function MarkdownPreview({ source }: MarkdownPreviewProps) {
-	return <Markdown children={source} components={{ code: CodeHighlight }} />
+	return (
+		<Markdown
+			children={source}
+			components={{ code: CodeHighlight }}
+			remarkPlugins={[remarkGfm]}
+			rehypePlugins={[rehypeRaw, rehypeIgnore]}
+		/>
+	)
 }
 
 function CodeHighlight({
@@ -35,7 +46,9 @@ function CodeHighlight({
 			{code}
 		</ShikiHighlighter>
 	) : (
-		<code className={className} {...props}>
+		<code
+			className={cn(className, "bg-gray-300/20 p-1 rounded-lg")}
+			{...props}>
 			{code}
 		</code>
 	)
