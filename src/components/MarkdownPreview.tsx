@@ -4,16 +4,8 @@ interface MarkdownPreviewProps {
 	source: string
 }
 
-const Markdown = lazy(() => import("@uiw/react-markdown-preview"))
+const Markdown = lazy(() => import("react-markdown"))
 
 export default function MarkdownPreview({ source }: MarkdownPreviewProps) {
-	return (
-		<Markdown
-			source={source}
-			style={{ backgroundColor: "black" }}
-			wrapperElement={{
-				"data-color-mode": "dark",
-			}}
-		/>
-	)
+	return <Markdown children={source} />
 }

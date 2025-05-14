@@ -61,9 +61,11 @@ function Index() {
 								"MMMM D, YYYY",
 							)}
 						</span>
-						<article className='mx-auto font-sans'>
-							<MarkdownPreview source={postContent} />
-						</article>
+						<div className='prose max-w-full prose-white'>
+							<article className='w-full font-sans'>
+								<MarkdownPreview source={postContent} />
+							</article>
+						</div>
 					</Suspense>
 				</div>
 				<div className='mx-auto flex flex-col mt-8'>
