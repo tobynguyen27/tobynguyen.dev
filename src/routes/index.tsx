@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router"
+import { createFileRoute, Link } from "@tanstack/react-router"
 import Badge from "@/components/Badge"
 
 export const Route = createFileRoute("/")({
@@ -69,29 +69,37 @@ function Index() {
 			</p>
 
 			<div className='flex flex-wrap gap-2 items-center w-full h-full my-5'>
-				<span className='text-lg text-gray-300/85 text-nowrap'>
-					You can find me via:
-				</span>
-				<Badge
-					icon={<i className='i-simple-icons-github text-gray-300' />}
-					text='GitHub'
-					url='https://github.com/tobynguyen27'
-					noBackground
-				/>
-				<Badge
-					icon={<i className='i-ic-baseline-mail text-gray-300' />}
-					text='Email'
-					url='mailto:hi@tobynguyen.dev'
-					noBackground
-				/>
-				<Badge
-					icon={
-						<i className='i-simple-icons-discord text-gray-300' />
-					}
-					text='Discord'
-					url='https://discord.com/users/1365300051932352655'
-					noBackground
-				/>
+				<div className='flex gap-2 w-full flex-wrap'>
+					<span className='text-lg text-gray-300/85'>
+						You can find me via:
+					</span>
+					<Badge
+						icon={
+							<i className='i-simple-icons-github text-gray-300' />
+						}
+						text='GitHub'
+						url='https://github.com/tobynguyen27'
+						noBackground
+					/>
+					<Badge
+						icon={
+							<i className='i-simple-icons-discord text-gray-300' />
+						}
+						text='Discord'
+						url='https://discord.com/users/1365300051932352655'
+						noBackground
+					/>
+				</div>
+				<div className='w-full'>
+					<span className='text-gray-300/85 text-lg'>
+						Or mail me at{" "}
+						<a
+							href='mailto:hi@tobynguyen.dev'
+							className='hover:(underline underline-offset-3 text-gray-300) duration-300'>
+							hi@tobynguyen.dev
+						</a>
+					</span>
+				</div>
 			</div>
 		</div>
 	)
