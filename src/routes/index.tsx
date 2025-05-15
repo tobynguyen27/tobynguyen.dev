@@ -12,13 +12,13 @@ function Index() {
 				Toby Nguyen
 			</h1>
 
-			<p className='text-gray-300 mt-8 text-lg'>
+			<p className='text-gray-300/85 mt-8 text-lg'>
 				Hi there 👋 I am Toby Nguyen. I am a self-taught web developer.
 				I enjoy building websites and sometimes I make Minecraft mods.
 			</p>
 
 			<div className='flex flex-col gap-1 my-5'>
-				<div className='text-gray-300 w-full h-full'>
+				<div className='text-gray-300/85 w-full h-full'>
 					<div className='flex flex-wrap gap-2 items-center w-full h-full'>
 						<span className='text-lg text-nowrap'>I know:</span>
 						<Badge
@@ -33,7 +33,7 @@ function Index() {
 						/>
 					</div>
 				</div>
-				<div className='text-gray-300 w-full h-full'>
+				<div className='text-gray-300/85 w-full h-full'>
 					<div className='flex flex-wrap gap-2 items-center w-full h-full'>
 						<span className='text-lg text-nowrap'>I use:</span>
 						<Badge
@@ -55,20 +55,21 @@ function Index() {
 				</div>
 			</div>
 
-			<p className='text-gray-300 text-lg'>
+			<p className='text-gray-300/85 text-lg'>
 				I just finished my high school in this year and I am currently
 				in a gap year. I planned to study Computer Science in university
 				and I am preparing necessary skills before going there.
 			</p>
-			<p className='text-gray-300 text-lg mt-3'>
+			<p className='text-gray-300/85 text-lg mt-3'>
 				Sometimes, I write blog posts about Minecraft, coding, etc. When
 				I am not coding, I enjoy watching anime and movies, playing
-				video games. I also keen on learning new things, so I am
-				currently learning Mathematics (Analysis).
+				video games and listening to musics. I also keen on learning new
+				things, so I am currently learning Mathematics (Analysis) and
+				piano.
 			</p>
 
 			<div className='flex flex-wrap gap-2 items-center w-full h-full my-5'>
-				<span className='text-lg text-gray-300 text-nowrap'>
+				<span className='text-lg text-gray-300/85 text-nowrap'>
 					You can find me via:
 				</span>
 				<Badge
