@@ -1,7 +1,7 @@
 [
 	{
 		"name": "Astral Generators",
-		"description": "A mod that adds more ways to craft items and producing energy for Create: Astral",
+		"description": "A Minecraft mod that I made for a Create: Astral, a Minecraft modpack. Designed to add more new generators and crafting recipes to the game.",
 		"url": "https://www.curseforge.com/minecraft/mc-mods/astral-generators-for-create-astral",
 		"icon": "https://cdn.jsdelivr.net/gh/astral-community/astral-generators@main/src/main/resources/assets/astralgenerators/icon.png"
 	},
