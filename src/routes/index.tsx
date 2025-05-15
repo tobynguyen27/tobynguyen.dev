@@ -55,20 +55,23 @@ function Index() {
 				</div>
 			</div>
 
-			<p className='text-gray-300/85 text-lg'>
-				I just finished my high school in this year and I am currently
-				in a gap year. I planned to study Computer Science in university
-				and I am preparing necessary skills before going there.
-			</p>
-			<p className='text-gray-300/85 text-lg mt-3'>
-				Sometimes, I write blog posts about Minecraft, coding, etc. When
-				I am not coding, I enjoy watching anime and movies, playing
-				video games and listening to musics. I also keen on learning new
-				things, so I am currently learning Mathematics (Analysis) and
-				piano.
-			</p>
+			<div className='flex w-full flex-col gap-3'>
+				<p className='text-gray-300/85 text-lg'>
+					I just finished my high school in this year and I am
+					currently in a gap year. I planned to study Computer Science
+					in university and I am preparing necessary skills before
+					going there.
+				</p>
+				<p className='text-gray-300/85 text-lg'>
+					Sometimes, I write blog posts about Minecraft, coding, etc.
+					When I am not coding, I enjoy watching anime and movies,
+					playing video games and listening to musics. I also keen on
+					learning new things, so I am currently learning Mathematics
+					(Analysis) and piano.
+				</p>
+			</div>
 
-			<div className='flex flex-wrap gap-2 items-center w-full h-full my-5'>
+			<div className='flex flex-wrap items-center w-full h-full my-5'>
 				<div className='flex gap-2 w-full flex-wrap'>
 					<span className='text-lg text-gray-300/85'>
 						You can find me via:

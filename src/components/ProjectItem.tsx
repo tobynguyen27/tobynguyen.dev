@@ -31,7 +31,7 @@ export default function ProjectItem({
 				</div>
 			</div>
 			<div className='h-auto'>
-				<p className='text-gray-300'>{description}</p>
+				<p className='text-gray-300/85'>{description}</p>
 			</div>
 		</a>
 	)
