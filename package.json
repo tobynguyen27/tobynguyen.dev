@@ -10,6 +10,7 @@
         "format:write": "prettier --write \"**/*.{ts,tsx,js,jsx,mdx}\" --cache"
     },
     "dependencies": {
+        "@preact/signals-react": "^3.0.1",
         "@tanstack/react-router": "^1.120.3",
         "@vercel/speed-insights": "^1.2.0",
         "clsx": "^2.1.1",
