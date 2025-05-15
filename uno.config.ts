@@ -6,6 +6,7 @@ import {
 	presetWind4,
 	presetTypography,
 	transformerVariantGroup,
+	transformerAttributifyJsx,
 } from "unocss"
 
 export default defineConfig({
@@ -30,5 +31,5 @@ export default defineConfig({
 		}),
 		presetTypography(),
 	],
-	transformers: [transformerVariantGroup()],
+	transformers: [transformerVariantGroup(), transformerAttributifyJsx()],
 })
