@@ -10,5 +10,11 @@
 		"description": "A fork of CodeChickenLib for Fabric.",
 		"url": "https://www.curseforge.com/minecraft/mc-mods/codebebelib",
 		"icon": "https://cdn.jsdelivr.net/gh/astral-community/CodeBebeLib@master/src/main/resources/assets/codebebelib/icon.png"
+	},
+	{
+		"name": "Defined's Blocks",
+		"description": "A Minecraft mod maintained by me. It adds decorative blocks from other popular mods without requiring those mods to be installed. Perfect for enhancing builds with a wider variety of aesthetic blocks.",
+		"url": "https://www.curseforge.com/minecraft/mc-mods/defineds-blocks",
+		"icon": "https://cdn.jsdelivr.net/gh/astral-community/Defineds-Blocks@refs/heads/main/src/main/resources/assets/definedsblocks/icon.png"
 	}
 ]
