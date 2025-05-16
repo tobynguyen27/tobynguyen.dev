@@ -1,6 +1,6 @@
 import ShikiHighlighter, { Element, isInlineCode } from "react-shiki"
 import cn from "@/utils/cn"
-import { ReactNode, useState } from "react"
+import { ReactNode, useMemo, useState } from "react"
 
 export default function CodeHighlight({
 	className,
@@ -30,28 +30,60 @@ export default function CodeHighlight({
 		setTimeout(() => setCopied(false), 1000)
 	}
 
-	return !isInline ? (
-		<div className=' w-full h-full bg-[#1E1E2E]'>
-			<div className='w-full border-b border-b-gray-300/10 flex justify-between'>
-				<div className='flex items-center justify-start w-full gap-1 ml-1'>
-					<i
-						className={cn(
-							`i-devicon-${language}`,
-							!filename ? "hidden" : "",
-						)}></i>
-					<span className={cn(filename ?? "ml-3")}>{filename}</span>
+	if (isInline) {
+		return (
+			<code
+				className={cn(
+					className,
+					"bg-gray-300/20 px-1 py-0.5 rounded-lg",
+				)}
+				{...props}>
+				{code}
+			</code>
+		)
+	}
+
+	return (
+		<div
+			className={cn(
+				" w-full h-full bg-[#1E1E2E]",
+				!filename && "relative",
+			)}>
+			{filename ? (
+				<div className='w-full border-b border-b-gray-300/10 flex justify-between'>
+					<div className='flex items-center justify-start w-full gap-1 ml-1'>
+						<i
+							className={cn(
+								`i-devicon-${language}`,
+								!filename ? "hidden" : "",
+							)}></i>
+						<span className={cn(filename ?? "ml-3")}>
+							{filename}
+						</span>
+					</div>
+					<button
+						onClick={copyToClipboard}
+						className=' hover:cursor-pointer py-1 mr-3'
+						aria-label='Copy code to clipboard'>
+						{copied ? (
+							<span className='i-tabler-copy-check h-5 w-5 text-green-400' />
+						) : (
+							<span className='i-tabler-copy h-5 w-5 text-gray-300' />
+						)}
+					</button>
 				</div>
+			) : (
 				<button
 					onClick={copyToClipboard}
-					className=' hover:cursor-pointer py-1 mr-3'
+					className='bg-[#1E1E2E] hover:cursor-pointer absolute z-1 top-2 right-3 p-2'
 					aria-label='Copy code to clipboard'>
 					{copied ? (
-						<span className='i-ic-baseline-check h-4 w-4 text-green-400' />
+						<span className='i-tabler-copy-check h-5 w-5 text-green-400' />
 					) : (
-						<span className='i-ic-baseline-content-copy h-4 w-4 text-gray-300' />
+						<span className='i-tabler-copy h-5 w-5 text-gray-300' />
 					)}
 				</button>
-			</div>
+			)}
 			<ShikiHighlighter
 				language={language}
 				theme='catppuccin-mocha'
@@ -60,11 +92,5 @@ export default function CodeHighlight({
 				{code}
 			</ShikiHighlighter>
 		</div>
-	) : (
-		<code
-			className={cn(className, "bg-gray-300/20 px-1 py-0.5 rounded-lg")}
-			{...props}>
-			{code}
-		</code>
 	)
 }
