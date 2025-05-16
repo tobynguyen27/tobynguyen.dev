@@ -13,7 +13,7 @@ These _life savers_ functions that I always use when developing mods.
 
 ### 1.1 toEnglishName(path)
 
-```kotlin
+```TextFormatting.kt#kotlin
 import java.util.Locale
 
 fun toEnglishName(name: String): String {
@@ -34,7 +34,7 @@ For instance:
 
 Instead of spamming long `ResourceLocation`, we should make a class extends it and only receive path. This will decrease the amount of code we need to write.
 
-```kotlin
+```Identifier.kt#kotlin
 class Identifier(path: String) : ResourceLocation(MOD_NAME, path) {}
 ```
 
