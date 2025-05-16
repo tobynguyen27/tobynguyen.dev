@@ -1,6 +1,6 @@
 import ShikiHighlighter, { Element, isInlineCode } from "react-shiki"
 import cn from "@/utils/cn"
-import { ReactNode, useMemo, useState } from "react"
+import { ReactNode, useState } from "react"
 
 export default function CodeHighlight({
 	className,
@@ -13,22 +13,13 @@ export default function CodeHighlight({
 	node?: Element
 }) {
 	const code = String(children).trim()
+	const isInline = node ? isInlineCode(node) : undefined
 
 	const match1 = className?.match(/-([^#]+)#(.+)/)
 	const match2 = className?.match(/language-(.+)/)
 
 	const filename = match1 ? match1[1] : undefined
 	const language = match1 ? match1[2] : match2 ? match2[1] : undefined
-
-	const isInline = node ? isInlineCode(node) : undefined
-
-	const [copied, setCopied] = useState(false)
-
-	const copyToClipboard = async () => {
-		await navigator.clipboard.writeText(code)
-		setCopied(true)
-		setTimeout(() => setCopied(false), 1000)
-	}
 
 	if (isInline) {
 		return (
@@ -61,28 +52,16 @@ export default function CodeHighlight({
 							{filename}
 						</span>
 					</div>
-					<button
-						onClick={copyToClipboard}
+					<CopyButton
 						className=' hover:cursor-pointer py-1 mr-3'
-						aria-label='Copy code to clipboard'>
-						{copied ? (
-							<span className='i-tabler-copy-check h-5 w-5 text-green-400' />
-						) : (
-							<span className='i-tabler-copy h-5 w-5 text-gray-300' />
-						)}
-					</button>
+						content={code}
+					/>
 				</div>
 			) : (
-				<button
-					onClick={copyToClipboard}
+				<CopyButton
 					className='bg-[#1E1E2E] hover:cursor-pointer absolute z-1 top-2 right-3 p-2'
-					aria-label='Copy code to clipboard'>
-					{copied ? (
-						<span className='i-tabler-copy-check h-5 w-5 text-green-400' />
-					) : (
-						<span className='i-tabler-copy h-5 w-5 text-gray-300' />
-					)}
-				</button>
+					content={code}
+				/>
 			)}
 			<ShikiHighlighter
 				language={language}
@@ -92,5 +71,34 @@ export default function CodeHighlight({
 				{code}
 			</ShikiHighlighter>
 		</div>
+	)
+}
+
+function CopyButton({
+	className,
+	content,
+}: {
+	className?: string
+	content: string
+}) {
+	const [copied, setCopied] = useState(false)
+
+	const copyToClipboard = async () => {
+		await navigator.clipboard.writeText(content)
+		setCopied(true)
+		setTimeout(() => setCopied(false), 1000)
+	}
+
+	return (
+		<button
+			onClick={copyToClipboard}
+			className={className}
+			aria-label='Copy code to clipboard'>
+			{copied ? (
+				<span className='i-tabler-copy-check h-5 w-5 text-green-400' />
+			) : (
+				<span className='i-tabler-copy h-5 w-5 text-gray-300' />
+			)}
+		</button>
 	)
 }
