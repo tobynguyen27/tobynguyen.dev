@@ -51,7 +51,7 @@ export default function CodeHighlight({
 			)}>
 			{filename ? (
 				<div className='w-full border-b border-b-gray-300/10 flex justify-between'>
-					<div className='flex items-center justify-start w-full gap-1 ml-1'>
+					<div className='ml-3 flex items-center gap-1'>
 						<i
 							className={cn(
 								`i-devicon-${language}`,
