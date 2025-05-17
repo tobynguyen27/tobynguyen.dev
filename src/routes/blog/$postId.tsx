@@ -70,18 +70,16 @@ function Index() {
 				</div>
 				<div className='mx-auto flex flex-col mt-8'>
 					<Link to='/blog'>
-						<button className='text-gray-300/80 text-xl rounded-md hover:(cursor-pointer text-white) duration-300 group'>
-							<i className='i-ic-baseline-keyboard-arrow-right' />{" "}
+						<button className='text-gray-300/80 text-xl rounded-md hover:(cursor-pointer text-white) duration-300 group '>
 							<span className='group-hover:(underline underline-offset-4) duration-300'>
-								cd /blog
+								{">"} cd /blog
 							</span>
 						</button>
 					</Link>
 					<Link to='/'>
 						<button className='text-gray-300/80 text-xl rounded-md hover:(cursor-pointer text-white) duration-300 group'>
-							<i className='i-ic-baseline-keyboard-arrow-right' />{" "}
 							<span className='group-hover:(underline underline-offset-4) duration-300'>
-								cd /home
+								{">"} cd /home
 							</span>
 						</button>
 					</Link>
