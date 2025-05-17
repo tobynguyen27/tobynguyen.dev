@@ -1,6 +1,8 @@
-import ShikiHighlighter, { Element, isInlineCode } from "react-shiki"
+import { Element, isInlineCode } from "react-shiki"
 import cn from "@/utils/cn"
-import { ReactNode, useState } from "react"
+import { lazy, ReactNode, Suspense, useState } from "react"
+
+const ShikiHighlighter = lazy(() => import("react-shiki"))
 
 export default function CodeHighlight({
 	className,
@@ -63,13 +65,16 @@ export default function CodeHighlight({
 					content={code}
 				/>
 			)}
-			<ShikiHighlighter
-				language={language}
-				theme='catppuccin-mocha'
-				showLanguage={false}
-				{...props}>
-				{code}
-			</ShikiHighlighter>
+			<Suspense
+				fallback={<p className='text-gray-300'>Loading code...</p>}>
+				<ShikiHighlighter
+					language={language}
+					theme='catppuccin-mocha'
+					showLanguage={false}
+					{...props}>
+					{code}
+				</ShikiHighlighter>
+			</Suspense>
 		</div>
 	)
 }
