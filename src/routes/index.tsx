@@ -92,6 +92,12 @@ function Index() {
 						url='https://discord.com/users/1365300051932352655'
 						noBackground
 					/>
+					<Badge
+						icon={<i className='i-simple-icons-x text-gray-300' />}
+						text='X'
+						url='https://x.com/tobynguyen27'
+						noBackground
+					/>
 				</div>
 				<div className='w-full'>
 					<span className='text-gray-300/85 text-lg'>
