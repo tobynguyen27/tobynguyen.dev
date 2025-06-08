@@ -1,0 +1,51 @@
+---
+import type { Props as ProjectItemType } from "../../components/ProjectItem.astro"
+import projects from "../../assets/data/projects.json"
+
+import ProjectItem from "../../components/ProjectItem.astro"
+import Root from "../../layouts/Root.astro"
+---
+
+<Root title="Projects">
+    <div class="mx-auto h-full w-full container">
+        <div class="mt-12 w-full">
+            <p class="text-3xl text-white text-center">My Projects</p>
+        </div>
+        <div class="my-3 flex flex-wrap gap-2 h-full w-full items-center justify-center">
+            <a
+                href="https://github.com/tobynguyen27"
+                target="_blank"
+                class="group p-2 border border-gray-300 rounded-md flex gap-1 duration-300 items-center hover:(text-white border-white bg-white/20 cursor-pointer)"
+            >
+                <i class="i-simple-icons-github text-gray-300 duration-300 group-hover:text-white" />
+                <p class="text-gray-300 duration-300 group-hover:text-white">GitHub</p>
+            </a>
+            <a
+                href="https://www.curseforge.com/members/tobynguyen/projects"
+                target="_blank"
+                class="group p-2 border border-gray-300 rounded-md flex gap-1 duration-300 items-center hover:(text-[#eb622b] border-[#eb622b] bg-[#eb622b]/20 cursor-pointer)"
+            >
+                <i class="i-simple-icons-curseforge text-gray-300 duration-300 group-hover:text-[#eb622b]" />
+                <p class="text-gray-300 duration-300 group-hover:text-[#eb622b]">CurseForge</p>
+            </a>
+            <a
+                href="https://modrinth.com/user/tobynguyen27"
+                target="_blank"
+                class="group p-2 border border-gray-300 rounded-md flex gap-1 duration-300 items-center hover:(text-[#1bd96a] border-[#1bd96a] bg-[#1bd96a]/20 cursor-pointer)"
+            >
+                <i class="i-simple-icons-modrinth text-gray-300 duration-300 group-hover:text-[#1bd96a]" />
+                <p class="text-gray-300 duration-300 group-hover:text-[#1bd96a]">Modrinth</p>
+            </a>
+        </div>
+        <div class="mt-12 gap-3 grid grid-cols-1 h-full w-full place-items-center lg:grid-cols-3 md:grid-cols-2">
+            {(projects as ProjectItemType[]).map(project => (
+                <ProjectItem
+                    icon={project.icon}
+                    name={project.name}
+                    description={project.description}
+                    url={project.url}
+                />
+            ))}
+        </div>
+    </div>
+</Root>

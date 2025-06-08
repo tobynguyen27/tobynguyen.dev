@@ -1,0 +1,38 @@
+---
+import type { CollectionEntry } from "astro:content"
+import dayjs from "dayjs"
+import Root from "./Root.astro"
+
+type Props = CollectionEntry<"blog">["data"]
+
+const { title, date } = Astro.props;
+---
+
+<Root title={title}>
+    <div class="mx-auto p-3 lg:px-36 md:px-24 sm:px-12 sm:py-12 xl:px-48">
+        <div class="">
+            <div class="p-6 border border-gray-300/30 rounded-md lg:p-18 md:p-12 sm:p-8">
+                <span class="text-3xl text-white font-semibold lg:text-5xl">{title}</span>
+                <br />
+                <span class="text-lg text-gray-300/80">{dayjs(date, "YYYY-MM-DD").format("MMMM D, YYYY")}</span>
+                <div class="max-w-full prose prose-white">
+                    <article class="font-sans w-full">
+                        <slot />
+                    </article>
+                </div>
+            </div>
+            <div class="mx-auto mt-8 flex flex-col">
+                <a href="/blog">
+                    <button class="group text-xl text-gray-300/80 rounded-md duration-300 hover:(text-white cursor-pointer)">
+                        <span class="duration-300 group-hover:(underline underline-offset-4)">{">"} cd /blog</span>
+                    </button>
+                </a>
+                <a href="/">
+                        <button class="group text-xl text-gray-300/80 rounded-md duration-300 hover:(text-white cursor-pointer)">
+                        <span class="duration-300 group-hover:(underline underline-offset-4)">{">"} cd /home</span>
+                    </button>
+                </a>
+            </div>
+        </div>
+    </div>
+</Root>

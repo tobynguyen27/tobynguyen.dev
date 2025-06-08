@@ -1,0 +1,36 @@
+import {
+    defineConfig,
+    presetAttributify,
+    presetIcons,
+    presetTypography,
+    presetWebFonts,
+    presetWind4,
+    transformerAttributifyJsx,
+    transformerVariantGroup,
+} from "unocss"
+
+export default defineConfig({
+    presets: [
+        presetWind4(),
+        presetAttributify(),
+        presetIcons({
+            extraProperties: {
+                "display": "inline-block",
+                "vertical-align": "middle",
+                "height": "1.2em",
+                "width": "1.2em",
+            },
+        }),
+        presetWebFonts({
+            themeKey: "font",
+            provider: "fontsource",
+            fonts: {
+                sans: "Geist",
+                mono: "JetBrains Mono",
+            },
+        }),
+        presetTypography(),
+    ],
+    transformers: [transformerVariantGroup(), transformerAttributifyJsx()],
+    safelist: ["i-devicon-kotlin", "i-devicon-typescript"],
+})
