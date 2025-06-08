@@ -32,5 +32,4 @@ export default defineConfig({
         presetTypography(),
     ],
     transformers: [transformerVariantGroup(), transformerAttributifyJsx()],
-    safelist: ["i-devicon-kotlin", "i-devicon-typescript"],
 })
