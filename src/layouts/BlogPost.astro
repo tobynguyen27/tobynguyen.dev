@@ -2,13 +2,14 @@
 import type { CollectionEntry } from "astro:content"
 import dayjs from "dayjs"
 import Root from "./Root.astro"
+import "../styles/markdown.css"
 
 type Props = CollectionEntry<"blog">["data"]
 
 const { title, date } = Astro.props;
 ---
 
-<Root title={title}>
+<Root title={title} override>
     <div class="mx-auto p-3 lg:px-36 md:px-24 sm:px-12 sm:py-12 xl:px-48">
         <div class="">
             <div class="p-6 border border-gray-300/30 rounded-md lg:p-18 md:p-12 sm:p-8">
