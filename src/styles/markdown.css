@@ -1,3 +1,21 @@
 .prose code {
-	font-family: var(--font-mono);
+  font-family: var(--font-mono);
+}
+
+.prose blockquote {
+  font-style: italic;
+  border-left-width: 0.2rem;
+  border-color: #78716c;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  padding-left: 1em;
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+.prose blockquote p:first-of-type::before {
+  content: open-quote;
+}
+
+.prose blockquote p:last-of-type::after {
+  content: close-quote;
 }
