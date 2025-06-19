@@ -1,0 +1,34 @@
+---
+title: Java for Minecraft in a nutshell
+description: Everything about Java for Minecraft players
+date: 2025-06-08
+readTime: 5
+---
+
+## What is Java?
+
+[Java](https://www.oracle.com/vn/java/) is a high-level multi-paradigm programming language famous for its ability to compile to platform-independent bytecode. Instead of compiling to machine code like C or Rust, Java compiles to bytecode that can be executed on any platform with a Java Virtual Machine (JVM). So it's both compiled and interpreted language at the same time.
+
+To run a Java program, you **only** need to have a Java Runtime Environment (JRE) installed on your system. You don't need JDK (Java Development Kit) to play Minecraft. JDK is only useful for developing Minecraft mods. I personally recommend using JRE instead of JDK if you don't develop Minecraft mods because JRE is about 4 times smaller than JDK.
+
+## Java versions for Minecraft
+
+There are 3 Java versions for Minecraft:
+
+- Java 8 (,1.16]: Minecraft 1.16 and older.
+- Java 17 (1.16, 1.20.5): Minecraft 1.20.5 and older.
+- Java 21 [1.20.5,): Minecraft 1.20.5 and newer.
+
+For Minecraft version 1.6.x and older, I have not tested yet since I don't play these versions. If Java 8 is not working on these versions, you can try other older versions like Java 7 or 6.
+
+## What JRE/JDK should I use?
+
+Differences between each distro are not that significant, at least not when it comes to gaming. You can use any JRE/JDK distro you like.
+
+Some distro use [OpenJ9](https://eclipse.dev/openj9/) JVM which is designed for running cloud applications cost-effectively in the cloud so it is not suitable for running Minecraft client.
+
+## Memory allocation
+
+Minimum and maximum (-Xms and -Xmx) memory **should** be set to the same value, as explained [here](https://dzone.com/articles/benefits-of-setting-initial-and-maximum-memory-siz). However, if you are on a low-memory system, and Minecraft takes up almost all your memory, set your minimum memory below your maximum memory to conserve as much as possible. Sizes must be set in Megabytes (-Xms4096M) or Gigabytes (-Xmx8G)
+
+I personally allocate 6GB for Minecraft, it is enough for most of modpacks.

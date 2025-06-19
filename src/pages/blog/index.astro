@@ -16,10 +16,10 @@ const posts = (await getCollection("blog")).sort(
         <div class="">
       {posts.map(({ data, id }) => (
             <PostItem
-                title={data.title}
-                date={data.date}
-                description={data.description}
-                link={`/blog/${id}`}
+              title={data.title}
+              date={data.date}
+              description={data.description}
+              link={`/blog/${id}`}
             />
         ))}
         </div>

@@ -11,7 +11,7 @@ const { icon, text, url, noBackground } = Astro.props
 
 <a href={url} target="_blank">
     <div
-        class={`flex items-center justify-center gap-1 ${noBackground ? "" : "bg-stone-900"} py-1 px-2 rounded-md w-min hover:(bg-stone-800 text-gray-100 cursor-pointer) duration-300`}
+      class={`flex items-center justify-center gap-1 ${noBackground ? "" : "bg-stone-900"} py-1 px-2 rounded-md w-min hover:(bg-stone-800 text-gray-100 cursor-pointer) duration-300`}
     >
         <i class={icon}></i>
         <p class="text-gray-300 text-nowrap">{text}</p>
