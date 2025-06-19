@@ -6,10 +6,10 @@ import "@/styles/markdown.css"
 
 type Props = CollectionEntry<"blog">["data"]
 
-const { title, date, readTime } = Astro.props;
+const { title, description, date, readTime } = Astro.props;
 ---
 
-<Root title={title} override>
+<Root title={title} description={description} overrideTitle>
     <div class="mx-auto p-3 max-w-fit sm:py-12">
         <div class="">
             <div class="p-6 border border-gray-300/30 rounded-md lg:p-18 md:p-12 sm:p-8">
