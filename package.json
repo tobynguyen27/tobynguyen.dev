@@ -33,7 +33,9 @@
         "wrangler": "^4.19.2",
         "@iconify-json/carbon": "^1.2.9",
         "@iconify-json/devicon": "^1.2.29",
-        "@iconify-json/simple-icons": "^1.2.38"
+        "@iconify-json/simple-icons": "^1.2.38",
+        "simple-git-hooks": "^2.13.0",
+        "lint-staged": "^16.1.2"
       }
     }
   },
@@ -44,17 +46,25 @@
     "@astrojs/sitemap": "catalog:build"
   },
   "devDependencies": {
+    "@antfu/eslint-config": "catalog:lint",
     "@iconify-json/carbon": "catalog:dev",
     "@iconify-json/devicon": "catalog:dev",
     "@iconify-json/simple-icons": "catalog:dev",
-    "wrangler": "catalog:dev",
-    "@unocss/reset": "catalog:build",
-    "lightningcss": "catalog:build",
-    "unocss": "catalog:build",
     "@unocss/eslint-plugin": "catalog:lint",
+    "@unocss/reset": "catalog:build",
     "eslint": "catalog:lint",
     "eslint-plugin-astro": "catalog:lint",
-    "@antfu/eslint-config": "catalog:lint",
-    "eslint-plugin-format": "catalog:lint"
+    "eslint-plugin-format": "catalog:lint",
+    "lightningcss": "catalog:build",
+    "unocss": "catalog:build",
+    "lint-staged": "catalog:dev",
+    "simple-git-hooks": "catalog:dev",
+    "wrangler": "catalog:dev"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "bunx lint-staged"
+  },
+  "lint-staged": {
+    "*": "eslint --fix"
   }
 }
