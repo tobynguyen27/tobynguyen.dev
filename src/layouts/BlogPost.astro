@@ -18,21 +18,19 @@ const { title, date, readTime } = Astro.props;
                   <p class="text-lg text-gray-300/70 flex gap-1 items-center justify-center"><i class="i-carbon-time" />{readTime} min read</p>
                   <p class="text-lg text-gray-300/70">{dayjs(date, "YYYY-MM-DD").format("MMMM D, YYYY")}</p>
                 </div>
-                <div class="mt-8 prose lg:mt-16">
-                    <article class="font-sans w-full">
-                        <slot />
-                    </article>
-                </div>
+                <article class="font-sans mt-8 prose prose-a:(text-blue-500 no-underline) lg:mt-16 hover:prose-a:(underline underline-offset-3)">
+                  <slot />
+                </article>
             </div>
             <div class="mx-auto mt-8 flex flex-col">
                 <a href="/blog">
                     <button class="group text-xl text-gray-300/80 rounded-md duration-300 hover:(text-white cursor-pointer)">
-                        <span class="duration-300 group-hover:(underline underline-offset-4)">{">"} cd /blog</span>
+                        <span class="duration-300 group-hover:(underline underline-offset-3)">{">"} cd /blog</span>
                     </button>
                 </a>
                 <a href="/">
                         <button class="group text-xl text-gray-300/80 rounded-md duration-300 hover:(text-white cursor-pointer)">
-                        <span class="duration-300 group-hover:(underline underline-offset-4)">{">"} cd /home</span>
+                        <span class="duration-300 group-hover:(underline underline-offset-3)">{">"} cd /home</span>
                     </button>
                 </a>
             </div>
