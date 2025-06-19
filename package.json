@@ -1,32 +1,60 @@
 {
-    "type": "module",
-    "private": true,
-    "scripts": {
-        "dev": "astro dev",
-        "build": "bunx --bun astro build",
-        "preview": "astro preview",
-        "astro": "astro",
-        "lint": "eslint",
-        "lint:fix": "eslint --fix"
-    },
-    "dependencies": {
-        "@astrojs/mdx": "^4.3.0",
-        "@astrojs/sitemap": "^3.4.1",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "bunx --bun astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix"
+  },
+  "workspaces": {
+    "catalogs": {
+      "frontend": {
         "astro": "^5.9.4",
-        "dayjs": "^1.11.13"
-    },
-    "devDependencies": {
-        "@antfu/eslint-config": "^4.14.1",
-        "@iconify-json/carbon": "^1.2.9",
-        "@iconify-json/devicon": "^1.2.29",
-        "@iconify-json/simple-icons": "^1.2.38",
-        "@unocss/eslint-plugin": "^66.2.2",
-        "@unocss/reset": "^66.2.2",
+        "dayjs": "^1.11.13",
+        "@astrojs/mdx": "^4.3.0"
+      },
+      "lint": {
         "eslint": "^9.29.0",
         "eslint-plugin-astro": "^1.3.1",
         "eslint-plugin-format": "^1.0.1",
+        "@antfu/eslint-config": "^4.14.1",
+        "@unocss/eslint-plugin": "^66.2.2"
+      },
+      "build": {
         "lightningcss": "^1.30.1",
         "unocss": "^66.2.2",
-        "wrangler": "^4.20.0"
+        "@unocss/reset": "^66.2.2",
+        "@astrojs/sitemap": "^3.4.1"
+      },
+      "dev": {
+        "wrangler": "^4.19.2",
+        "@iconify-json/carbon": "^1.2.9",
+        "@iconify-json/devicon": "^1.2.29",
+        "@iconify-json/simple-icons": "^1.2.38"
+      }
     }
+  },
+  "dependencies": {
+    "@astrojs/mdx": "catalog:frontend",
+    "astro": "catalog:frontend",
+    "dayjs": "catalog:frontend",
+    "@astrojs/sitemap": "catalog:build"
+  },
+  "devDependencies": {
+    "@iconify-json/carbon": "catalog:dev",
+    "@iconify-json/devicon": "catalog:dev",
+    "@iconify-json/simple-icons": "catalog:dev",
+    "wrangler": "catalog:dev",
+    "@unocss/reset": "catalog:build",
+    "lightningcss": "catalog:build",
+    "unocss": "catalog:build",
+    "@unocss/eslint-plugin": "catalog:lint",
+    "eslint": "catalog:lint",
+    "eslint-plugin-astro": "catalog:lint",
+    "@antfu/eslint-config": "catalog:lint",
+    "eslint-plugin-format": "catalog:lint"
+  }
 }
