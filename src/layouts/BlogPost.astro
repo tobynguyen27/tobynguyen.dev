@@ -18,7 +18,7 @@ const { title, description, date, readTime } = Astro.props;
                   <p class="text-lg subtext-base flex gap-1 items-center justify-center"><i class="i-carbon-time" />{readTime} min read</p>
                   <p class="text-lg subtext-base">{dayjs(date, "YYYY-MM-DD").format("MMMM D, YYYY")}</p>
                 </div>
-                <article class="font-sans mt-8 prose prose-gray prose-a:(text-blue-500 no-underline) prose-code:font-mono lg:mt-16 dark:prose-white dark:prose-tr:bg-black hover:prose-a:(underline underline-offset-3)">
+                <article class="font-sans mt-8 prose prose-gray prose-a:(text-blue-500 no-underline) prose-code:font-mono lg:mt-16 prose-td:border-gray-300/95 prose-th:border-gray-300/95 dark:prose-white dark:prose-td:border-gray-300/30 dark:prose-th:border-gray-300/30 dark:prose-tr:bg-black hover:prose-a:(underline underline-offset-3)">
                   <slot />
                 </article>
             </div>
