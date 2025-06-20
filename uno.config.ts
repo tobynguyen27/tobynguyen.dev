@@ -13,7 +13,7 @@ export default defineConfig({
   shortcuts: {
     "text-base": "text-gray-900 dark:text-gray-300",
     "subtext-base": "text-gray-600/85 dark:text-gray-300/85",
-    "text-link": "text-base hover:(underline underline-offset-3)",
+    "text-link": "text-base hover:(underline underline-offset-3 text-gray-900) text-gray-600 dark:text-gray-300 dark:hover:text-white",
     "navbar-item-text": "text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white",
   },
   presets: [
