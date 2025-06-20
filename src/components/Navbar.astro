@@ -1,4 +1,6 @@
 ---
+import ThemeToggle from "./ThemeToggle.astro"
+
 interface NavbarItem {
     name: string
     url: string
@@ -24,6 +26,7 @@ const navbarItems: NavbarItem[] = [
                     <p class="text-xl text-gray-300/85 p-2 rounded-md duration-300 hover:text-white">{item.name}</p>
                 </a>
             ))}
+            <ThemeToggle />
             <a href="https://github.com/tobynguyen27" target="_blank" class="hidden sm:block">
                 <button class="i-simple-icons-github text-xl text-gray-300 duration-300 hover:(text-white cursor-pointer)" />
             </a>
