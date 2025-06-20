@@ -1,10 +1,23 @@
-.prose {
+.dark .prose {
   font-size: 1rem;
   line-height: 1.75;
   color: var(--colors-gray-300) !important;
 }
 
+.prose {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--colors-gray-900) !important;
+}
+
 .prose blockquote {
+  border-left: 0.25rem solid rgba(209, 213, 219, 0.5);
+  quotes: "\201C" "\201D" "\2018" "\2019";
+  font-weight: 500;
+  font-style: italic;
+}
+
+.dark .prose blockquote {
   border-left: 0.25rem solid rgba(209, 213, 219, 0.3);
   quotes: "\201C" "\201D" "\2018" "\2019";
   font-weight: 500;
@@ -19,12 +32,14 @@
   content: close-quote;
 }
 
-.prose code {
-  font-family: var(--font-mono);
+.dark .prose :not(pre) > code {
+  background-color: var(--colors-stone-900);
+  border-radius: 0.25rem;
+  padding: 0.2em 0.25em;
 }
 
 .prose :not(pre) > code {
-  background-color: var(--colors-stone-900);
+  background-color: var(--colors-stone-200);
   border-radius: 0.25rem;
   padding: 0.2em 0.25em;
 }
@@ -62,26 +77,6 @@
   color: inherit;
   margin-top: 1.5em;
   margin-bottom: 0.5em;
-}
-
-.prose table {
-  width: 100%;
-  table-layout: auto;
-  text-align: left;
-  margin-top: 2em;
-  margin-bottom: 2em;
-  font-size: 0.875em;
-  line-height: 1.7142857;
-}
-.prose thead {
-  font-weight: 600;
-  border-bottom-width: 1px;
-  border-bottom-color: rgba(229, 231, 235, 0.2);
-}
-
-.prose tbody tr {
-  border-bottom-width: 1px;
-  border-bottom-color: rgba(229, 231, 235, 0.2);
 }
 
 .prose tbody tr:last-child {

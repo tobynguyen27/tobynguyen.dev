@@ -13,16 +13,16 @@ const { title, date, description, link } = Astro.props
 
 <a
   href={link}
-  class="p-5 rounded-md flex flex-col w-full duration-300 justify-center hover:(bg-stone/15 cursor-pointer)"
+  class="p-5 rounded-md flex flex-col w-full duration-300 justify-center hover:(bg-stone-200/80 cursor-pointer dark:bg-stone/15)"
 >
     <div class="">
-        <p class="text-3xl text-gray-300 font-semibold">{title}</p>
+        <p class="text-3xl text-base font-semibold">{title}</p>
     </div>
     <div class="">
-        <p class="text-gray-300/85">{description}</p>
+        <p class="subtext-base">{description}</p>
     </div>
     <div class="my-3">
-        <p class="text-gray-300/85">
+        <p class="subtext-base">
             {dayjs(date).format("MMMM D, YYYY")}
         </p>
     </div>
