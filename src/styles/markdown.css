@@ -57,3 +57,27 @@
   margin-top: 1.5em;
   margin-bottom: 0.5em;
 }
+
+.prose table {
+  width: 100%;
+  table-layout: auto;
+  text-align: left;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  font-size: 0.875em;
+  line-height: 1.7142857;
+}
+.prose thead {
+  font-weight: 600;
+  border-bottom-width: 1px;
+  border-bottom-color: rgba(229, 231, 235, 0.2);
+}
+
+.prose tbody tr {
+  border-bottom-width: 1px;
+  border-bottom-color: rgba(229, 231, 235, 0.2);
+}
+
+.prose tbody tr:last-child {
+  border-bottom-width: 0;
+}

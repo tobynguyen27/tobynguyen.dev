@@ -2,7 +2,7 @@
 title: Java for Minecraft in a nutshell
 description: Everything about Java for Minecraft players
 date: 2025-06-08
-readTime: 5
+readTime: 10
 ---
 
 ## What is Java?
@@ -21,14 +21,86 @@ There are 3 Java versions for Minecraft:
 
 For Minecraft version 1.6.x and older, I have not tested yet since I don't play these versions. If Java 8 is not working on these versions, you can try other older versions like Java 7 or 6.
 
+Furthermore, if your are playing an old modpack and it supports newer Java version, you should choose the version that supports newer Java version. For instance, [GregTech New Horizons](https://github.com/GTNewHorizons/GT-New-Horizons-Modpack) has two versions: the first one uses Java 8, and the second one uses Java 17+. You should choose the second one because newer Java versions have a better Garbage Collector.
+
 ## What JRE/JDK should I use?
 
 Differences between each distro are not that significant, at least not when it comes to gaming. You can use any JRE/JDK distro you like.
 
 Some distro use [OpenJ9](https://eclipse.dev/openj9/) JVM which is designed for running cloud applications cost-effectively in the cloud so it is not suitable for running Minecraft client.
 
+### Should I use OpenJ9 JVM for hosting Minecraft server?
+
+No, it is not designed for game servers.
+
 ## Memory allocation
 
-Minimum and maximum (-Xms and -Xmx) memory **should** be set to the same value, as explained [here](https://dzone.com/articles/benefits-of-setting-initial-and-maximum-memory-siz). However, if you are on a low-memory system, and Minecraft takes up almost all your memory, set your minimum memory below your maximum memory to conserve as much as possible. Sizes must be set in Megabytes (-Xms4096M) or Gigabytes (-Xmx8G)
+Minimum and maximum (-Xms and -Xmx) memory **should** be set to the same value because when minimum memory is lower than maximum memory, you have unused memory and used memory is wasted memory. Sizes must be set in Megabytes (-Xms4096M) or Gigabytes (-Xmx8G)
 
-I personally allocate 6GB for Minecraft, it is enough for most of modpacks.
+## JVM Flags
+
+JVM flags (or JVM arguments, etc.) are used to configure the JVM. These are a little bit complex and not friendly for beginners.
+
+### Garbage Collector (GC)
+
+Garbage Collector (GC) is a JVM's mechanism that identifying and reclaiming heap memory that are not longer reachable in program. It runs in the background to free up memory, reduce leaks and improve overall applications performance.
+
+There are some GCs available in Java, including the Serial GC, Parallel GC, ZGC, Shenandoah GC, G1 GC, etc.. Each GC has its own strengths and weaknesses, and the best choice depends on the specific use case. There is no the best GC for all use cases, and you should choose the one that best fits your needs.
+
+<span class="text-blue font-semibold">Throughput</span> denotes the speed at
+which a Java application runs. For example, if your application is a
+transaction-based system, high throughput means that more transactions are
+executed during a given amount of time.
+
+<span class="text-rose font-semibold">Pause time</span> is the duration during
+which the application is temporarily frozen while the GC is running. For
+example, if you are playing Minecraft and the screen suddenly freezes for 0.5
+seconds, it means that the GC is running.
+
+<span class="text-blue">Throughput</span> and
+<span class="text-rose">pause time</span> are inversely proportional to each
+other. They key in here is finding the equilibrium between them.
+
+<table class="tg">
+  <thead>
+    <tr>
+      <th>GC</th>
+      <th text-blue>Throughput</th>
+      <th text-rose>Pause time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Parallel GC</td>
+      <td>High</td>
+      <td>Long</td>
+    </tr>
+    <tr>
+      <td>G1 GC</td>
+      <td>Slightly high</td>
+      <td>Medium</td>
+    </tr>
+    <tr>
+      <td>Z GC</td>
+      <td>Medium</td>
+      <td>Very Low</td>
+    </tr>
+    <tr>
+      <td>Shenandoah GC</td>
+      <td>Medium</td>
+      <td>Low</td>
+    </tr>
+  </tbody>
+</table>
+
+I personally suggest using the G1 GC or Z GC for both client and server. Shenandoah GC is not always included in every JVM distributions <br/>
+To enable GC, you can use the following JVM arguments:
+
+- `-XX:+UseG1GC`: Enables the G1 GC.
+- `-XX:+UseZGC`: Enables the Z GC.
+- `-XX:+UseShenandoahGC`: Enables the Shenandoah GC.
+
+### JVM flags presets
+
+For server, you can use [Aikar's flags](https://aikar.co/2018/07/02/tuning-the-jvm-g1gc-garbage-collector-flags-for-minecraft/). He did well in tuning JVM and explaining JVM flags. <br/>
+For client, change your GC or just do not tune JVM :)
