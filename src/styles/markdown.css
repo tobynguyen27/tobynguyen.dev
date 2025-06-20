@@ -23,11 +23,17 @@
   font-family: var(--font-mono);
 }
 
-.prose code::before {
+.prose :not(pre) > code {
+  background-color: var(--colors-stone-900);
+  border-radius: 0.25rem;
+  padding: 0.2em 0.25em;
+}
+
+.prose :not(pre) > code::before {
   content: "";
 }
 
-.prose code::after {
+.prose :not(pre) > code::after {
   content: "";
 }
 
