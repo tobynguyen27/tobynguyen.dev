@@ -8,7 +8,10 @@ export default defineConfig({
   output: "static",
   integrations: [UnoCSS({ injectReset: true }), mdx({
     syntaxHighlight: "shiki",
-    shikiConfig: { theme: "catppuccin-mocha" },
+    shikiConfig: { themes: {
+      light: "catppuccin-latte",
+      dark: "catppuccin-mocha",
+    } },
     gfm: true,
   }), sitemap()],
   vite: {
