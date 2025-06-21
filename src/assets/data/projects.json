@@ -16,5 +16,11 @@
     "description": "A Minecraft mod maintained by me. It adds decorative blocks from other popular mods without requiring those mods to be installed. Perfect for enhancing builds with a wider variety of aesthetic blocks.",
     "url": "https://www.curseforge.com/minecraft/mc-mods/defineds-blocks",
     "icon": "https://cdn.jsdelivr.net/gh/astral-community/Defineds-Blocks@refs/heads/main/src/main/resources/assets/definedsblocks/icon.png"
+  },
+  {
+    "name": "Dangerous Glass",
+    "description": "Add new mechanism to glass blocks in Minecraft, players will be poisoned and blinded for a few seconds when standing near and breaking them",
+    "url": "https://modrinth.com/mod/dangerousglass",
+    "icon": "https://cdn.jsdelivr.net/gh/tobynguyen27/DangerousGlass@main/src/main/resources/assets/logo.png"
   }
 ]
