@@ -3,6 +3,7 @@
   "name": "tobynguyen-website",
   "compatibility_date": "2025-06-08",
   "assets": {
-    "directory": "./dist"
+    "directory": "./dist",
+    "not_found_handling": "404-page"
   }
 }
