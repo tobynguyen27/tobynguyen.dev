@@ -11,7 +11,7 @@ const posts = (await getCollection("blog")).sort(
 <Root title="Blog">
     <div class="lg:1/2 mx-auto h-full w-11/12 md:w-3/5 sm:w-4/6">
         <div class="my-8">
-            <h1 class="text-5xl text-base p-5">Blog</h1>
+            <h1 class="text-5xl text-primary p-5">Blog</h1>
         </div>
         <div class="">
       {posts.map(({ data, id }) => (

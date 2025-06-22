@@ -39,13 +39,13 @@ html.dark .astro-code span {
 }
 
 .dark .prose :not(pre) > code {
-  background-color: var(--colors-stone-900);
+  background-color: #1a1a1a;
   border-radius: 0.25rem;
   padding: 0.2em 0.25em;
 }
 
 .prose :not(pre) > code {
-  background-color: var(--colors-stone-200);
+  background-color: #ebebeb;
   border-radius: 0.25rem;
   padding: 0.2em 0.25em;
 }
