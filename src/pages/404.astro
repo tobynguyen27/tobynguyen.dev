@@ -4,7 +4,11 @@ import Root from "@/layouts/Root.astro"
 
 <Root title="Page Not Found">
   <div class="flex flex-col gap-6 h-screen w-full items-center justify-center">
-    <p class="text-5xl text-primary">404 | Page Not Found</p>
-    <a href="/" class="text-xl text-link">Go to home</a>
+    <p class="text-5xl text-primary text-center hidden sm:block">404 | Page Not Found</p>
+    <div class="text-center sm:hidden">
+      <p class="text-5xl">404</p>
+      <p class="text-xl">Page Not Found</p>
+    </div>
+    <a href="/" class="text-lg text-link text-center">Go to home</a>
   </div>
 </Root>
