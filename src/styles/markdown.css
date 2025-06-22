@@ -1,19 +1,13 @@
-html.dark .astro-code,
-html.dark .astro-code span {
-  color: var(--shiki-dark) !important;
-  background-color: var(--shiki-dark-bg) !important;
-}
-
 .dark .prose {
   font-size: 1rem;
   line-height: 1.75;
-  color: var(--colors-gray-300) !important;
+  color: #ededed !important;
 }
 
 .prose {
   font-size: 1rem;
   line-height: 1.75;
-  color: var(--colors-gray-900) !important;
+  color: #171717 !important;
 }
 
 .prose blockquote {
