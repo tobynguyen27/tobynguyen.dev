@@ -36,18 +36,27 @@ The solution is to create a Nix shell and explicitly tell Minecraft where to fin
           pkgs = import inputs.nixpkgs {inherit system;};
 
           libs = with pkgs; [
-            ## native versions
             glfw3-minecraft
             openal
 
             ## openal
+            alsa-lib
             libjack2
+            libpulseaudio
             pipewire
 
             ## glfw
             libGL
+            xorg.libX11
+            xorg.libXcursor
+            xorg.libXext
+            xorg.libXrandr
+            xorg.libXxf86vm
 
-            flite
+            udev # oshi
+
+            vulkan-loader # VulkanMod's lwjgl
+            flite # text2speech
           ];
         });
   in {
@@ -56,7 +65,7 @@ The solution is to create a Nix shell and explicitly tell Minecraft where to fin
       libs,
     }: {
       default = pkgs.mkShell {
-        packages = with pkgs; [];
+        packages = with pkgs; [mesa-demos pciutils xorg.xrandr];
         buildInputs = libs;
         LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath libs;
       };
@@ -69,7 +78,7 @@ As you can see, Minecraft does not only require GLFW, but also other libraries s
 You can define a JDK version inside `packages`. For example:
 
 ```nix
-packages = with pkgs; [zulu21]
+packages = with pkgs; ["other packages" zulu21]
 ```
 
 ### For modpack developers
