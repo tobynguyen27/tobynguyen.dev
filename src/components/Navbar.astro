@@ -1,16 +1,16 @@
 ---
-import ThemeToggle from "./ThemeToggle.astro"
+import ThemeToggle from "./ThemeToggle.astro";
 
 interface NavbarItem {
-    name: string
-    url: string
+    name: string;
+    url: string;
 }
 
 const navbarItems: NavbarItem[] = [
     { name: "Home", url: "/" },
     { name: "Blog", url: "/blog" },
     { name: "Projects", url: "/projects" },
-]
+];
 ---
 
 <nav class="border-b border-b-[#EAEAEA] bg-1 flex h-32 w-full items-center justify-center dark:border-b-[#2E2E2E] sm:h-18">

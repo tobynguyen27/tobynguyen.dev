@@ -1,7 +1,7 @@
 ---
-import { getCollection } from "astro:content"
-import PostItem from "@/components/PostItem.astro"
-import Root from "@/layouts/Root.astro"
+import { getCollection } from "astro:content";
+import PostItem from "@/components/PostItem.astro";
+import Root from "@/layouts/Root.astro";
 
 const posts = (await getCollection("blog")).sort(
     (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),

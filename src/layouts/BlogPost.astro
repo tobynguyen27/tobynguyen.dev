@@ -1,11 +1,11 @@
 ---
-import type { CollectionEntry } from "astro:content"
-import dayjs from "dayjs"
-import Root from "./Root.astro"
-import "@/styles/markdown.css"
-import "@/styles/shiki.css"
+import type { CollectionEntry } from "astro:content";
+import dayjs from "dayjs";
+import Root from "./Root.astro";
+import "@/styles/markdown.css";
+import "@/styles/shiki.css";
 
-type Props = CollectionEntry<"blog">["data"]
+type Props = CollectionEntry<"blog">["data"];
 
 const { title, description, date, readTime } = Astro.props;
 ---
