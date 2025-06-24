@@ -11,6 +11,7 @@ export default antfu({
 
   formatters: {
     markdown: "dprint",
+    css: "prettier",
   },
 
   typescript: true,
