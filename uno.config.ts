@@ -43,4 +43,16 @@ export default defineConfig({
     presetTypography(),
   ],
   transformers: [transformerVariantGroup(), transformerAttributifyJsx()],
+  theme: {
+    colors: {
+      light: {
+        "bg-100": "hsla(0,0%,100%,1)",
+        "bg-200": "hsla(0,0%,98%,1)",
+      },
+      dark: {
+        "bg-100": "hsla(0,0%,4%,1)",
+        "bg-200": "hsla(0,0%,0%,1)",
+      },
+    },
+  },
 })
