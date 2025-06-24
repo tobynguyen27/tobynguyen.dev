@@ -7,7 +7,7 @@ import {
   presetWind4,
   transformerAttributifyJsx,
   transformerVariantGroup,
-} from "unocss";
+} from "unocss"
 
 export default defineConfig({
   shortcuts: {
@@ -43,4 +43,4 @@ export default defineConfig({
     presetTypography(),
   ],
   transformers: [transformerVariantGroup(), transformerAttributifyJsx()],
-});
+})

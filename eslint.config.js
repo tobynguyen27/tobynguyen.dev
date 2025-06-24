@@ -1,4 +1,4 @@
-import antfu from "@antfu/eslint-config";
+import antfu from "@antfu/eslint-config"
 
 export default antfu({
   type: "app",
@@ -6,7 +6,7 @@ export default antfu({
   stylistic: {
     indent: 2,
     quotes: "double",
-    semi: true,
+    semi: false,
   },
 
   formatters: {
@@ -17,4 +17,4 @@ export default antfu({
   typescript: true,
   astro: true,
   unocss: true,
-});
+})
