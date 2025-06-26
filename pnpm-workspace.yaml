@@ -1,0 +1,29 @@
+catalogs:
+  build:
+    "@astrojs/sitemap": ^3.4.1
+    "@unocss/reset": ^66.2.2
+    lightningcss: ^1.30.1
+    unocss: 66.2.2
+  dev:
+    "@iconify-json/carbon": ^1.2.9
+    "@iconify-json/devicon": ^1.2.29
+    "@iconify-json/simple-icons": ^1.2.38
+    lint-staged: ^16.1.2
+
+    simple-git-hooks: ^2.13.0
+    wrangler: ^4.19.2
+  frontend:
+    "@astrojs/mdx": ^4.3.0
+    astro: ^5.9.4
+    dayjs: ^1.11.13
+  lint:
+    "@antfu/eslint-config": ^4.14.1
+    "@unocss/eslint-plugin": ^66.2.2
+    eslint: ^9.29.0
+    eslint-plugin-astro: ^1.3.1
+    eslint-plugin-format: ^1.0.1
+onlyBuiltDependencies:
+  - esbuild
+  - sharp
+  - simple-git-hooks
+  - workerd

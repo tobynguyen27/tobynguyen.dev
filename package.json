@@ -1,9 +1,10 @@
 {
   "type": "module",
   "private": true,
+  "packageManager": "pnpm@10.12.1",
   "scripts": {
     "dev": "astro dev --host",
-    "build": "bunx --bun astro build",
+    "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
     "lint": "eslint",
