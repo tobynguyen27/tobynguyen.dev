@@ -9,7 +9,6 @@ catalogs:
     "@iconify-json/devicon": ^1.2.29
     "@iconify-json/simple-icons": ^1.2.38
     lint-staged: ^16.1.2
-
     simple-git-hooks: ^2.13.0
     wrangler: ^4.19.2
   frontend:
