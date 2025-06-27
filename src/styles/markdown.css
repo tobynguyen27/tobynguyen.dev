@@ -57,6 +57,7 @@
   font-size: 2.25em;
   margin-top: 0;
   margin-bottom: 0.8em;
+  width: fit-content;
 }
 
 .prose h2 {
@@ -64,6 +65,7 @@
   font-size: 1.5em;
   margin-top: 1em;
   margin-bottom: 1em;
+  width: fit-content;
 }
 
 .prose h3 {
@@ -71,12 +73,14 @@
   font-size: 1.25em;
   margin-top: 1.6em;
   margin-bottom: 0.6em;
+  width: fit-content;
 }
 
 .prose h4 {
   color: inherit;
   margin-top: 1.5em;
   margin-bottom: 0.5em;
+  width: fit-content;
 }
 
 .prose tbody tr:last-child {
