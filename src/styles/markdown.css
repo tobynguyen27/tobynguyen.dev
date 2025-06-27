@@ -82,3 +82,8 @@
 .prose tbody tr:last-child {
   border-bottom-width: 0;
 }
+
+.heading-anchor {
+  color: inherit !important;
+  text-decoration: none !important;
+}
