@@ -7,7 +7,7 @@ import {
   presetWind4,
   transformerAttributifyJsx,
   transformerVariantGroup,
-} from "unocss"
+} from "unocss";
 
 export default defineConfig({
   shortcuts: {
@@ -18,8 +18,10 @@ export default defineConfig({
     "text-secondary": "text-[#666666] dark:text-[#A0A0A0]",
     "decoration-primary": "decoration-[#171717] dark:decoration-[#EDEDED]",
     "decoration-secondary": "decoration-[#666666]/30 dark:decoration-[#A0A0A0]/30",
-    "text-link": "text-secondary decoration-0.8 underline underline-offset-5 decoration-secondary hover:(decoration-primary underline-offset-5 text-primary) duration-200",
-    "button-primary": "border border-[#EAEAEA] dark:border-[#2E2E2E] rounded-md hover:(border-[#C9C9C9] dark:border-[#454545] dark:bg-[#1A1A1A] bg-[#EBEBEB])",
+    "text-link":
+      "text-secondary decoration-0.8 underline underline-offset-5 decoration-secondary hover:(decoration-primary underline-offset-5 text-primary) duration-200",
+    "button-primary":
+      "border border-[#EAEAEA] dark:border-[#2E2E2E] rounded-md hover:(border-[#C9C9C9] dark:border-[#454545] dark:bg-[#1A1A1A] bg-[#EBEBEB])",
   },
   presets: [
     presetWind4(),
@@ -35,24 +37,15 @@ export default defineConfig({
     presetWebFonts({
       themeKey: "font",
       provider: "fontsource",
-      fonts: {
-        sans: "Geist",
-        mono: "JetBrains Mono",
-      },
+      fonts: { sans: "Geist", mono: "JetBrains Mono" },
     }),
     presetTypography(),
   ],
   transformers: [transformerVariantGroup(), transformerAttributifyJsx()],
   theme: {
     colors: {
-      light: {
-        "bg-100": "hsla(0,0%,100%,1)",
-        "bg-200": "hsla(0,0%,98%,1)",
-      },
-      dark: {
-        "bg-100": "hsla(0,0%,4%,1)",
-        "bg-200": "hsla(0,0%,0%,1)",
-      },
+      light: { "bg-100": "hsla(0,0%,100%,1)", "bg-200": "hsla(0,0%,98%,1)" },
+      dark: { "bg-100": "hsla(0,0%,4%,1)", "bg-200": "hsla(0,0%,0%,1)" },
     },
   },
-})
+});
