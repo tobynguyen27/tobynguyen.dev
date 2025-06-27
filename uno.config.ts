@@ -28,10 +28,10 @@ export default defineConfig({
     presetAttributify(),
     presetIcons({
       extraProperties: {
-        "display": "inline-block",
+        display: "inline-block",
         "vertical-align": "middle",
-        "height": "1.2em",
-        "width": "1.2em",
+        height: "1.2em",
+        width: "1.2em",
       },
     }),
     presetWebFonts({

@@ -1,50 +1,51 @@
 ---
-import type { Props as ProjectItemType } from "@/components/ProjectItem.astro"
-import projects from "@/assets/data/projects.json"
-import ProjectItem from "@/components/ProjectItem.astro"
+import type { Props as ProjectItemType } from "@/components/ProjectItem.astro";
+import projects from "@/assets/data/projects.json";
+import ProjectItem from "@/components/ProjectItem.astro";
 import Root from "@/layouts/Root.astro";
 ---
 
 <Root title="Projects">
-    <div class="mx-auto container h-full w-full">
-        <div class="mt-12 w-full">
-            <p class="text-3xl text-primary text-center">My Projects</p>
-        </div>
-        <div class="my-3 flex flex-wrap gap-2 h-full w-full items-center justify-center">
-            <a
-              href="https://github.com/tobynguyen27"
-              target="_blank"
-              class="group p-2 button-primary flex gap-1 duration-200 items-center hover:(cursor-pointer)"
-            >
-                <i class="i-simple-icons-github text-primary duration-200" />
-                <p class="text-primary duration-200">GitHub</p>
-            </a>
-            <a
-              href="https://www.curseforge.com/members/tobynguyen/projects"
-              target="_blank"
-              class="group p-2 border border-[#EAEAEA] rounded-md flex gap-1 duration-200 items-center hover:(text-[#eb622b] border-[#eb622b] bg-[#eb622b]/20 cursor-pointer) dark:border-[#2E2E2E]"
-            >
-                <i class="i-simple-icons-curseforge text-primary duration-200 group-hover:text-[#eb622b]" />
-                <p class="text-primary duration-200 group-hover:text-[#eb622b]">CurseForge</p>
-            </a>
-            <a
-              href="https://modrinth.com/user/tobynguyen27"
-              target="_blank"
-              class="group p-2 border border-[#EAEAEA] rounded-md flex gap-1 duration-200 items-center hover:(text-[#1bd96a] border-[#1bd96a] bg-[#1bd96a]/20 cursor-pointer) dark:border-[#2E2E2E]"
-            >
-                <i class="i-simple-icons-modrinth text-primary duration-200 group-hover:text-[#1bd96a]" />
-                <p class="text-primary duration-200 group-hover:text-[#1bd96a]">Modrinth</p>
-            </a>
-        </div>
-        <div class="mt-12 gap-3 grid grid-cols-1 h-full w-full place-items-center lg:grid-cols-3 md:grid-cols-2">
-            {(projects as ProjectItemType[]).map(project => (
-                <ProjectItem
-                  icon={project.icon}
-                  name={project.name}
-                  description={project.description}
-                  url={project.url}
-                />
-            ))}
-        </div>
+  <div class="container mx-auto h-full w-full">
+    <div class="mt-12 w-full">
+      <p class="text-primary text-center text-3xl">My Projects</p>
     </div>
+    <div class="my-3 flex h-full w-full flex-wrap items-center justify-center gap-2">
+      <a
+        href="https://github.com/tobynguyen27"
+        target="_blank"
+        class="button-primary hover:(cursor-pointer) group flex items-center gap-1 p-2 duration-200">
+        <i class="i-simple-icons-github text-primary duration-200"></i>
+        <p class="text-primary duration-200">GitHub</p>
+      </a>
+      <a
+        href="https://www.curseforge.com/members/tobynguyen/projects"
+        target="_blank"
+        class="hover:(text-[#eb622b] cursor-pointer) group flex items-center gap-1 rounded-md border border-[#EAEAEA] border-[#eb622b] bg-[#eb622b]/20 p-2 duration-200 dark:border-[#2E2E2E]">
+        <i class="i-simple-icons-curseforge text-primary duration-200 group-hover:text-[#eb622b]"
+        ></i>
+        <p class="text-primary duration-200 group-hover:text-[#eb622b]">CurseForge</p>
+      </a>
+      <a
+        href="https://modrinth.com/user/tobynguyen27"
+        target="_blank"
+        class="hover:(text-[#1bd96a] cursor-pointer) group flex items-center gap-1 rounded-md border border-[#1bd96a] border-[#EAEAEA] bg-[#1bd96a]/20 p-2 duration-200 dark:border-[#2E2E2E]">
+        <i class="i-simple-icons-modrinth text-primary duration-200 group-hover:text-[#1bd96a]"></i>
+        <p class="text-primary duration-200 group-hover:text-[#1bd96a]">Modrinth</p>
+      </a>
+    </div>
+    <div
+      class="mt-12 grid h-full w-full grid-cols-1 place-items-center gap-3 md:grid-cols-2 lg:grid-cols-3">
+      {
+        (projects as ProjectItemType[]).map((project) => (
+          <ProjectItem
+            icon={project.icon}
+            name={project.name}
+            description={project.description}
+            url={project.url}
+          />
+        ))
+      }
+    </div>
+  </div>
 </Root>

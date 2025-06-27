@@ -25,6 +25,8 @@
     "lightningcss": "catalog:build",
     "lint-staged": "catalog:dev",
     "prettier": "catalog:lint",
+    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-tailwindcss": "^0.6.13",
     "simple-git-hooks": "catalog:dev",
     "unocss": "catalog:build",
     "wrangler": "catalog:dev"

@@ -1,9 +1,9 @@
 ---
 export interface Props {
-    icon: string
-    name: string
-    description: string
-    url: string
+  icon: string;
+  name: string;
+  description: string;
+  url: string;
 }
 
 const { icon, name, description, url } = Astro.props;
@@ -12,21 +12,16 @@ const { icon, name, description, url } = Astro.props;
 <a
   href={url}
   target="_blank"
-  class="p-5 border border-transparent rounded-lg h-full w-full duration-200 hover:(bg-[#EBEBEB] cursor-pointer dark:bg-[#1A1A1A])"
->
-    <div class="flex flex-inline h-auto items-center">
-        <div class="">
-            <img
-              src={icon}
-              class="rounded-md h-28 w-28"
-              alt="icon"
-            />
-        </div>
-        <div class="">
-            <p class="text-2xl text-primary font-semibold ml-5">{name}</p>
-        </div>
+  class="hover:(bg-[#EBEBEB] dark:bg-[#1A1A1A]) h-full w-full cursor-pointer rounded-lg border border-transparent p-5 duration-200">
+  <div class="flex-inline flex h-auto items-center">
+    <div class="">
+      <img src={icon} class="h-28 w-28 rounded-md" alt="icon" />
     </div>
-    <div class="h-auto">
-        <p class="text-secondary">{description}</p>
+    <div class="">
+      <p class="text-primary ml-5 text-2xl font-semibold">{name}</p>
     </div>
+  </div>
+  <div class="h-auto">
+    <p class="text-secondary">{description}</p>
+  </div>
 </a>
