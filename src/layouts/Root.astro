@@ -20,7 +20,7 @@ const { title, overrideTitle = false, description } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title ? (overrideTitle ? title : `${title} - Toby Nguyen`) : "Toby Nguyen"}</title>
   </head>
-  <body class="bg-light-bg-200 dark:bg-dark-bg-200">
+  <body class="bg-2">
     <Navbar />
     <slot />
     <Footer />
