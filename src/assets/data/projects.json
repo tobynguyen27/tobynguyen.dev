@@ -3,7 +3,9 @@
     "name": "Astral Generators",
     "description": "A Minecraft mod that I made for a Create: Astral, a Minecraft modpack. Designed to add more new generators and crafting recipes to the game.",
     "url": "https://www.curseforge.com/minecraft/mc-mods/astral-generators-for-create-astral",
-    "icon": "https://cdn.jsdelivr.net/gh/astral-community/astral-generators@main/src/main/resources/assets/astralgenerators/icon.png"
+    "icon": "https://cdn.jsdelivr.net/gh/astral-community/astral-generators@main/src/main/resources/assets/astralgenerators/icon.png",
+    "tag": "maintainer",
+    "tagColor": "orange"
   },
   {
     "name": "CodeBebeLib",
@@ -15,7 +17,9 @@
     "name": "Defined's Blocks",
     "description": "A Minecraft mod maintained by me. It adds decorative blocks from other popular mods without requiring those mods to be installed. Perfect for enhancing builds with a wider variety of aesthetic blocks.",
     "url": "https://www.curseforge.com/minecraft/mc-mods/defineds-blocks",
-    "icon": "https://cdn.jsdelivr.net/gh/astral-community/Defineds-Blocks@refs/heads/main/src/main/resources/assets/definedsblocks/icon.png"
+    "icon": "https://cdn.jsdelivr.net/gh/astral-community/Defineds-Blocks@refs/heads/main/src/main/resources/assets/definedsblocks/icon.png",
+    "tag": "maintainer",
+    "tagColor": "orange"
   },
   {
     "name": "Dangerous Glass",

@@ -1,12 +1,16 @@
 ---
+import Tag, { type TagColor, type TagType } from "./Tag.astro";
+
 export interface Props {
   icon: string;
   name: string;
   description: string;
   url: string;
+  tag?: TagType;
+  tagColor?: TagColor;
 }
 
-const { icon, name, description, url } = Astro.props;
+const { icon, name, description, url, tag, tagColor } = Astro.props;
 ---
 
 <a
@@ -17,8 +21,9 @@ const { icon, name, description, url } = Astro.props;
     <div class="">
       <img src={icon} class="h-28 w-28 rounded-md" alt="icon" />
     </div>
-    <div class="">
-      <p class="text-primary ml-5 text-2xl font-semibold">{name}</p>
+    <div class="ml-5">
+      <p class="text-primary text-2xl font-semibold">{name}</p>
+      {tag && tagColor && <Tag type={tag} color={tagColor} />}
     </div>
   </div>
   <div class="h-auto">
