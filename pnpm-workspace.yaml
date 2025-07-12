@@ -1,19 +1,19 @@
 catalogs:
   build:
-    "@astrojs/sitemap": ^3.4.1
-    "@unocss/reset": ^66.3.2
+    '@astrojs/sitemap': ^3.4.1
+    '@unocss/reset': ^66.3.3
     lightningcss: ^1.30.1
     unocss: 66.2.2
   dev:
     lint-staged: ^16.1.2
     simple-git-hooks: ^2.13.0
-    wrangler: ^4.22.0
+    wrangler: ^4.24.3
   frontend:
-    "@iconify-json/carbon": ^1.2.10
-    "@iconify-json/devicon": ^1.2.29
-    "@iconify-json/simple-icons": ^1.2.40
-    "@astrojs/mdx": ^4.3.0
-    astro: ^5.10.1
+    '@iconify-json/carbon': ^1.2.10
+    '@iconify-json/devicon': ^1.2.29
+    '@iconify-json/simple-icons': ^1.2.42
+    '@astrojs/mdx': ^4.3.0
+    astro: ^5.11.0
     dayjs: ^1.11.13
     rehype-autolink-headings: ^7.1.0
     rehype-slug: ^6.0.0
