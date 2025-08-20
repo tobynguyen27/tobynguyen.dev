@@ -1,0 +1,107 @@
+---
+title: Minecraft with Nix/NixOS
+description: A guide for Minecraft mod/modpack developers who are using Nix/NixOS
+date: 2025-06-21
+readTime: 10
+---
+
+## What is Nix/NixOS?
+
+Nix is a package manager that uses a scripting language called Nix to manage packages and configurations. It is a purely functional package manager that allows for reproducible builds and easy version management. NixOS is a Linux distribution that uses Nix as its package manager.
+
+## About direnv
+
+[direnv](https://direnv.net/) is an extension for your shell that manages environment variables based on the current directory. For example, when you enter a folder, it will load all environment variables that are defined in a `.envrc` file into a bash sub-shell and all exported variables are then captured by direnv and then made available to the current shell.
+
+I suggest using [nix-direnv](https://github.com/nix-community/nix-direnv). For more information, you can read [here](https://github.com/nix-community/nix-direnv).
+
+## Minecraft mod/modpack development
+
+### For mod developers
+
+One of the most common issues when running a Minecraft client in your mod is the GLFW library not found error. This happens because NixOS does not have a `/lib` directory, so Minecraft cannot locate the GLFW library.
+
+The solution is to create a Nix shell and explicitly tell Minecraft where to find the GLFW library. Here's a sample shell script (this shell script had tested on Minecraft 1.21.1):
+
+```nix
+{
+  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+
+  outputs = inputs: let
+    # openal doesn't support Darwin, I may add it back if I know an alternative package
+    supportedSystems = ["x86_64-linux" "aarch64-linux"];
+    forEachSupportedSystem = f:
+      inputs.nixpkgs.lib.genAttrs supportedSystems (system:
+        f rec {
+          pkgs = import inputs.nixpkgs {inherit system;};
+
+          libs = with pkgs; [
+            glfw3-minecraft
+            openal
+
+            ## openal
+            alsa-lib
+            libjack2
+            libpulseaudio
+            pipewire
+
+            ## glfw
+            libGL
+            xorg.libX11
+            xorg.libXcursor
+            xorg.libXext
+            xorg.libXrandr
+            xorg.libXxf86vm
+
+            udev # oshi
+
+            vulkan-loader # VulkanMod's lwjgl
+            flite # text2speech
+          ];
+        });
+  in {
+    devShells = forEachSupportedSystem ({
+      pkgs,
+      libs,
+    }: {
+      default = pkgs.mkShell {
+        packages = with pkgs; [mesa-demos pciutils xorg.xrandr];
+        buildInputs = libs;
+        LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath libs;
+      };
+    });
+  };
+}
+```
+
+As you can see, Minecraft does not only require GLFW, but also other libraries such as OpenAL, JACK, PipeWire, libGL, and flite. <br/>
+You can define a JDK version inside `packages`. For example:
+
+```nix
+packages = with pkgs; ["other packages" zulu21]
+```
+
+### For modpack developers
+
+The most popular CLI tool for creating Minecraft modpacks is [Packwiz](https://packwiz.infra.link/). You have 2 ways to install Packwiz, the first way is install it like other packages (using home-manager is suggested), and the second way is using Nix shell. Example script for the second option:
+
+```nix
+{
+  inputs.nixpkgs.url = "github:nixos/nixpkgs";
+
+  outputs = inputs: let
+    supportedSystems = ["x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin"];
+    forEachSupportedSystem = f:
+      inputs.nixpkgs.lib.genAttrs supportedSystems (system:
+        f {
+          pkgs = import inputs.nixpkgs {inherit system;};
+        });
+  in {
+    devShells = forEachSupportedSystem ({pkgs}: {
+      default = pkgs.mkShell {
+        packages = with pkgs; [packwiz];
+      };
+    });
+  };
+}
+```

@@ -1,0 +1,40 @@
+{
+  "type": "module",
+  "private": true,
+  "packageManager": "pnpm@10.12.1",
+  "scripts": {
+    "dev": "astro dev --host",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "format:check": "prettier --check .",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "@astrojs/mdx": "catalog:frontend",
+    "@astrojs/sitemap": "catalog:build",
+    "astro": "catalog:frontend",
+    "dayjs": "catalog:frontend",
+    "@iconify-json/carbon": "catalog:frontend",
+    "@iconify-json/devicon": "catalog:frontend",
+    "@iconify-json/simple-icons": "catalog:frontend",
+    "rehype-autolink-headings": "catalog:frontend",
+    "rehype-slug": "catalog:frontend"
+  },
+  "devDependencies": {
+    "@unocss/reset": "catalog:build",
+    "lightningcss": "catalog:build",
+    "lint-staged": "catalog:dev",
+    "prettier": "catalog:lint",
+    "prettier-plugin-astro": "catalog:lint",
+    "simple-git-hooks": "catalog:dev",
+    "unocss": "catalog:build",
+    "wrangler": "catalog:dev"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
+  },
+  "lint-staged": {
+    "*": "prettier --write ."
+  }
+}

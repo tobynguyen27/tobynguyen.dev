@@ -1,0 +1,39 @@
+---
+import ThemeToggle from "./ThemeToggle.astro";
+
+interface NavbarItem {
+  name: string;
+  url: string;
+}
+
+const navbarItems: NavbarItem[] = [
+  { name: "Home", url: "/" },
+  { name: "Blog", url: "/blog" },
+  { name: "Projects", url: "/projects" },
+];
+---
+
+<nav
+  class="bg-1 sm:h-18 flex h-32 w-full items-center justify-center border-b border-b-[#EAEAEA] dark:border-b-[#2E2E2E]">
+  <div class="flex h-full w-full flex-col items-center justify-between sm:flex-row sm:gap-12">
+    <div class="flex h-full w-full items-center justify-center sm:justify-start sm:pl-12">
+      <a href="/">
+        <p class="text-primary text-nowrap text-center font-mono text-3xl">Toby Nguyen_</p>
+      </a>
+    </div>
+    <div
+      class="flex h-full w-full items-center justify-center gap-3 sm:justify-end sm:pr-12 md:gap-6">
+      {
+        navbarItems.map((item) => (
+          <a href={item.url}>
+            <p class="navbar-item-text rounded-md p-2 text-xl duration-200">{item.name}</p>
+          </a>
+        ))
+      }
+      <a href="https://github.com/tobynguyen27" target="_blank" class="hidden sm:block">
+        <button class="i-simple-icons-github navbar-item-text text-xl duration-200"></button>
+      </a>
+      <ThemeToggle />
+    </div>
+  </div>
+</nav>

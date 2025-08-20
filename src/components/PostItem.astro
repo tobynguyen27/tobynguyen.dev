@@ -1,0 +1,28 @@
+---
+import dayjs from "dayjs";
+
+interface Props {
+  title: string;
+  date: Date;
+  description: string;
+  link: string;
+}
+
+const { title, date, description, link } = Astro.props;
+---
+
+<a
+  href={link}
+  class="hover:(bg-[#EBEBEB] dark:bg-[#1A1A1A]) flex w-full cursor-pointer flex-col justify-center rounded-md p-5 duration-200">
+  <div class="">
+    <p class="text-primary text-3xl font-semibold">{title}</p>
+  </div>
+  <div class="">
+    <p class="text-secondary">{description}</p>
+  </div>
+  <div class="my-3">
+    <p class="text-secondary">
+      {dayjs(date).format("MMMM D, YYYY")}
+    </p>
+  </div>
+</a>

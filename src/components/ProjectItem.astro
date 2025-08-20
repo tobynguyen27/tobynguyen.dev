@@ -1,0 +1,32 @@
+---
+import Tag, { type TagColor, type TagType } from "./Tag.astro";
+
+export interface Props {
+  icon: string;
+  name: string;
+  description: string;
+  url: string;
+  tag?: TagType;
+  tagColor?: TagColor;
+}
+
+const { icon, name, description, url, tag, tagColor } = Astro.props;
+---
+
+<a
+  href={url}
+  target="_blank"
+  class="hover:(bg-[#EBEBEB] dark:bg-[#1A1A1A]) h-full w-full cursor-pointer rounded-lg border border-transparent p-5 duration-200">
+  <div class="flex-inline flex h-auto items-center">
+    <div class="">
+      <img src={icon} class="h-28 w-28 rounded-md" alt="icon" />
+    </div>
+    <div class="ml-5">
+      <p class="text-primary text-2xl font-semibold">{name}</p>
+      {tag && tagColor && <Tag type={tag} color={tagColor} />}
+    </div>
+  </div>
+  <div class="h-auto">
+    <p class="text-secondary">{description}</p>
+  </div>
+</a>

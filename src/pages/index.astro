@@ -1,0 +1,81 @@
+---
+import Badge from "@/components/Badge.astro";
+import Root from "@/layouts/Root.astro";
+---
+
+<Root>
+  <div class="mx-auto mt-12 w-3/4 md:w-3/5 lg:w-1/2">
+    <h1 class="text-primary hidden font-mono text-3xl sm:block">Toby Nguyen</h1>
+
+    <p class="text-secondary mt-8 text-lg">
+      Hi there 👋 I am Toby Nguyen. I am a self-taught web developer. I enjoy building websites and
+      sometimes I make Minecraft mods.
+    </p>
+
+    <div class="my-5 flex flex-col gap-1">
+      <div class="text-secondary h-full w-full">
+        <div class="flex h-full w-full flex-wrap items-center gap-2">
+          <span class="text-nowrap text-lg">I know:</span>
+          <Badge
+            icon="i-devicon-typescript"
+            text="TypeScript"
+            url="https://github.com/microsoft/TypeScript"
+          />
+          <Badge icon="i-devicon-kotlin" text="Kotlin" url="https://github.com/JetBrains/kotlin" />
+        </div>
+      </div>
+      <div class="text-secondary h-full w-full">
+        <div class="flex h-full w-full flex-wrap items-center gap-2">
+          <span class="text-nowrap text-lg">I use:</span>
+          <Badge icon="i-devicon-nixos" text="Nix" url="https://github.com/NixOS/nix" />
+          <Badge icon="i-devicon-vscode" text="VSCode" url="https://github.com/microsoft/vscode" />
+          <Badge
+            icon="i-devicon-intellij"
+            text="IntelliJ IDEA"
+            url="https://github.com/JetBrains/intellij-community"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="flex w-full flex-col gap-3">
+      <p class="text-secondary text-lg">
+        I just finished my high school in this year and I am currently in a gap year. I planned to
+        study Computer Science in university and I am preparing necessary skills before going there.
+      </p>
+      <p class="text-secondary text-lg">
+        Sometimes, I write blog posts about Minecraft, coding and anything that I find interesting.
+        I'm a big fan of open source softwares so most of softwares that I am using are open source.
+      </p>
+      <p class="text-secondary text-lg">
+        Outside of programming, I enjoy playing games (Minecraft and Satisfactory are my favourite),
+        watching anime and movies and listening to musics. I am also keen on learning new things, so
+        I am currently learning Mathematics (Analysis) and piano.
+      </p>
+    </div>
+
+    <div class="my-5 flex h-full w-full flex-wrap items-center">
+      <div class="flex w-full flex-wrap gap-2">
+        <span class="text-secondary text-lg">You can find me via:</span>
+        <Badge
+          icon="i-carbon-logo-github text-gray-900 dark:text-gray-300"
+          text="GitHub"
+          url="https://github.com/tobynguyen27"
+          noBackground
+        />
+        <Badge
+          icon="i-carbon-logo-discord text-gray-900 dark:text-gray-300"
+          text="Discord"
+          url="https://discord.com/users/1365300051932352655"
+          noBackground
+        />
+      </div>
+      <div class="mt-2 w-full">
+        <span class="text-secondary text-lg"
+          >Or mail me at{" "}
+          <a href="mailto:hi@tobynguyen.dev" class="text-link"> hi@tobynguyen.dev </a>
+        </span>
+      </div>
+    </div>
+  </div>
+</Root>

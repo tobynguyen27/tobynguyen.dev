@@ -1,0 +1,18 @@
+---
+interface Props {
+  icon: string;
+  text: string;
+  url: string;
+  noBackground?: boolean;
+}
+
+const { icon, text, url, noBackground } = Astro.props;
+---
+
+<a href={url} target="_blank">
+  <div
+    class={`flex items-center justify-center gap-1 ${noBackground ? "" : "dark:bg-[#1A1A1A] bg-[#EBEBEB]"} py-1 px-2 rounded-md w-min hover:(dark:bg-[#292929] bg-[#E6E6E6] cursor-pointer) duration-200`}>
+    <i class={icon}></i>
+    <p class="text-primary text-nowrap">{text}</p>
+  </div>
+</a>

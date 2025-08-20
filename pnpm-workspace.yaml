@@ -1,0 +1,28 @@
+catalogs:
+  build:
+    "@astrojs/sitemap": ^3.4.2
+    "@unocss/reset": ^66.4.2
+    lightningcss: ^1.30.1
+    unocss: 66.2.2
+  dev:
+    lint-staged: ^16.1.5
+    simple-git-hooks: ^2.13.1
+    wrangler: ^4.29.0
+  frontend:
+    "@iconify-json/carbon": ^1.2.13
+    "@iconify-json/devicon": ^1.2.41
+    "@iconify-json/simple-icons": ^1.2.47
+    "@astrojs/mdx": ^4.3.3
+    astro: ^5.12.9
+    dayjs: ^1.11.13
+    rehype-autolink-headings: ^7.1.0
+    rehype-slug: ^6.0.0
+  lint:
+    prettier: ^3.6.2
+    prettier-plugin-astro: ^0.14.1
+
+onlyBuiltDependencies:
+  - esbuild
+  - sharp
+  - simple-git-hooks
+  - workerd
