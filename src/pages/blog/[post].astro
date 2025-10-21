@@ -23,8 +23,7 @@ const { title, description, date, readTime } = post.data;
 <Root title={title} description={description} overrideTitle>
   <div class="mx-auto max-w-fit p-3 sm:py-12">
     <div class="">
-      <div
-        class="lg:p-18 rounded-md border border-[#EAEAEA] p-6 sm:p-8 md:p-12 dark:border-[#2E2E2E]">
+      <div class="lg:p-18 rounded-md border border-gray-400 p-6 sm:p-8 md:p-12">
         <p class="text-primary text-center text-4xl font-semibold lg:text-5xl">{title}</p>
         <div class="flex w-full justify-between pt-2">
           <p class="text-secondary flex items-center justify-center gap-1 text-lg">
@@ -37,11 +36,11 @@ const { title, description, date, readTime } = post.data;
           <Content />
         </article>
       </div>
-      <div class="mx-auto mt-8 flex flex-col">
-        <a href="/blog" class="text-link w-fit text-lg">
+      <div class="mx-auto mt-8 flex flex-col gap-3">
+        <a href="/blog" class="text-secondary underline-primary w-fit text-lg">
           <span>{">"} cd /blog</span>
         </a>
-        <a href="/" class="text-link w-fit text-lg">
+        <a href="/" class="text-secondary underline-primary w-fit text-lg">
           <span>{">"} cd /home</span>
         </a>
       </div>
