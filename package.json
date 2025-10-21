@@ -15,14 +15,11 @@
     "@astrojs/sitemap": "catalog:build",
     "astro": "catalog:frontend",
     "dayjs": "catalog:frontend",
-    "@iconify-json/carbon": "catalog:frontend",
-    "@iconify-json/devicon": "catalog:frontend",
-    "@iconify-json/simple-icons": "catalog:frontend",
     "rehype-autolink-headings": "catalog:frontend",
     "rehype-slug": "catalog:frontend"
   },
   "devDependencies": {
-    "@unocss/reset": "catalog:build",
+    "@iconify/json": "catalog:frontend",
     "lightningcss": "catalog:build",
     "lint-staged": "catalog:dev",
     "prettier": "catalog:lint",

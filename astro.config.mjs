@@ -9,7 +9,7 @@ export default defineConfig({
   site: "https://tobynguyen.dev",
   output: "static",
   integrations: [
-    UnoCSS({ injectReset: true }),
+    UnoCSS(),
     mdx({
       syntaxHighlight: "shiki",
       shikiConfig: { themes: { light: "catppuccin-latte", dark: "catppuccin-mocha" } },

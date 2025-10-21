@@ -1,7 +1,6 @@
 catalogs:
   build:
     "@astrojs/sitemap": ^3.6.0
-    "@unocss/reset": ^66.5.4
     lightningcss: ^1.30.2
     unocss: 66.2.2
   dev:
@@ -9,9 +8,7 @@ catalogs:
     simple-git-hooks: ^2.13.1
     wrangler: ^4.43.0
   frontend:
-    "@iconify-json/carbon": ^1.2.14
-    "@iconify-json/devicon": ^1.2.45
-    "@iconify-json/simple-icons": ^1.2.55
+    "@iconify/json": ^2.2.398
     "@astrojs/mdx": ^4.3.7
     astro: ^5.14.7
     dayjs: ^1.11.18

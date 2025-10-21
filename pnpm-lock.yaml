@@ -9,9 +9,6 @@ catalogs:
     "@astrojs/sitemap":
       specifier: ^3.6.0
       version: 3.6.0
-    "@unocss/reset":
-      specifier: ^66.5.4
-      version: 66.5.4
     lightningcss:
       specifier: ^1.30.2
       version: 1.30.2
@@ -32,15 +29,9 @@ catalogs:
     "@astrojs/mdx":
       specifier: ^4.3.7
       version: 4.3.7
-    "@iconify-json/carbon":
-      specifier: ^1.2.14
-      version: 1.2.14
-    "@iconify-json/devicon":
-      specifier: ^1.2.45
-      version: 1.2.45
-    "@iconify-json/simple-icons":
-      specifier: ^1.2.55
-      version: 1.2.55
+    "@iconify/json":
+      specifier: ^2.2.398
+      version: 2.2.398
     astro:
       specifier: ^5.14.7
       version: 5.14.7
@@ -70,15 +61,6 @@ importers:
       "@astrojs/sitemap":
         specifier: catalog:build
         version: 3.6.0
-      "@iconify-json/carbon":
-        specifier: catalog:frontend
-        version: 1.2.14
-      "@iconify-json/devicon":
-        specifier: catalog:frontend
-        version: 1.2.45
-      "@iconify-json/simple-icons":
-        specifier: catalog:frontend
-        version: 1.2.55
       astro:
         specifier: catalog:frontend
         version: 5.14.7(@types/node@24.9.1)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.52.5)(typescript@5.8.3)(yaml@2.8.1)
@@ -92,9 +74,9 @@ importers:
         specifier: catalog:frontend
         version: 6.0.0
     devDependencies:
-      "@unocss/reset":
-        specifier: catalog:build
-        version: 66.5.4
+      "@iconify/json":
+        specifier: catalog:frontend
+        version: 2.2.398
       lightningcss:
         specifier: catalog:build
         version: 1.30.2
@@ -756,22 +738,10 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  "@iconify-json/carbon@1.2.14":
+  "@iconify/json@2.2.398":
     resolution:
       {
-        integrity: sha512-33u6uGiYJ79Dfp72peT+PBMcjxzi+NyJLpqYRX8pnw0zchsUW7Us2xecgvkWgD83KYcbe6hufyWlHFU9y7fb/Q==,
-      }
-
-  "@iconify-json/devicon@1.2.45":
-    resolution:
-      {
-        integrity: sha512-EgowZDawRGJb72FlKKcOPwoMpdDkrqAVWNHhK7qSLI9sYAm7OkfLm/Vvjuqul1XCWA4KBylFv0szWPVpTkzVIg==,
-      }
-
-  "@iconify-json/simple-icons@1.2.55":
-    resolution:
-      {
-        integrity: sha512-9vc04pmup/zcef8hDypWU8nMwMaFVkWuUzWkxyL++DVp5AA8baoJHK6RyKN1v+cvfR2agxkUb053XVggzFFkTA==,
+        integrity: sha512-SEUDjkyAenAKMd5hDfzNzeObZw+KgQdIHaOuWA4yv89qSf2s0dJ7L1iXhRjtEZxFnuXQ2D67uFiHmE+90jvDGQ==,
       }
 
   "@iconify/types@2.0.0":
@@ -1672,12 +1642,6 @@ packages:
     resolution:
       {
         integrity: sha512-FBvsq2jsqcW+lE7CllN+mkoUrnck1k568ChrwpNJ6SCKhouYhMZMot9VhQhz9ZNaEbwVNZO1Oh2VqiqU5S4E3Q==,
-      }
-
-  "@unocss/reset@66.5.4":
-    resolution:
-      {
-        integrity: sha512-RF/Xscv4mOEDUltUpdKYZEBgIiE7nAVkipJ8gZWEwKfmUFz0TRcwlf0igjqjgGn11tuix0mJyk5Uwis9LioX4Q==,
       }
 
   "@unocss/rule-utils@66.2.2":
@@ -4781,17 +4745,10 @@ snapshots:
   "@esbuild/win32-x64@0.25.4":
     optional: true
 
-  "@iconify-json/carbon@1.2.14":
+  "@iconify/json@2.2.398":
     dependencies:
       "@iconify/types": 2.0.0
-
-  "@iconify-json/devicon@1.2.45":
-    dependencies:
-      "@iconify/types": 2.0.0
-
-  "@iconify-json/simple-icons@1.2.55":
-    dependencies:
-      "@iconify/types": 2.0.0
+      pathe: 2.0.3
 
   "@iconify/types@2.0.0": {}
 
@@ -5315,8 +5272,6 @@ snapshots:
       "@unocss/preset-wind3": 66.2.2
 
   "@unocss/reset@66.2.2": {}
-
-  "@unocss/reset@66.5.4": {}
 
   "@unocss/rule-utils@66.2.2":
     dependencies:
