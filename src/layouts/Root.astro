@@ -2,6 +2,8 @@
 import Footer from "@/components/Footer.astro";
 import Navbar from "@/components/Navbar.astro";
 
+import "@/styles/global.css";
+
 interface Props {
   title?: string;
   overrideTitle?: boolean;
@@ -20,7 +22,7 @@ const { title, overrideTitle = false, description } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title ? (overrideTitle ? title : `${title} - Toby Nguyen`) : "Toby Nguyen"}</title>
   </head>
-  <body class="bg-2">
+  <body class="bg-100">
     <Navbar />
     <slot />
     <Footer />

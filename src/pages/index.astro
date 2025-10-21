@@ -4,7 +4,7 @@ import Root from "@/layouts/Root.astro";
 ---
 
 <Root>
-  <div class="mx-auto mt-12 w-3/4 md:w-3/5 lg:w-1/2">
+  <div class="w-10/12 sm:w-3/4 md:w-1/2 mx-auto mt-12">
     <h1 class="text-primary hidden font-mono text-3xl sm:block">Toby Nguyen</h1>
 
     <p class="text-secondary my-5 text-lg italic">
@@ -12,8 +12,8 @@ import Root from "@/layouts/Root.astro";
     </p>
 
     <p class="text-secondary text-lg">
-      Hi there 👋 I am Toby Nguyen. I am a self-taught web developer. I enjoy building websites and
-      sometimes I make Minecraft mods.
+      Hi there 👋 I am Toby Nguyen, my Vietnamese name is <span class="italic">Nguyễn Minh Thọ</span
+      >. I am a self-taught web developer and Kotlin developer.
     </p>
 
     <div class="my-5 flex flex-col gap-1">
@@ -26,12 +26,14 @@ import Root from "@/layouts/Root.astro";
             url="https://github.com/microsoft/TypeScript"
           />
           <Badge icon="i-devicon-kotlin" text="Kotlin" url="https://github.com/JetBrains/kotlin" />
+          <Badge icon="i-simple-icons-rust" text="Rust" url="https://rust-lang.org/" />
         </div>
       </div>
       <div class="text-secondary h-full w-full">
         <div class="flex h-full w-full flex-wrap items-center gap-2">
           <span class="text-nowrap text-lg">I use:</span>
           <Badge icon="i-devicon-nixos" text="Nix" url="https://github.com/NixOS/nix" />
+          <Badge icon="i-devicon-archlinux" text="Arch Linux" url="https://archlinux.org/" />
           <Badge icon="i-devicon-vscode" text="VSCode" url="https://github.com/microsoft/vscode" />
           <Badge
             icon="i-devicon-intellij"
@@ -44,17 +46,22 @@ import Root from "@/layouts/Root.astro";
 
     <div class="flex w-full flex-col gap-3">
       <p class="text-secondary text-lg">
-        I just finished my high school in this year and I am currently in a gap year. I planned to
-        study Computer Science in university and I am preparing necessary skills before going there.
+        I have been studying Information Technology major at <a
+          href="https://huflit.edu.vn"
+          target="_blank"
+          class="underline-primary"
+          >Ho Chi Minh City University of Foreign Languages and Information Technology (HUFLIT)</a
+        > since 2025.
       </p>
       <p class="text-secondary text-lg">
-        Sometimes, I write blog posts about Minecraft, coding and anything that I find interesting.
-        I'm a big fan of open source softwares so most of softwares that I am using are open source.
+        Sometimes, I write blog posts about coding and anything that I find interesting. I'm a big
+        fan of Open Source Softwares so I contribute to OSS in my free time and most of softwares
+        that I am using are open source.
       </p>
       <p class="text-secondary text-lg">
-        Outside of programming, I enjoy playing games (Minecraft and Satisfactory are my favourite),
-        watching anime and movies and listening to musics. I am also keen on learning new things, so
-        I am currently learning Mathematics (Analysis) and piano.
+        Outside of programming, I enjoy playing games, watching anime and movies and listening to
+        music. I am also keen on learning new things, so I am currently learning Mathematics
+        (Analysis) and piano.
       </p>
     </div>
 
@@ -62,23 +69,23 @@ import Root from "@/layouts/Root.astro";
       <div class="flex w-full flex-wrap gap-2">
         <span class="text-secondary text-lg">You can find me via:</span>
         <Badge
-          icon="i-carbon-logo-github text-gray-900 dark:text-gray-300"
+          icon="i-carbon-logo-github text-secondary"
           text="GitHub"
           url="https://github.com/tobynguyen27"
           noBackground
         />
         <Badge
-          icon="i-carbon-logo-discord text-gray-900 dark:text-gray-300"
+          icon="i-carbon-logo-discord text-secondary"
           text="Discord"
           url="https://discord.com/users/1365300051932352655"
           noBackground
         />
       </div>
       <div class="mt-2 w-full">
-        <span class="text-secondary text-lg"
-          >Or mail me at{" "}
-          <a href="mailto:hi@tobynguyen.dev" class="text-link"> hi@tobynguyen.dev </a>
-        </span>
+        <p class="text-secondary text-lg">
+          Or mail me at{" "}
+          <a href="mailto:hi@tobynguyen.dev" class="underline-primary">hi@tobynguyen.dev </a>
+        </p>
       </div>
     </div>
   </div>

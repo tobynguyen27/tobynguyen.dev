@@ -13,8 +13,7 @@ const navbarItems: NavbarItem[] = [
 ];
 ---
 
-<nav
-  class="bg-1 sm:h-18 flex h-32 w-full items-center justify-center border-b border-b-[#EAEAEA] dark:border-b-[#2E2E2E]">
+<nav class="bg-100 sm:h-18 flex h-32 w-full items-center justify-center border-b border-b-gray-400">
   <div class="flex h-full w-full flex-col items-center justify-between sm:flex-row sm:gap-12">
     <div class="flex h-full w-full items-center justify-center sm:justify-start sm:pl-12">
       <a href="/">
@@ -26,12 +25,12 @@ const navbarItems: NavbarItem[] = [
       {
         navbarItems.map((item) => (
           <a href={item.url}>
-            <p class="navbar-item-text rounded-md p-2 text-xl duration-200">{item.name}</p>
+            <p class="navbar-item rounded-md p-2">{item.name}</p>
           </a>
         ))
       }
       <a href="https://github.com/tobynguyen27" target="_blank" class="hidden sm:block">
-        <button class="i-simple-icons-github navbar-item-text text-xl duration-200"></button>
+        <button class="i-simple-icons-github navbar-item"></button>
       </a>
       <ThemeToggle />
     </div>
