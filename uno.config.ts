@@ -44,6 +44,17 @@ export default defineConfig({
       "gray-800": "var(--gray-800)",
       "gray-900": "var(--gray-900)",
       "gray-1000": "var(--gray-1000)",
+
+      "blue-100": "var(--blue-100)",
+      "blue-200": "var(--blue-200)",
+      "blue-300": "var(--blue-300)",
+      "blue-400": "var(--blue-400)",
+      "blue-500": "var(--blue-500)",
+      "blue-600": "var(--blue-600)",
+      "blue-700": "var(--blue-700)",
+      "blue-800": "var(--blue-800)",
+      "blue-900": "var(--blue-900)",
+      "blue-1000": "var(--blue-1000)",
     },
   },
   shortcuts: {
