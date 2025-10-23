@@ -20,18 +20,11 @@
   },
   "devDependencies": {
     "@iconify/json": "catalog:frontend",
+    "lefthook": "^2.0.0",
     "lightningcss": "catalog:build",
-    "lint-staged": "catalog:dev",
     "prettier": "catalog:lint",
     "prettier-plugin-astro": "catalog:lint",
-    "simple-git-hooks": "catalog:dev",
     "unocss": "catalog:build",
     "wrangler": "catalog:dev"
-  },
-  "simple-git-hooks": {
-    "pre-commit": "pnpm lint-staged"
-  },
-  "lint-staged": {
-    "*": "prettier --write ."
   }
 }
