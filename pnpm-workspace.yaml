@@ -4,13 +4,13 @@ catalogs:
     lightningcss: ^1.30.2
     unocss: 66.2.2
   dev:
-    wrangler: ^4.44.0
-    lefthook: ^2.0.0
+    wrangler: ^4.45.3
+    lefthook: ^2.0.2
   frontend:
-    '@iconify/json': ^2.2.399
-    '@astrojs/mdx': ^4.3.7
-    astro: ^5.14.8
-    dayjs: ^1.11.18
+    '@iconify/json': ^2.2.402
+    '@astrojs/mdx': ^4.3.9
+    astro: ^5.15.3
+    dayjs: ^1.11.19
     rehype-autolink-headings: ^7.1.0
     rehype-slug: ^6.0.0
   lint:
