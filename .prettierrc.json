@@ -12,5 +12,15 @@
   "bracketSameLine": true,
   "arrowParens": "always",
   "endOfLine": "lf",
-  "overrides": [{ "files": "*.astro", "options": { "parser": "astro" } }]
+  "overrides": [
+    { "files": "*.astro", "options": { "parser": "astro" } },
+    {
+      "files": ["**/*.{js,mjs,cjs,jsx}"],
+      "options": { "plugins": ["@prettier/plugin-oxc"], "parser": "oxc" }
+    },
+    {
+      "files": ["**/*.{ts,mts,cts,tsx}"],
+      "options": { "plugins": ["@prettier/plugin-oxc"], "parser": "oxc-ts" }
+    }
+  ]
 }
