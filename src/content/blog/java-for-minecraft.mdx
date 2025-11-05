@@ -47,48 +47,48 @@ Garbage Collector (GC) is a JVM's mechanism that identifying and reclaiming heap
 
 There are some GCs available in Java, including the Serial GC, Parallel GC, ZGC, Shenandoah GC, G1 GC, etc.. Each GC has its own strengths and weaknesses, and the best choice depends on the specific use case. There is no the best GC for all use cases, and you should choose the one that best fits your needs.
 
-<span class="text-blue font-semibold">Throughput</span> denotes the speed at which a Java
-application runs. For example, if your application is a transaction-based system, high throughput
-means that more transactions are executed during a given amount of time.
+<span class="text-blue font-semibold">Throughput</span> denotes the speed at which a Java application runs. For example,
+if your application is a transaction-based system, high throughput means that more transactions are executed during a
+given amount of time.
 
-<span class="text-rose font-semibold">Pause time</span> is the duration during which the application
-is temporarily frozen while the GC is running. For example, if you are playing Minecraft and the
-screen suddenly freezes for 0.5 seconds, it means that the GC is running.
+<span class="text-rose font-semibold">Pause time</span> is the duration during which the application is temporarily
+frozen while the GC is running. For example, if you are playing Minecraft and the screen suddenly freezes for 0.5
+seconds, it means that the GC is running.
 
 <span class="text-blue">Throughput</span> and
-<span class="text-rose">pause time</span> are inversely proportional to each other. They key in here
-is finding the equilibrium between them.
+<span class="text-rose">pause time</span> are inversely proportional to each other. They key in here is finding the
+equilibrium between them.
 
 <table>
-  <thead>
-    <tr>
-      <th>GC</th>
-      <th text-blue>Throughput</th>
-      <th text-rose>Pause time</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Parallel GC</td>
-      <td>High</td>
-      <td>Long</td>
-    </tr>
-    <tr>
-      <td>G1 GC</td>
-      <td>Slightly high</td>
-      <td>Medium</td>
-    </tr>
-    <tr>
-      <td>Z GC</td>
-      <td>Medium</td>
-      <td>Very Low</td>
-    </tr>
-    <tr>
-      <td>Shenandoah GC</td>
-      <td>Medium</td>
-      <td>Low</td>
-    </tr>
-  </tbody>
+    <thead>
+        <tr>
+            <th>GC</th>
+            <th text-blue>Throughput</th>
+            <th text-rose>Pause time</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Parallel GC</td>
+            <td>High</td>
+            <td>Long</td>
+        </tr>
+        <tr>
+            <td>G1 GC</td>
+            <td>Slightly high</td>
+            <td>Medium</td>
+        </tr>
+        <tr>
+            <td>Z GC</td>
+            <td>Medium</td>
+            <td>Very Low</td>
+        </tr>
+        <tr>
+            <td>Shenandoah GC</td>
+            <td>Medium</td>
+            <td>Low</td>
+        </tr>
+    </tbody>
 </table>
 
 I personally suggest using the G1 GC or Z GC for both client and server. Shenandoah GC is not always included in every JVM distributions <br/>

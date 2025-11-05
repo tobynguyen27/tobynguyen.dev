@@ -1,93 +1,93 @@
 .dark .prose {
-  font-size: 1rem;
-  line-height: 1.75;
-  color: #ededed !important;
+    font-size: 1rem;
+    line-height: 1.75;
+    color: #ededed !important;
 }
 
 .prose {
-  font-size: 1rem;
-  line-height: 1.75;
-  color: #171717 !important;
+    font-size: 1rem;
+    line-height: 1.75;
+    color: #171717 !important;
 }
 
 .prose blockquote {
-  border-left: 0.25rem solid rgba(209, 213, 219, 0.5);
-  quotes: "\201C" "\201D" "\2018" "\2019";
-  font-weight: 500;
-  font-style: italic;
+    border-left: 0.25rem solid rgba(209, 213, 219, 0.5);
+    quotes: "\201C" "\201D" "\2018" "\2019";
+    font-weight: 500;
+    font-style: italic;
 }
 
 .dark .prose blockquote {
-  border-left: 0.25rem solid rgba(209, 213, 219, 0.3);
-  quotes: "\201C" "\201D" "\2018" "\2019";
-  font-weight: 500;
-  font-style: italic;
+    border-left: 0.25rem solid rgba(209, 213, 219, 0.3);
+    quotes: "\201C" "\201D" "\2018" "\2019";
+    font-weight: 500;
+    font-style: italic;
 }
 
 .prose blockquote p:first-of-type::before {
-  content: open-quote;
+    content: open-quote;
 }
 
 .prose blockquote p:last-of-type::after {
-  content: close-quote;
+    content: close-quote;
 }
 
 .dark .prose :not(pre) > code {
-  background-color: #1a1a1a;
-  border-radius: 0.25rem;
-  padding: 0.2em 0.25em;
+    background-color: #1a1a1a;
+    border-radius: 0.25rem;
+    padding: 0.2em 0.25em;
 }
 
 .prose :not(pre) > code {
-  background-color: #ebebeb;
-  border-radius: 0.25rem;
-  padding: 0.2em 0.25em;
+    background-color: #ebebeb;
+    border-radius: 0.25rem;
+    padding: 0.2em 0.25em;
 }
 
 .prose :not(pre) > code::before {
-  content: "";
+    content: "";
 }
 
 .prose :not(pre) > code::after {
-  content: "";
+    content: "";
 }
 
 .prose h1 {
-  color: inherit;
-  font-size: 2.25em;
-  margin-top: 0;
-  margin-bottom: 0.8em;
-  width: fit-content;
+    color: inherit;
+    font-size: 2.25em;
+    margin-top: 0;
+    margin-bottom: 0.8em;
+    width: fit-content;
 }
 
 .prose h2 {
-  color: inherit;
-  font-size: 1.5em;
-  margin-top: 1em;
-  margin-bottom: 1em;
-  width: fit-content;
+    color: inherit;
+    font-size: 1.5em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    width: fit-content;
 }
 
 .prose h3 {
-  color: inherit;
-  font-size: 1.25em;
-  margin-top: 1.6em;
-  margin-bottom: 0.6em;
-  width: fit-content;
+    color: inherit;
+    font-size: 1.25em;
+    margin-top: 1.6em;
+    margin-bottom: 0.6em;
+    width: fit-content;
 }
 
 .prose h4 {
-  color: inherit;
-  margin-top: 1.5em;
-  margin-bottom: 0.5em;
-  width: fit-content;
+    color: inherit;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    width: fit-content;
 }
 
 .prose tbody tr:last-child {
-  border-bottom-width: 0;
+    border-bottom-width: 0;
 }
 
 .heading-anchor {
-  color: inherit !important;
-  text-decoration: none !important;
+    color: inherit !important;
+    text-decoration: none !important;
 }

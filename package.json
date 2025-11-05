@@ -1,31 +1,31 @@
 {
-  "type": "module",
-  "private": true,
-  "packageManager": "pnpm@10.12.1",
-  "scripts": {
-    "dev": "astro dev --host",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro",
-    "format:check": "prettier --check .",
-    "format": "prettier --write ."
-  },
-  "dependencies": {
-    "@astrojs/mdx": "catalog:frontend",
-    "@astrojs/sitemap": "catalog:build",
-    "astro": "catalog:frontend",
-    "dayjs": "catalog:frontend",
-    "rehype-autolink-headings": "catalog:frontend",
-    "rehype-slug": "catalog:frontend"
-  },
-  "devDependencies": {
-    "@iconify/json": "catalog:frontend",
-    "@prettier/plugin-oxc": "^0.0.4",
-    "lefthook": "catalog:dev",
-    "lightningcss": "catalog:build",
-    "prettier": "catalog:lint",
-    "prettier-plugin-astro": "catalog:lint",
-    "unocss": "catalog:build",
-    "wrangler": "catalog:dev"
-  }
+    "type": "module",
+    "private": true,
+    "packageManager": "pnpm@10.12.1",
+    "scripts": {
+        "dev": "astro dev --host",
+        "build": "astro build",
+        "preview": "astro preview",
+        "astro": "astro",
+        "format:check": "prettier --check .",
+        "format": "prettier --write ."
+    },
+    "dependencies": {
+        "@astrojs/mdx": "catalog:frontend",
+        "@astrojs/sitemap": "catalog:build",
+        "astro": "catalog:frontend",
+        "dayjs": "catalog:frontend",
+        "rehype-autolink-headings": "catalog:frontend",
+        "rehype-slug": "catalog:frontend"
+    },
+    "devDependencies": {
+        "@iconify/json": "catalog:frontend",
+        "@prettier/plugin-oxc": "^0.0.4",
+        "lefthook": "catalog:dev",
+        "lightningcss": "catalog:build",
+        "prettier": "catalog:lint",
+        "prettier-plugin-astro": "catalog:lint",
+        "unocss": "catalog:build",
+        "wrangler": "catalog:dev"
+    }
 }

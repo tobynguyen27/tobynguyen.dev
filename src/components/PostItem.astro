@@ -2,27 +2,27 @@
 import dayjs from "dayjs";
 
 interface Props {
-  title: string;
-  date: Date;
-  description: string;
-  link: string;
+    title: string;
+    date: Date;
+    description: string;
+    link: string;
 }
 
 const { title, date, description, link } = Astro.props;
 ---
 
 <a
-  href={link}
-  class="hover:(border-gray-500 bg-gray-200) border-gray-400 border flex w-full cursor-pointer flex-col justify-center rounded-md p-5 duration-300">
-  <div class="">
-    <p class="text-primary text-3xl font-semibold">{title}</p>
-  </div>
-  <div class="">
-    <p class="text-secondary">{description}</p>
-  </div>
-  <div class="my-3">
-    <p class="text-secondary">
-      {dayjs(date).format("MMMM D, YYYY")}
-    </p>
-  </div>
+    href={link}
+    class="hover:(border-gray-500 bg-gray-200) border-gray-400 border flex w-full cursor-pointer flex-col justify-center rounded-md p-5 duration-300">
+    <div class="">
+        <p class="text-primary text-3xl font-semibold">{title}</p>
+    </div>
+    <div class="">
+        <p class="text-secondary">{description}</p>
+    </div>
+    <div class="my-3">
+        <p class="text-secondary">
+            {dayjs(date).format("MMMM D, YYYY")}
+        </p>
+    </div>
 </a>

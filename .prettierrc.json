@@ -1,20 +1,20 @@
 {
-  "plugins": ["prettier-plugin-astro", "@prettier/plugin-oxc"],
-  "printWidth": 100,
-  "tabWidth": 2,
-  "useTabs": false,
-  "semi": true,
-  "singleQuote": false,
-  "quoteProps": "as-needed",
-  "trailingComma": "all",
-  "bracketSpacing": true,
-  "objectWrap": "collapse",
-  "bracketSameLine": true,
-  "arrowParens": "always",
-  "endOfLine": "lf",
-  "overrides": [
-    { "files": "**/*.astro", "options": { "parser": "astro" } },
-    { "files": ["**/*.{js,mjs,cjs,jsx}"], "options": { "parser": "oxc" } },
-    { "files": ["**/*.{ts,mts,cts,tsx}"], "options": { "parser": "oxc-ts" } }
-  ]
+    "plugins": ["prettier-plugin-astro", "@prettier/plugin-oxc"],
+    "printWidth": 120,
+    "tabWidth": 4,
+    "useTabs": false,
+    "semi": true,
+    "singleQuote": false,
+    "quoteProps": "as-needed",
+    "trailingComma": "all",
+    "bracketSpacing": true,
+    "objectWrap": "collapse",
+    "bracketSameLine": true,
+    "arrowParens": "always",
+    "endOfLine": "lf",
+    "overrides": [
+        { "files": "**/*.astro", "options": { "parser": "astro" } },
+        { "files": ["**/*.{js,mjs,cjs,jsx}"], "options": { "parser": "oxc" } },
+        { "files": ["**/*.{ts,mts,cts,tsx}"], "options": { "parser": "oxc-ts" } }
+    ]
 }

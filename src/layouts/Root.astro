@@ -5,26 +5,26 @@ import Navbar from "@/components/Navbar.astro";
 import "@/styles/global.css";
 
 interface Props {
-  title?: string;
-  overrideTitle?: boolean;
-  description?: string;
+    title?: string;
+    overrideTitle?: boolean;
+    description?: string;
 }
 
 const { title, overrideTitle = false, description } = Astro.props;
 ---
 
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="author" content="Toby Nguyen" />
-    <meta name="description" content={description || "Toby Nguyen personal website"} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>{title ? (overrideTitle ? title : `${title} - Toby Nguyen`) : "Toby Nguyen"}</title>
-  </head>
-  <body class="bg-100">
-    <Navbar />
-    <slot />
-    <Footer />
-  </body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="author" content="Toby Nguyen" />
+        <meta name="description" content={description || "Toby Nguyen personal website"} />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <title>{title ? (overrideTitle ? title : `${title} - Toby Nguyen`) : "Toby Nguyen"}</title>
+    </head>
+    <body class="bg-100">
+        <Navbar />
+        <slot />
+        <Footer />
+    </body>
 </html>

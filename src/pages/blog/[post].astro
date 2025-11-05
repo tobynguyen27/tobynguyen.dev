@@ -8,9 +8,9 @@ import "@/styles/markdown.css";
 import "@/styles/shiki.css";
 
 export async function getStaticPaths() {
-  const posts = await getCollection("blog");
+    const posts = await getCollection("blog");
 
-  return posts.map((post) => ({ params: { post: post.id }, props: post }));
+    return posts.map((post) => ({ params: { post: post.id }, props: post }));
 }
 type Props = CollectionEntry<"blog">;
 
@@ -21,29 +21,29 @@ const { title, description, date, readTime } = post.data;
 ---
 
 <Root title={title} description={description} overrideTitle>
-  <div class="mx-auto max-w-fit p-3 sm:py-12">
-    <div class="">
-      <div class="lg:p-18 rounded-md border border-gray-400 p-6 sm:p-8 md:p-12">
-        <p class="text-primary text-center text-4xl font-semibold lg:text-5xl">{title}</p>
-        <div class="flex w-full justify-between pt-2">
-          <p class="text-secondary flex items-center justify-center gap-1 text-lg">
-            <i class="i-carbon-time"></i>{readTime} min read
-          </p>
-          <p class="text-secondary text-lg">{dayjs(date, "YYYY-MM-DD").format("MMMM D, YYYY")}</p>
+    <div class="mx-auto max-w-fit p-3 sm:py-12">
+        <div class="">
+            <div class="lg:p-18 rounded-md border border-gray-400 p-6 sm:p-8 md:p-12">
+                <p class="text-primary text-center text-4xl font-semibold lg:text-5xl">{title}</p>
+                <div class="flex w-full justify-between pt-2">
+                    <p class="text-secondary flex items-center justify-center gap-1 text-lg">
+                        <i class="i-carbon-time"></i>{readTime} min read
+                    </p>
+                    <p class="text-secondary text-lg">{dayjs(date, "YYYY-MM-DD").format("MMMM D, YYYY")}</p>
+                </div>
+                <article
+                    class="prose hover:prose-headings:(underline underline-offset-3) prose-gray prose-a:(text-blue-700) prose-code:font-mono prose-td:border-gray-300/95 prose-th:border-gray-300/95 dark:prose-white dark:prose-td:border-gray-300/30 dark:prose-th:border-gray-300/30 dark:prose-tr:bg-black prose-a:no-underline hover:prose-a:(underline underline-offset-3 text-blue-800) mt-8 font-sans no-underline lg:mt-16">
+                    <Content />
+                </article>
+            </div>
+            <div class="mx-auto mt-8 flex flex-col gap-3">
+                <a href="/blog" class="text-secondary underline-primary w-fit text-lg">
+                    <span>{">"} cd /blog</span>
+                </a>
+                <a href="/" class="text-secondary underline-primary w-fit text-lg">
+                    <span>{">"} cd /home</span>
+                </a>
+            </div>
         </div>
-        <article
-          class="prose hover:prose-headings:(underline underline-offset-3) prose-gray prose-a:(text-blue-700) prose-code:font-mono prose-td:border-gray-300/95 prose-th:border-gray-300/95 dark:prose-white dark:prose-td:border-gray-300/30 dark:prose-th:border-gray-300/30 dark:prose-tr:bg-black prose-a:no-underline hover:prose-a:(underline underline-offset-3 text-blue-800) mt-8 font-sans no-underline lg:mt-16">
-          <Content />
-        </article>
-      </div>
-      <div class="mx-auto mt-8 flex flex-col gap-3">
-        <a href="/blog" class="text-secondary underline-primary w-fit text-lg">
-          <span>{">"} cd /blog</span>
-        </a>
-        <a href="/" class="text-secondary underline-primary w-fit text-lg">
-          <span>{">"} cd /home</span>
-        </a>
-      </div>
     </div>
-  </div>
 </Root>
