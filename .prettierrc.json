@@ -1,5 +1,5 @@
 {
-    "plugins": ["prettier-plugin-astro", "@prettier/plugin-oxc"],
+    "plugins": ["prettier-plugin-astro"],
     "printWidth": 120,
     "tabWidth": 4,
     "useTabs": false,
@@ -14,8 +14,6 @@
     "endOfLine": "lf",
     "overrides": [
         { "files": "**/*.astro", "options": { "parser": "astro" } },
-        { "files": ["**/*.{js,mjs,cjs,jsx}"], "options": { "parser": "oxc" } },
-        { "files": ["**/*.{ts,mts,cts,tsx}"], "options": { "parser": "oxc-ts" } },
         { "files": ["**/*.{yaml,yml}"], "options": { "tabWidth": 2 } }
     ]
 }
