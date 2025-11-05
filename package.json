@@ -7,7 +7,6 @@
         "build": "astro build",
         "preview": "astro preview",
         "astro": "astro",
-        "format:check": "prettier --check .",
         "format": "prettier --write ."
     },
     "dependencies": {
@@ -20,7 +19,7 @@
     },
     "devDependencies": {
         "@iconify/json": "catalog:frontend",
-        "@prettier/plugin-oxc": "^0.0.4",
+        "@prettier/plugin-oxc": "catalog:lint",
         "lefthook": "catalog:dev",
         "lightningcss": "catalog:build",
         "prettier": "catalog:lint",
