@@ -19,7 +19,6 @@
     },
     "devDependencies": {
         "@iconify/json": "catalog:frontend",
-        "@prettier/plugin-oxc": "catalog:lint",
         "lefthook": "catalog:dev",
         "lightningcss": "catalog:build",
         "prettier": "catalog:lint",
