@@ -8,44 +8,29 @@ const projects = await getCollection("projects");
 ---
 
 <Root title="Projects">
-    <div class="w-11/12 mx-auto h-full">
-        <div class="mt-12 w-full">
-            <p class="text-primary text-center text-3xl">My Projects</p>
-        </div>
-        <div class="my-3 flex h-full w-full flex-wrap items-center justify-center gap-2">
+    <div class="w-full h-full flex justify-center items-center flex-col gap-5 my-12">
+        <h1 class="text-primary text-3xl text-center font-semibold">My Projects</h1>
+        <p class="text-secondary text-lg text-center">Projects that I created or maintaining.</p>
+        <div class="">
             <a
                 href="https://github.com/tobynguyen27"
                 target="_blank"
-                class="border-gray-400 border rounded-md hover:(cursor-pointer bg-gray-200 border-gray-500) group flex items-center gap-1 p-2 duration-300">
-                <i class="i-simple-icons-github text-primary duration-200"></i>
-                <p class="text-primary duration-200">GitHub</p>
-            </a>
-            <a
-                href="https://www.curseforge.com/members/tobynguyen/projects"
-                target="_blank"
-                class="hover:(bg-amber-600/20 border-amber-600) group flex cursor-pointer items-center gap-1 rounded-md border p-2 duration-200 border-gray-400">
-                <i class="i-simple-icons-curseforge text-primary duration-300 group-hover:text-amber-600"></i>
-                <p class="text-primary duration-300 group-hover:text-amber-600">CurseForge</p>
-            </a>
-            <a
-                href="https://modrinth.com/user/tobynguyen27"
-                target="_blank"
-                class="hover:(bg-green-700/20 border-green-700) group flex cursor-pointer items-center gap-1 rounded-md border border-gray-400 p-2 duration-200">
-                <i class="i-simple-icons-modrinth text-primary duration-200 group-hover:text-green-700"></i>
-                <p class="text-primary duration-200 group-hover:text-green-700">Modrinth</p>
+                class="text-secondary border-gray-400 border rounded-md hover:(cursor-pointer bg-gray-200 border-gray-500) p-2 duration-200">
+                <i class="i-tabler-brand-github"></i>
+                <span>GitHub</span>
             </a>
         </div>
-        <div class="mt-12 grid h-full w-full grid-cols-1 place-items-center gap-3 md:grid-cols-2 lg:grid-cols-3">
-            {
-                projects.map((project) => (
-                    <ProjectItem
-                        icon={project.data.icon}
-                        name={project.data.id}
-                        description={project.data.description}
-                        url={project.data.link}
-                    />
-                ))
-            }
-        </div>
+    </div>
+    <div class="grid h-full w-11/12 mx-auto grid-cols-1 place-items-center gap-5 md:grid-cols-2 lg:grid-cols-3">
+        {
+            projects.map((project) => (
+                <ProjectItem
+                    icon={project.data.icon}
+                    name={project.data.id}
+                    description={project.data.description}
+                    url={project.data.link}
+                />
+            ))
+        }
     </div>
 </Root>
