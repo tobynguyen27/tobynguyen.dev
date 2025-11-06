@@ -13,10 +13,15 @@ export default defineConfig({
     presets: [
         presetWind4({ preflights: { reset: true } }),
         presetAttributify(),
+        presetWebFonts({ provider: "fontsource", fonts: { mono: "JetBrains Mono", sans: "Geist" } }),
         presetIcons({
-            extraProperties: { display: "inline-block", "vertical-align": "middle", height: "1.2em", width: "1.2em" },
+            extraProperties: {
+                display: "inline-block",
+                height: "1.2em",
+                width: "1.2em",
+                "vertical-align": "text-bottom",
+            },
         }),
-        presetWebFonts({ themeKey: "font", provider: "fontsource", fonts: { sans: "Geist", mono: "JetBrains Mono" } }),
         presetTypography(),
     ],
     transformers: [transformerVariantGroup(), transformerAttributifyJsx()],
@@ -77,9 +82,9 @@ export default defineConfig({
         "bg-100": "bg-bg-100",
         "bg-200": "bg-bg-200",
 
-        "navbar-item": "text-secondary hover:(text-primary cursor-pointer) duration-300 text-xl",
+        "navbar-item": "text-secondary text-lg hover:(text-primary cursor-pointer) duration-200",
 
         "underline-primary":
-            "underline decoration-offset-5 decoration-gray-1000/30 hover:(text-primary cursor-pointer decoration-gray-1000) duration-300",
+            "underline decoration-offset-5 decoration-gray-1000/30 hover:(text-primary cursor-pointer decoration-gray-1000) duration-200",
     },
 });
