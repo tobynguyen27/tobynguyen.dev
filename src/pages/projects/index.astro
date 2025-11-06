@@ -1,12 +1,14 @@
 ---
-import type { Props as ProjectItemType } from "@/components/ProjectItem.astro";
-import projects from "@/assets/data/projects.json";
 import ProjectItem from "@/components/ProjectItem.astro";
 import Root from "@/layouts/Root.astro";
+
+import { getCollection } from "astro:content";
+
+const projects = await getCollection("projects");
 ---
 
 <Root title="Projects">
-    <div class="container mx-auto h-full w-full">
+    <div class="w-11/12 mx-auto h-full">
         <div class="mt-12 w-full">
             <p class="text-primary text-center text-3xl">My Projects</p>
         </div>
@@ -35,14 +37,12 @@ import Root from "@/layouts/Root.astro";
         </div>
         <div class="mt-12 grid h-full w-full grid-cols-1 place-items-center gap-3 md:grid-cols-2 lg:grid-cols-3">
             {
-                (projects as ProjectItemType[]).map((project) => (
+                projects.map((project) => (
                     <ProjectItem
-                        icon={project.icon}
-                        name={project.name}
-                        description={project.description}
-                        url={project.url}
-                        tag={project.tag}
-                        tagColor={project.tagColor}
+                        icon={project.data.icon}
+                        name={project.data.id}
+                        description={project.data.description}
+                        url={project.data.link}
                     />
                 ))
             }
