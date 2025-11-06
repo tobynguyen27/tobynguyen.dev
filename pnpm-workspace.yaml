@@ -4,10 +4,10 @@ catalogs:
     lightningcss: ^1.30.2
     unocss: 66.2.2
   dev:
-    wrangler: ^4.45.4
+    wrangler: ^4.46.0
     lefthook: ^2.0.2
   frontend:
-    "@iconify/json": ^2.2.403
+    "@iconify/json": ^2.2.404
     "@astrojs/mdx": ^4.3.9
     astro: ^5.15.3
     dayjs: ^1.11.19
