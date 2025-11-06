@@ -17,12 +17,20 @@ const { title, overrideTitle = false, description } = Astro.props;
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="author" content="Toby Nguyen" />
-        <meta name="description" content={description || "Toby Nguyen personal website"} />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="generator" content={Astro.generator} />
+
         <title>{title ? (overrideTitle ? title : `${title} - Toby Nguyen`) : "Toby Nguyen"}</title>
+        <meta name="title" content={title ? (overrideTitle ? title : `${title} - Toby Nguyen`) : "Toby Nguyen"} />
+        <meta name="description" content={description || "Toby Nguyen personal website"} />
+        <meta name="author" content="Toby Nguyen" />
+
+        <meta name="color-scheme" content="dark light" />
+        <meta name="theme-color" content="#F9FAFB" media="(prefers-color-scheme: light)" />
+        <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
+
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     </head>
-    <body class="bg-100">
+    <body class="bg-200">
         <Navbar />
         <slot />
         <Footer />
