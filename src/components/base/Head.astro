@@ -1,6 +1,4 @@
 ---
-import { ClientRouter } from "astro:transitions";
-
 interface Props {
     title: string;
     description: string;
@@ -33,5 +31,3 @@ const { title, description, overrideTitle = false } = Astro.props;
 <link rel="canonical" href={canonicalURL} />
 
 <link rel="sitemap" href="/sitemap-index.xml" />
-
-<ClientRouter />
