@@ -1,35 +1,21 @@
 ---
+import Head from "@/components/base/Head.astro";
 import Footer from "@/components/Footer.astro";
 import Navbar from "@/components/Navbar.astro";
 
 import "@/styles/global.css";
 
 interface Props {
-    title?: string;
+    title: string;
+    description: string;
     overrideTitle?: boolean;
-    description?: string;
 }
 
-const { title, overrideTitle = false, description } = Astro.props;
+const { title, description, overrideTitle } = Astro.props;
 ---
 
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="generator" content={Astro.generator} />
-
-        <title>{title ? (overrideTitle ? title : `${title} - Toby Nguyen`) : "Toby Nguyen"}</title>
-        <meta name="title" content={title ? (overrideTitle ? title : `${title} - Toby Nguyen`) : "Toby Nguyen"} />
-        <meta name="description" content={description || "Toby Nguyen personal website"} />
-        <meta name="author" content="Toby Nguyen" />
-
-        <meta name="color-scheme" content="dark light" />
-        <meta name="theme-color" content="#F9FAFB" media="(prefers-color-scheme: light)" />
-        <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
-
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    </head>
+    <head><Head {title} {description} {overrideTitle} /></head>
     <body class="bg-200">
         <Navbar />
         <slot />

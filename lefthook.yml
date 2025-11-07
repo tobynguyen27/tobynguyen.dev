@@ -2,4 +2,5 @@ pre-commit:
   parallel: true
   jobs:
     - run: pnpx prettier --write {staged_files}
+      glob: "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc,astro,yaml,yml}"
       stage_fixed: true

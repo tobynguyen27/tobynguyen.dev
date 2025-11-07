@@ -6,7 +6,7 @@ import Root from "@/layouts/Root.astro";
 const posts = (await getCollection("blog")).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
 
-<Root title="Blog">
+<Root title="Blog" description="Toby Nguyen's Blog">
     <div class="lg:1/2 mx-auto h-full w-11/12 sm:w-4/6 md:w-3/5">
         <div class="mt-12">
             <h1 class="text-primary py-5 text-5xl">Blog</h1>

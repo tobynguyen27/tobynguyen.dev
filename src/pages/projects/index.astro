@@ -7,7 +7,7 @@ import { getCollection } from "astro:content";
 const projects = await getCollection("projects");
 ---
 
-<Root title="Projects">
+<Root title="Projects" description="Projects that Toby Nguyen created or maintaining">
     <div class="w-full h-full flex justify-center items-center flex-col gap-5 my-12">
         <h1 class="text-primary text-3xl text-center font-semibold">My Projects</h1>
         <p class="text-secondary text-lg text-center">Projects that I created or maintaining.</p>

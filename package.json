@@ -20,7 +20,6 @@
     "devDependencies": {
         "@iconify/json": "catalog:frontend",
         "lefthook": "catalog:dev",
-        "lightningcss": "catalog:build",
         "prettier": "catalog:lint",
         "prettier-plugin-astro": "catalog:lint",
         "unocss": "catalog:build",

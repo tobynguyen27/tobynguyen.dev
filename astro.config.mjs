@@ -21,6 +21,5 @@ export default defineConfig({
         }),
         sitemap(),
     ],
-    vite: { build: { cssMinify: "lightningcss" } },
     server: { port: 3000 },
 });

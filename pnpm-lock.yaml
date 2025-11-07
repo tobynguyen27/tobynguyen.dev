@@ -9,9 +9,6 @@ catalogs:
     "@astrojs/sitemap":
       specifier: ^3.6.0
       version: 3.6.0
-    lightningcss:
-      specifier: ^1.30.2
-      version: 1.30.2
     unocss:
       specifier: 66.2.2
       version: 66.2.2
@@ -77,9 +74,6 @@ importers:
       lefthook:
         specifier: catalog:dev
         version: 2.0.2
-      lightningcss:
-        specifier: catalog:build
-        version: 1.30.2
       prettier:
         specifier: catalog:lint
         version: 3.6.2
@@ -4894,6 +4888,7 @@ snapshots:
       lightningcss-linux-x64-musl: 1.30.2
       lightningcss-win32-arm64-msvc: 1.30.2
       lightningcss-win32-x64-msvc: 1.30.2
+    optional: true
 
   local-pkg@1.1.2:
     dependencies:
