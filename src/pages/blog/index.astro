@@ -21,6 +21,7 @@ const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueO
                             description={data.description}
                             link={data.redirect}
                             isRedirect
+                            isDraft={data.isDraft}
                         />
                     ) : (
                         <PostItem
@@ -28,6 +29,7 @@ const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueO
                             date={data.pubDate}
                             description={data.description}
                             link={`/blog/${id}`}
+                            isDraft={data.isDraft}
                         />
                     ),
                 )

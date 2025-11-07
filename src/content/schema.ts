@@ -6,6 +6,7 @@ export const postSchema = z.object({
     pubDate: z.date(),
     minutesRead: z.number(),
     redirect: z.string().url().optional(),
+    isDraft: z.boolean(),
 });
 
 export type PostSchema = z.infer<typeof postSchema>;
