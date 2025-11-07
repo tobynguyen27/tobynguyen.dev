@@ -23,6 +23,7 @@
         "lefthook": "catalog:dev",
         "prettier": "catalog:lint",
         "prettier-plugin-astro": "catalog:lint",
+        "sharp": "^0.34.5",
         "unocss": "catalog:build",
         "wrangler": "catalog:dev"
     }

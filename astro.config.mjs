@@ -2,6 +2,7 @@ import { remarkReadingTime } from "./plugins/remark-reading-time";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import { defineConfig } from "astro/config";
+import { remarkGenerateOgImage } from "./plugins/remark-generate-og-image";
 import UnoCSS from "unocss/astro";
 
 export default defineConfig({
@@ -10,7 +11,7 @@ export default defineConfig({
     integrations: [
         UnoCSS(),
         mdx({
-            remarkPlugins: [remarkReadingTime],
+            remarkPlugins: [remarkReadingTime, remarkGenerateOgImage],
             shikiConfig: { themes: { light: "catppuccin-latte", dark: "catppuccin-mocha" } },
         }),
         sitemap(),
