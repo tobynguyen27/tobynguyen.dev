@@ -14,7 +14,6 @@
 }
 
 .prose :not(pre) > code {
-    font-family: var(--font-mono);
     background-color: var(--gray-300);
     border-radius: 0.25rem;
     padding: 0.2em 0.25em;
@@ -59,7 +58,6 @@
     border-bottom-width: 0;
 }
 
-.heading-anchor {
-    color: inherit !important;
-    text-decoration: none !important;
+.prose :where(tr):not(:where(.not-prose, .not-prose *)):nth-child(2n) {
+    background: var(--bg-100) !important;
 }

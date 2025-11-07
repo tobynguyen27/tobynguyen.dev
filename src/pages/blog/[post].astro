@@ -22,7 +22,15 @@ const { title, description, pubDate, minutesRead } = post.data;
 
 <Root title={title} description={description} overrideTitle={true}>
     <div
-        class="w-10/12 sm:w-3/4 lg:w-1/2 mx-auto mt-12 border-gray-400 rounded-md p-5 sm:p-8 md:p-12 prose prose-gray-900 prose-headings:prose-gray-1000 prose-a:text-blue-900 hover:(prose-a:text-blue-800)">
+        class="w-10/12 sm:w-3/4 lg:w-1/2 mx-auto mt-12 border-gray-400 rounded-md p-5 sm:p-8 md:p-12
+        prose
+        prose-gray-900
+        prose-headings:prose-gray-1000
+        prose-code:font-mono
+        prose-td:border-gray-400
+        prose-th:border-gray-400
+        prose-a:(text-blue-900 decoration-none)
+        hover:(prose-a:text-blue-800 prose-a:decoration-underline)">
         <div class="w-full h-full">
             <h1 class="text-primary">{title}</h1>
             <div class="w-full h-full">
