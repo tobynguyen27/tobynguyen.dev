@@ -85,6 +85,6 @@ export default defineConfig({
         "navbar-item": "text-secondary text-lg hover:(text-primary cursor-pointer) duration-200",
 
         "underline-primary":
-            "underline decoration-offset-5 decoration-gray-1000/30 hover:(text-primary cursor-pointer decoration-gray-1000) duration-200",
+            "underline decoration-offset-5 decoration-gray-1000/20 hover:(text-primary cursor-pointer decoration-gray-1000) duration-200",
     },
 });
