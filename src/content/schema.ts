@@ -3,8 +3,9 @@ import { z } from "astro:content";
 export const postSchema = z.object({
     title: z.string(),
     description: z.string(),
-    date: z.date(),
-    readTime: z.number(),
+    pubDate: z.date(),
+    minutesRead: z.number(),
+    redirect: z.string().url().optional(),
 });
 
 export type PostSchema = z.infer<typeof postSchema>;

@@ -3,7 +3,7 @@ import { getCollection } from "astro:content";
 import PostItem from "@/components/PostItem.astro";
 import Root from "@/layouts/Root.astro";
 
-const posts = (await getCollection("blog")).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 
 <Root title="Blog" description="Toby Nguyen's Blog">
@@ -13,9 +13,24 @@ const posts = (await getCollection("blog")).sort((a, b) => b.data.date.valueOf()
         </div>
         <div class="flex flex-col gap-5">
             {
-                posts.map(({ data, id }) => (
-                    <PostItem title={data.title} date={data.date} description={data.description} link={`/blog/${id}`} />
-                ))
+                posts.map(({ data, id }) =>
+                    data.redirect ? (
+                        <PostItem
+                            title={data.title}
+                            date={data.pubDate}
+                            description={data.description}
+                            link={data.redirect}
+                            isRedirect
+                        />
+                    ) : (
+                        <PostItem
+                            title={data.title}
+                            date={data.pubDate}
+                            description={data.description}
+                            link={`/blog/${id}`}
+                        />
+                    ),
+                )
             }
         </div>
     </div>

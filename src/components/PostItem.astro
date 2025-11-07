@@ -6,16 +6,21 @@ interface Props {
     date: Date;
     description: string;
     link: string;
+    isRedirect?: boolean;
 }
 
-const { title, date, description, link } = Astro.props;
+const { title, date, description, link, isRedirect = false } = Astro.props;
 ---
 
 <a
     href={link}
+    target={isRedirect ? "_blank" : "_self"}
     class="hover:(border-gray-500 bg-gray-200) border-gray-400 border flex w-full cursor-pointer flex-col justify-center rounded-md p-5 duration-300">
     <div class="">
-        <p class="text-primary text-lg font-semibold">{title}</p>
+        <p class="text-primary text-lg font-semibold">
+            {title}
+            {isRedirect && <i class="i-carbon-arrow-up-right text-secondary w-5 h-5 align-top" />}
+        </p>
     </div>
     <div class="">
         <p class="text-secondary">{description}</p>
