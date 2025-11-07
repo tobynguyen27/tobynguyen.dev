@@ -4,9 +4,6 @@ import { getCollection, render } from "astro:content";
 import dayjs from "dayjs";
 import Root from "@/layouts/Root.astro";
 
-import "@/styles/markdown.css";
-import "@/styles/shiki.css";
-
 export async function getStaticPaths() {
     const posts = await getCollection("blog");
 
@@ -17,33 +14,24 @@ type Props = CollectionEntry<"blog">;
 const post = Astro.props;
 
 const { Content } = await render(post);
-const { title, description, date, readTime } = post.data;
+const { title, description, pubDate, minutesRead } = post.data;
 ---
 
 <Root title={title} description={description} overrideTitle={true}>
-    <div class="mx-auto max-w-fit p-3 sm:py-12">
-        <div class="">
-            <div class="lg:p-18 rounded-md border border-gray-400 p-6 sm:p-8 md:p-12">
-                <p class="text-primary text-center text-4xl font-semibold lg:text-5xl">{title}</p>
-                <div class="flex w-full justify-between pt-2">
-                    <p class="text-secondary flex items-center justify-center gap-1 text-lg">
-                        <i class="i-carbon-time"></i>{readTime} min read
-                    </p>
-                    <p class="text-secondary text-lg">{dayjs(date, "YYYY-MM-DD").format("MMMM D, YYYY")}</p>
+    <div class="w-10/12 sm:w-3/4 lg:w-1/2 mx-auto mt-12 border-gray-400 rounded-md prose p-5 sm:p-8 md:p-12">
+        <div class="w-full h-full">
+            <h1 class="">{title}</h1>
+            <div class="w-full h-full flex flex-col md:(flex-row justify-between gap-3)">
+                <div class="flex flex-row items-center gap-1 text-secondary h-fit">
+                    <span>{dayjs(pubDate, "YYYY-MM-DD").format("MMMM D, YYYY")} · {minutesRead} min read</span>
                 </div>
-                <article
-                    class="prose hover:prose-headings:(underline underline-offset-3) prose-gray prose-a:(text-blue-700) prose-code:font-mono prose-td:border-gray-300/95 prose-th:border-gray-300/95 dark:prose-white dark:prose-td:border-gray-300/30 dark:prose-th:border-gray-300/30 dark:prose-tr:bg-black prose-a:no-underline hover:prose-a:(underline underline-offset-3 text-blue-800) mt-8 font-sans no-underline lg:mt-16">
-                    <Content />
-                </article>
+                <div class="">
+                    <span class="text-secondary"></span>
+                </div>
             </div>
-            <div class="mx-auto mt-8 flex flex-col gap-3">
-                <a href="/blog" class="text-secondary underline-primary w-fit text-lg">
-                    <span>{">"} cd /blog</span>
-                </a>
-                <a href="/" class="text-secondary underline-primary w-fit text-lg">
-                    <span>{">"} cd /home</span>
-                </a>
-            </div>
+        </div>
+        <div class="w-full h-full prose mx-auto">
+            <Content />
         </div>
     </div>
 </Root>

@@ -13,9 +13,7 @@
         "@astrojs/mdx": "catalog:frontend",
         "@astrojs/sitemap": "catalog:build",
         "astro": "catalog:frontend",
-        "dayjs": "catalog:frontend",
-        "rehype-autolink-headings": "catalog:frontend",
-        "rehype-slug": "catalog:frontend"
+        "dayjs": "catalog:frontend"
     },
     "devDependencies": {
         "@iconify/json": "catalog:frontend",
