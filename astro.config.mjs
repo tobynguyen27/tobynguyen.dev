@@ -21,5 +21,6 @@ export default defineConfig({
         }),
         sitemap(),
     ],
+    vite: { build: { assetsInlineLimit: 1024 } },
     server: { port: 3000 },
 });
