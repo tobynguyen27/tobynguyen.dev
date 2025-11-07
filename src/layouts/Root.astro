@@ -9,13 +9,14 @@ interface Props {
     title: string;
     description: string;
     overrideTitle?: boolean;
+    pubDate?: string;
 }
 
-const { title, description, overrideTitle } = Astro.props;
+const { title, description, overrideTitle, pubDate } = Astro.props;
 ---
 
 <html lang="en">
-    <head><Head {title} {description} {overrideTitle} /></head>
+    <head><Head {title} {description} {overrideTitle} {pubDate} /></head>
     <body class="bg-200">
         <Navbar />
         <slot />

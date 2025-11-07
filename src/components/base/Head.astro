@@ -1,33 +1,47 @@
 ---
+import { SEO } from "astro-seo";
+
 interface Props {
     title: string;
     description: string;
     overrideTitle?: boolean;
+    pubDate?: string;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, overrideTitle = false } = Astro.props;
+const { title, description, overrideTitle = false, pubDate = undefined } = Astro.props;
 ---
 
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="generator" content={Astro.generator} />
-
-<title>{overrideTitle ? title : `${title} - Toby Nguyen`}</title>
-<meta name="title" content={overrideTitle ? title : `${title} - Toby Nguyen`} />
-<meta name="description" content={description} />
-<meta name="author" content="Toby Nguyen" />
-
-<meta name="color-scheme" content="dark light" />
-<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
-<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
-
-<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<link rel="shortcut icon" href="/favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-
-<link rel="canonical" href={canonicalURL} />
-
-<link rel="sitemap" href="/sitemap-index.xml" />
+<SEO
+    title={overrideTitle ? title : `${title} - Toby Nguyen`}
+    {description}
+    canonical={canonicalURL}
+    charset="UTF-8"
+    extend={{
+        meta: [
+            { name: "generator", content: Astro.generator },
+            { name: "author", content: "Toby Nguyen" },
+            { name: "viewport", content: "width=device-width, initial-scale=1.0" },
+            { name: "color-scheme", content: "dark light" },
+            { name: "theme-color", content: "#ffffff", media: "(prefers-color-scheme: light)" },
+            { name: "theme-color", content: "#000000", media: "(prefers-color-scheme: dark)" },
+        ],
+        link: [
+            { rel: "sitemap", href: "/sitemap-index.xml" },
+            { rel: "icon", type: "image/png", href: "/favicon-96x96.png", sizes: "96x96" },
+            { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
+            { rel: "shortcut icon", href: "/favicon.ico" },
+            { rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png" },
+        ],
+    }}
+    openGraph={{
+        basic: {
+            type: pubDate ? "article" : "website",
+            url: canonicalURL,
+            title: overrideTitle ? title : `${title} - Toby Nguyen`,
+            image: "TODO",
+        },
+        optional: { description, siteName: "Toby Nguyen" },
+    }}
+/>

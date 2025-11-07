@@ -20,7 +20,11 @@ const { Content, remarkPluginFrontmatter } = await render(post);
 const { title, description, pubDate, minutesRead } = post.data;
 ---
 
-<Root title={title} description={description} overrideTitle={true}>
+<Root
+    title={title}
+    description={description}
+    overrideTitle={true}
+    pubDate={dayjs(pubDate, "YYYY-MM-DD").format("MMMM D, YYYY")}>
     <div
         class="w-10/12 sm:w-3/4 lg:w-1/2 mx-auto mt-12 border-gray-400 rounded-md p-5 sm:p-8 md:p-12
         prose
