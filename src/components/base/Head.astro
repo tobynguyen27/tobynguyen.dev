@@ -14,7 +14,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const { title, description, overrideTitle = false, pubDate = undefined, ogImage = "/og/og.png" } = Astro.props;
 
 function getOGImageURL() {
-    return `/og/${new URL(Astro.url).pathname.split("/").filter(Boolean).pop()!}`;
+    return `/og/${new URL(Astro.url).pathname.split("/").filter(Boolean).pop()!}.png`;
 }
 ---
 
