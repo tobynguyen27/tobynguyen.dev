@@ -1,24 +1,5 @@
-.dark .prose {
-    font-size: 1rem;
-    line-height: 1.75;
-    color: #ededed !important;
-}
-
-.prose {
-    font-size: 1rem;
-    line-height: 1.75;
-    color: #171717 !important;
-}
-
 .prose blockquote {
-    border-left: 0.25rem solid rgba(209, 213, 219, 0.5);
-    quotes: "\201C" "\201D" "\2018" "\2019";
-    font-weight: 500;
-    font-style: italic;
-}
-
-.dark .prose blockquote {
-    border-left: 0.25rem solid rgba(209, 213, 219, 0.3);
+    border-left: 0.25rem solid var(--gray-500);
     quotes: "\201C" "\201D" "\2018" "\2019";
     font-weight: 500;
     font-style: italic;
@@ -32,14 +13,9 @@
     content: close-quote;
 }
 
-.dark .prose :not(pre) > code {
-    background-color: #1a1a1a;
-    border-radius: 0.25rem;
-    padding: 0.2em 0.25em;
-}
-
 .prose :not(pre) > code {
-    background-color: #ebebeb;
+    font-family: var(--font-mono);
+    background-color: var(--gray-300);
     border-radius: 0.25rem;
     padding: 0.2em 0.25em;
 }
@@ -53,7 +29,6 @@
 }
 
 .prose h1 {
-    color: inherit;
     font-size: 2.25em;
     margin-top: 0;
     margin-bottom: 0.8em;
@@ -61,7 +36,6 @@
 }
 
 .prose h2 {
-    color: inherit;
     font-size: 1.5em;
     margin-top: 1em;
     margin-bottom: 1em;
@@ -69,7 +43,6 @@
 }
 
 .prose h3 {
-    color: inherit;
     font-size: 1.25em;
     margin-top: 1.6em;
     margin-bottom: 0.6em;
@@ -77,7 +50,6 @@
 }
 
 .prose h4 {
-    color: inherit;
     margin-top: 1.5em;
     margin-bottom: 0.5em;
     width: fit-content;
