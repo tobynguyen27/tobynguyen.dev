@@ -1,5 +1,14 @@
 import { z } from "astro:content";
 
+export const usesSchema = z.object({
+    id: z.string(),
+    items: z.array(
+        z.object({ name: z.string(), items: z.array(z.object({ name: z.string(), description: z.string() })) }),
+    ),
+});
+
+export type UsesSchema = z.infer<typeof usesSchema>;
+
 export const postSchema = z.object({
     title: z.string(),
     description: z.string(),

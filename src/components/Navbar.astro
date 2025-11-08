@@ -1,5 +1,18 @@
 ---
 import ThemeToggle from "./ThemeToggle.astro";
+
+interface NavbarItem {
+    path: string;
+    name: string;
+    icon: string;
+}
+
+const navbarItems: NavbarItem[] = [
+    { path: "/", name: "Home", icon: "i-material-symbols-home-outline" },
+    { path: "/blog", name: "Blog", icon: "i-material-symbols-lab-profile-outline" },
+    { path: "/projects", name: "Projects", icon: "i-material-symbols-lightbulb-2-outline" },
+    { path: "/uses", name: "Uses", icon: "i-material-symbols-service-toolbox-outline" },
+];
 ---
 
 <nav class="w-full h-full bg-100">
@@ -8,13 +21,22 @@ import ThemeToggle from "./ThemeToggle.astro";
             <a href="/" class="text-2xl font-mono text-primary">Toby Nguyen_</a>
         </div>
         <div class="sm:mr-7 flex gap-5">
-            <a href="/" class="navbar-item">Home</a>
-            <a href="/blog" class="navbar-item">Blog</a>
-            <a href="/projects" class="navbar-item">Projects</a>
-            <a href="https://github.com/tobynguyen27" target="_blank" class="navbar-item"
+            {
+                navbarItems.map((data) => (
+                    <>
+                        <a href={data.path} class="navbar-item hidden sm:block">
+                            {data.name}
+                        </a>
+                        <a href={data.path} class="navbar-item sm:hidden" title={data.name}>
+                            <i class={`${data.icon} text-xl`} />
+                        </a>
+                    </>
+                ))
+            }
+            <a href="https://github.com/tobynguyen27" target="_blank" class="navbar-item" title="GitHub"
                 ><i class="i-tabler:brand-github"></i></a
             >
-            <a href="" class="navbar-item"><i class="i-carbon:rss"></i></a>
+            <a href="" class="navbar-item" title="RSS"><i class="i-carbon:rss"></i></a>
             <ThemeToggle />
         </div>
     </div>

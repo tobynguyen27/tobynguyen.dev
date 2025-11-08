@@ -1,0 +1,42 @@
+---
+import Root from "@/layouts/Root.astro";
+
+import { getCollection } from "astro:content";
+
+const uses = await getCollection("uses");
+---
+
+<Root title="Uses" description="Tools, softwares and hardwares that I am using">
+    <div class="w-10/12 sm:w-3/4 md:w-1/2 mx-auto mt-12 flex flex-col">
+        <div class="">
+            <h1 class="text-primary text-3xl font-semibold">Uses</h1>
+
+            <p class="text-secondary mt-2 text-lg">Things that I am using</p>
+        </div>
+
+        <div class="flex flex-col gap-12">
+            {
+                uses.map((use) => (
+                    <div>
+                        <h2 class="text-2xl font-semibold my-5 text-primary">{use.data.id}</h2>
+                        <div class="flex flex-col gap-5">
+                            {use.data.items.map((items) => (
+                                <div>
+                                    <h3 class="text-secondary text-lg font-semibold">{items.name}</h3>
+
+                                    <ul class="list-disc-inside">
+                                        {items.items.map((item) => (
+                                            <li class="text-secondary my-2">
+                                                <span class="font-semibold">{item.name}</span>: {item.description}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</Root>
