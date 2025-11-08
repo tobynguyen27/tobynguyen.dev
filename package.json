@@ -10,13 +10,15 @@
         "format": "prettier --write ."
     },
     "dependencies": {
+        "@astrojs/markdown-remark": "^6.3.8",
         "@astrojs/mdx": "catalog:frontend",
         "@astrojs/sitemap": "catalog:build",
         "astro": "catalog:frontend",
         "astro-seo": "^0.8.4",
         "dayjs": "catalog:frontend",
         "mdast-util-to-string": "^4.0.0",
-        "reading-time": "^1.5.0"
+        "reading-time": "^1.5.0",
+        "rehype-autolink-headings": "^7.1.0"
     },
     "devDependencies": {
         "@iconify/json": "catalog:frontend",

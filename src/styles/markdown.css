@@ -61,3 +61,8 @@
 .prose :where(tr):not(:where(.not-prose, .not-prose *)):nth-child(2n) {
     background: var(--bg-100) !important;
 }
+
+.heading-anchor {
+    color: inherit !important;
+    text-underline-offset: 5px;
+}

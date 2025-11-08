@@ -4,6 +4,8 @@ import sitemap from "@astrojs/sitemap";
 import { defineConfig } from "astro/config";
 import { remarkGenerateOgImage } from "./plugins/remark-generate-og-image";
 import UnoCSS from "unocss/astro";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import { rehypeHeadingIds } from "@astrojs/markdown-remark";
 
 export default defineConfig({
     site: "https://tobynguyen.dev",
@@ -12,6 +14,10 @@ export default defineConfig({
         UnoCSS(),
         mdx({
             remarkPlugins: [remarkReadingTime, remarkGenerateOgImage],
+            rehypePlugins: [
+                rehypeHeadingIds,
+                [rehypeAutolinkHeadings, { behavior: "wrap", properties: { className: ["heading-anchor"] } }],
+            ],
             shikiConfig: { themes: { light: "catppuccin-latte", dark: "catppuccin-mocha" } },
         }),
         sitemap(),
