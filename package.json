@@ -10,7 +10,7 @@
         "format": "prettier --write ."
     },
     "dependencies": {
-        "@astrojs/markdown-remark": "^6.3.8",
+        "@astrojs/markdown-remark": "^6.3.9",
         "@astrojs/mdx": "catalog:frontend",
         "@astrojs/sitemap": "catalog:build",
         "astro": "catalog:frontend",
