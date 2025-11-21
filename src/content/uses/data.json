@@ -22,21 +22,33 @@
             {
                 "name": "Terminal",
                 "items": [
-                    { "name": "WezTerm", "description": "All in one terminal, I also don't need to install tmux." },
-                    { "name": "Fish Shell", "description": "This shell has everything a shell needed built-in." }
+                    {
+                        "name": "WezTerm",
+                        "description": "All in one terminal, I also don't need to install tmux."
+                    },
+                    {
+                        "name": "Fish Shell",
+                        "description": "This shell has everything a shell needed built-in."
+                    }
                 ]
             },
             {
                 "name": "Fonts",
                 "items": [
-                    { "name": "JetBrains Mono", "description": "I use this font in my code editors and terminals." },
+                    {
+                        "name": "JetBrains Mono",
+                        "description": "I use this font in my code editors and terminals."
+                    },
                     { "name": "Geist", "description": "For system font, I prefer Geist." }
                 ]
             },
             {
                 "name": "CLI",
                 "items": [
-                    { "name": "pnpm", "description": "The best Node.js package manager and for monorepo also." },
+                    {
+                        "name": "pnpm",
+                        "description": "The best Node.js package manager and for monorepo also."
+                    },
                     { "name": "ffmpeg", "description": "Converts audio/video formats." },
                     { "name": "yt-dlp", "description": "An audio/video downloader." }
                 ]
@@ -44,15 +56,24 @@
             {
                 "name": "Productivity",
                 "items": [
-                    { "name": "Zen Browser", "description": "A Firefox based browser with modern UI." },
-                    { "name": "Proton Pass", "description": "I store all my secrets here, literally." },
+                    {
+                        "name": "Zen Browser",
+                        "description": "A Firefox based browser with modern UI."
+                    },
+                    {
+                        "name": "Proton Pass",
+                        "description": "I store all my secrets here, literally."
+                    },
                     { "name": "Obsidian", "description": "I store notes, files, ideas in here." }
                 ]
             },
             {
                 "name": "Design & Media",
                 "items": [
-                    { "name": "Figma", "description": "I draw illustrations, logos, etc. in here." },
+                    {
+                        "name": "Figma",
+                        "description": "I draw illustrations, logos, etc. in here."
+                    },
                     { "name": "OBS", "description": "The best app for streaming and recording." },
                     { "name": "Kdenlive", "description": "Video editing." }
                 ]
@@ -72,7 +93,10 @@
             {
                 "name": "Computer",
                 "items": [
-                    { "name": "Acer Nitro 5 AN515-45", "description": "My main laptop, used for everything." },
+                    {
+                        "name": "Acer Nitro 5 AN515-45",
+                        "description": "My main laptop, used for everything."
+                    },
                     {
                         "name": "ViewSonic VA2432-H-W",
                         "description": "Web development with an external monitor is great."
@@ -87,15 +111,24 @@
                         "description": "It's good at doing what a smartphone is supposed to do."
                     },
                     { "name": "iPad Gen 9", "description": "My second brain." },
-                    { "name": "Apple Watch Series 8", "description": "I use it for tracking my sleep and fitness." }
+                    {
+                        "name": "Apple Watch Series 8",
+                        "description": "I use it for tracking my sleep and fitness."
+                    }
                 ]
             },
             {
                 "name": "Peripherals",
                 "items": [
-                    { "name": "Apple Pencil 1", "description": "I use it to take notes on my iPad." },
+                    {
+                        "name": "Apple Pencil 1",
+                        "description": "I use it to take notes on my iPad."
+                    },
                     { "name": "Razer Deathadder", "description": "It fits with my hand size." },
-                    { "name": "Sony WH-CH720N", "description": "Listening music with noise canceling is a great." }
+                    {
+                        "name": "Sony WH-CH720N",
+                        "description": "Listening music with noise canceling is a great."
+                    }
                 ]
             }
         ]

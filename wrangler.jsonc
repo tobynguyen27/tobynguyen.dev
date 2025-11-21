@@ -2,5 +2,9 @@
     "$schema": "node_modules/wrangler/config-schema.json",
     "name": "tobynguyen-website",
     "compatibility_date": "2025-06-08",
-    "assets": { "directory": "./dist", "not_found_handling": "404-page", "html_handling": "drop-trailing-slash" },
+    "assets": {
+        "directory": "./dist",
+        "not_found_handling": "404-page",
+        "html_handling": "drop-trailing-slash"
+    }
 }

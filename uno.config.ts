@@ -13,7 +13,10 @@ export default defineConfig({
     presets: [
         presetWind4({ preflights: { reset: true } }),
         presetAttributify(),
-        presetWebFonts({ provider: "fontsource", fonts: { mono: "JetBrains Mono", sans: "Geist" } }),
+        presetWebFonts({
+            provider: "fontsource",
+            fonts: { mono: "JetBrains Mono", sans: "Geist" },
+        }),
         presetIcons({
             extraProperties: {
                 display: "inline-block",

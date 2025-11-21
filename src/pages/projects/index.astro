@@ -1,8 +1,7 @@
 ---
+import { getCollection } from "astro:content";
 import ProjectItem from "@/components/ProjectItem.astro";
 import Root from "@/layouts/Root.astro";
-
-import { getCollection } from "astro:content";
 
 const projects = await getCollection("projects");
 ---
@@ -21,7 +20,8 @@ const projects = await getCollection("projects");
             </a>
         </div>
     </div>
-    <div class="grid h-full w-11/12 mx-auto grid-cols-1 place-items-center gap-5 md:grid-cols-2 lg:grid-cols-3">
+    <div
+        class="grid h-full w-11/12 mx-auto grid-cols-1 place-items-center gap-5 md:grid-cols-2 lg:grid-cols-3">
         {
             projects.map((project) => (
                 <ProjectItem

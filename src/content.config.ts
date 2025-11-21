@@ -1,5 +1,5 @@
-import { file, glob } from "astro/loaders";
 import { defineCollection, z } from "astro:content";
+import { file, glob } from "astro/loaders";
 import { postSchema, projectSchema, usesSchema } from "./content/schema";
 
 const blog = defineCollection({
@@ -7,7 +7,10 @@ const blog = defineCollection({
     schema: postSchema,
 });
 
-const projects = defineCollection({ loader: file("./src/content/projects/data.json"), schema: projectSchema });
+const projects = defineCollection({
+    loader: file("./src/content/projects/data.json"),
+    schema: projectSchema,
+});
 
 const uses = defineCollection({ loader: file("./src/content/uses/data.json"), schema: usesSchema });
 

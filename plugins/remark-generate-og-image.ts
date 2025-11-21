@@ -1,11 +1,11 @@
 import * as fs from "node:fs";
+import { existsSync } from "node:fs";
+import { mkdir } from "node:fs/promises";
 import { basename, dirname, join } from "node:path";
 import sharp from "sharp";
-import { mkdir } from "node:fs/promises";
-import { existsSync } from "node:fs";
 
 export function remarkGenerateOgImage() {
-    return async function (tree: any, file: any) {
+    return async (tree: any, file: any) => {
         if (!checkFileExistsInDir("public/og", "og-image.png")) {
             const title = file.data.astro.frontmatter.title;
 
@@ -25,7 +25,10 @@ export function checkFileExistsInDir(path: string, filename: string) {
 }
 
 async function generateOg(title: string, output: string) {
-    const templateOG = fs.readFileSync(join(process.cwd(), "/plugins/og-template/og-template.svg"), "utf-8");
+    const templateOG = fs.readFileSync(
+        join(process.cwd(), "/plugins/og-template/og-template.svg"),
+        "utf-8",
+    );
 
     if (fs.existsSync(output)) return;
 

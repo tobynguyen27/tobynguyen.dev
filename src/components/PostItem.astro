@@ -28,8 +28,6 @@ const { title, date, description, link, isRedirect = false, isDraft = false } = 
         <p class="text-secondary">{description}</p>
     </div>
     <div class="my-3">
-        <p class="text-secondary">
-            {dayjs(date).format("MMMM D, YYYY")}
-        </p>
+        <p class="text-secondary">{dayjs(date).format("MMMM D, YYYY")}</p>
     </div>
 </a>

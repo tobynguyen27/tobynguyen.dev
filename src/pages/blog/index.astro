@@ -3,7 +3,9 @@ import { getCollection } from "astro:content";
 import PostItem from "@/components/PostItem.astro";
 import Root from "@/layouts/Root.astro";
 
-const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const posts = (await getCollection("blog")).sort(
+    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
 ---
 
 <Root title="Blog" description="Toby Nguyen's Blog">
