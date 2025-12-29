@@ -1,14 +1,14 @@
 catalogs:
   build:
-    "@astrojs/sitemap": ^3.6.0
+    '@astrojs/sitemap': ^3.6.0
     unocss: 66.2.2
   dev:
-    wrangler: ^4.49.0
-    lefthook: ^2.0.4
+    wrangler: ^4.54.0
+    lefthook: ^2.0.13
   frontend:
-    "@iconify/json": ^2.2.408
-    "@astrojs/mdx": ^4.3.11
-    astro: ^5.15.9
+    '@iconify/json': ^2.2.422
+    '@astrojs/mdx': ^4.3.13
+    astro: ^5.16.6
     dayjs: ^1.11.19
   lint:
     prettier: ^3.6.2

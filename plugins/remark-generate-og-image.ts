@@ -5,7 +5,8 @@ import { basename, dirname, join } from "node:path";
 import sharp from "sharp";
 
 export function remarkGenerateOgImage() {
-    return async (tree: any, file: any) => {
+    // biome-ignore lint/suspicious/noExplicitAny: bypass
+    return async (_: any, file: any) => {
         if (!checkFileExistsInDir("public/og", "og-image.png")) {
             const title = file.data.astro.frontmatter.title;
 

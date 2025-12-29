@@ -1,5 +1,6 @@
 {
-    "$schema": "https://biomejs.dev/schemas/2.3.6/schema.json",
+    "$schema": "node_modules/@biomejs/biome/configuration_schema.json",
+    "root": true,
     "vcs": {
         "enabled": true,
         "clientKind": "git",
@@ -9,10 +10,7 @@
     "linter": {
         "enabled": true,
         "rules": {
-            "recommended": true,
-            "nursery": {
-                "useSortedClasses": "on"
-            }
+            "recommended": true
         }
     },
 
@@ -25,6 +23,10 @@
         "bracketSameLine": true,
         "bracketSpacing": true
     },
+    "html": {
+        "formatter": { "enabled": true },
+        "experimentalFullSupportEnabled": true
+    },
 
     "assist": {
         "actions": {
@@ -32,11 +34,6 @@
                 "organizeImports": "on"
             }
         }
-    },
-
-    "html": {
-        "formatter": { "enabled": true },
-        "experimentalFullSupportEnabled": true
     },
 
     "overrides": [
@@ -47,9 +44,6 @@
                     "correctness": {
                         "noUnusedImports": "off",
                         "noUnusedVariables": "off"
-                    },
-                    "complexity": {
-                        "noImportantStyles": "off"
                     }
                 }
             }

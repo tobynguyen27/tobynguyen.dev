@@ -1,6 +1,9 @@
 {
     "editor.defaultFormatter": "biomejs.biome",
     "editor.formatOnSave": true,
-    "[astro]": { "editor.defaultFormatter": "biomejs.biome" },
+    "editor.codeActionsOnSave": {
+        "source.fixAll.biome": "explicit",
+        "source.organizeImports.biome": "explicit"
+    },
     "workbench.editorAssociations": { "*.svg": "default" }
 }
