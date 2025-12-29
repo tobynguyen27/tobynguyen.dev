@@ -1,39 +1,59 @@
-import * as fs from "node:fs";
 import { existsSync } from "node:fs";
-import { mkdir } from "node:fs/promises";
-import { basename, dirname, join } from "node:path";
+import { mkdir, readFile } from "node:fs/promises";
+import { basename, join, resolve } from "node:path";
+import consola from "consola";
 import sharp from "sharp";
+import type { VFile } from "vfile";
 
-export function remarkGenerateOgImage() {
+interface OgOptions {
+    outputDir: string;
+    templatePath: string;
+}
+
+export function remarkGenerateOgImage(options: Partial<OgOptions> = {}) {
+    const { outputDir = "public/og", templatePath = "plugins/og-template/og-template.svg" } =
+        options;
+
+    let templateCache: string | null = null;
+
     // biome-ignore lint/suspicious/noExplicitAny: bypass
-    return async (_: any, file: any) => {
-        if (!checkFileExistsInDir("public/og", "og-image.png")) {
-            const title = file.data.astro.frontmatter.title;
+    return async (_: any, file: VFile) => {
+        const frontmatter = file.data.astro?.frontmatter;
+        const title = frontmatter?.title;
 
-            let nameWithoutExt = basename(file.basename, file.extname);
-            if (nameWithoutExt === "index") nameWithoutExt = basename(file.dirname);
-            if (checkFileExistsInDir("public/og", `${nameWithoutExt}.png`)) return;
+        if (!title) return;
 
-            await generateOg(title, `public/og/${nameWithoutExt}.png`);
+        let name = basename(file.path || "", file.extname || "");
+        if (name === "index" && file.dirname) {
+            name = basename(file.dirname);
         }
+
+        const outputPath = join(process.cwd(), outputDir, `${name}.png`);
+
+        if (existsSync(outputPath)) return;
+
+        if (!templateCache) {
+            templateCache = await readFile(resolve(process.cwd(), templatePath), "utf-8");
+        }
+
+        await generateOgImage({
+            title,
+            outputPath,
+            template: templateCache,
+        });
     };
 }
 
-export function checkFileExistsInDir(path: string, filename: string) {
-    const fullPath = join(process.cwd(), path, filename);
-
-    return existsSync(fullPath);
-}
-
-async function generateOg(title: string, output: string) {
-    const templateOG = fs.readFileSync(
-        join(process.cwd(), "/plugins/og-template/og-template.svg"),
-        "utf-8",
-    );
-
-    if (fs.existsSync(output)) return;
-
-    await mkdir(dirname(output), { recursive: true });
+async function generateOgImage({
+    title,
+    outputPath,
+    template,
+}: {
+    title: string;
+    outputPath: string;
+    template: string;
+}) {
+    await mkdir(resolve(outputPath, ".."), { recursive: true });
 
     const lines = title
         .trim()
@@ -41,12 +61,12 @@ async function generateOg(title: string, output: string) {
         .filter(Boolean);
 
     const data: Record<string, string> = { line1: lines[0], line2: lines[1], line3: lines[2] };
-    const svg = templateOG.replace(/\{\{([^}]+)\}\}/g, (_, name) => data[name] || "");
+    const svg = template.replace(/\{\{([^}]+)\}\}/g, (_, name) => data[name] || "");
 
-    console.log(`Generating ${output}`);
+    consola.info(`Generating ${outputPath}`);
     try {
-        await sharp(Buffer.from(svg)).resize(1200, 630).png().toFile(output);
+        await sharp(Buffer.from(svg)).resize(1200, 630).png().toFile(outputPath);
     } catch (e) {
-        console.error("Failed to generate og image", e);
+        consola.error("Failed to generate OG image", e);
     }
 }
