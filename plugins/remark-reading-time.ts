@@ -1,11 +1,15 @@
 import * as MDast from "mdast-util-to-string";
 import getReadingTime from "reading-time";
+import type { Node } from "unist";
+import type { VFile } from "vfile";
 
 export function remarkReadingTime() {
-    return (tree: any, { data }: { data: any }) => {
+    return (tree: Node, file: VFile) => {
         const textOnPage = MDast.toString(tree);
         const readingTime = getReadingTime(textOnPage);
 
-        data.astro.frontmatter.minutesRead = readingTime.text;
+        if (!file.data.astro || !file.data.astro.frontmatter) return;
+
+        file.data.astro.frontmatter.minutesRead = readingTime.text;
     };
 }
