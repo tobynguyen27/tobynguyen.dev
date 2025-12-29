@@ -3,13 +3,13 @@
         "id": "Astral Generators",
         "description": "A Minecraft mod that I made for a Create: Astral, a Minecraft modpack. Designed to add more new generators and crafting recipes to the game.",
         "link": "https://www.curseforge.com/minecraft/mc-mods/astral-generators-for-create-astral",
-        "icon": "https://cdn.jsdelivr.net/gh/astral-community/astral-generators@main/src/main/resources/assets/astralgenerators/icon.png"
+        "icon": "https://cdn.jsdelivr.net/gh/tobynguyen27/astral-generators@main/src/main/resources/assets/astralgenerators/icon.png"
     },
     {
         "id": "CodeBebeLib",
         "description": "A fork of a Minecraft library mod named CodeChickenLib for Fabric.",
         "link": "https://www.curseforge.com/minecraft/mc-mods/codebebelib",
-        "icon": "https://cdn.jsdelivr.net/gh/astral-community/CodeBebeLib@master/src/main/resources/assets/codebebelib/icon.png"
+        "icon": "https://cdn.jsdelivr.net/gh/tobynguyen27/CodeBebeLib@main/src/main/resources/assets/codebebelib/icon.png"
     },
     {
         "id": "Defined's Blocks",
@@ -22,5 +22,11 @@
         "description": "A Minecraft mod that adds new mechanism to glass blocks in Minecraft, players will be poisoned and blinded for a few seconds when standing near and breaking them",
         "link": "https://modrinth.com/mod/dangerousglass",
         "icon": "https://cdn.jsdelivr.net/gh/tobynguyen27/DangerousGlass@main/src/main/resources/assets/logo.png"
+    },
+    {
+        "id": "Sense",
+        "description": "A Minecraft mod library designed to simplify mod development. It offers a collection of utilities, enabling developers to create mods more efficiently with cleaner, more concise code.",
+        "link": "https://github.com/tobynguyen27/Sense",
+        "icon": "https://cdn.jsdelivr.net/gh/tobynguyen27/Sense@main/src/main/resources/assets/sense/icon.png"
     }
 ]
