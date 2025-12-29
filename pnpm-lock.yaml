@@ -74,6 +74,9 @@ importers:
       '@iconify/json':
         specifier: catalog:frontend
         version: 2.2.422
+      '@types/unist':
+        specifier: ^3.0.3
+        version: 3.0.3
       consola:
         specifier: ^3.4.2
         version: 3.4.2

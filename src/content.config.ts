@@ -1,4 +1,4 @@
-import { defineCollection, z } from "astro:content";
+import { defineCollection } from "astro:content";
 import { file, glob } from "astro/loaders";
 import { postSchema, projectSchema, usesSchema } from "./content/schema";
 
