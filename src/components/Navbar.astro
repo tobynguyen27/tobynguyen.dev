@@ -1,13 +1,14 @@
 ---
+import AnimatedLogo from "./AnimatedLogo.astro";
 import ThemeToggle from "./ThemeToggle.astro";
 
-interface NavbarItem {
+type NavbarItem = {
     path: string;
     name: string;
     icon: string;
-}
+};
 
-const navbarItems: NavbarItem[] = [
+const items: NavbarItem[] = [
     { path: "/", name: "Home", icon: "i-material-symbols-home-outline" },
     { path: "/blog", name: "Blog", icon: "i-material-symbols-lab-profile-outline" },
     { path: "/projects", name: "Projects", icon: "i-material-symbols-lightbulb-2-outline" },
@@ -15,33 +16,22 @@ const navbarItems: NavbarItem[] = [
 ];
 ---
 
-<nav class="w-full h-full bg-100">
-    <div
-        class="flex flex-col gap-5 sm:gap-0 sm:flex-row py-5 justify-between items-center border-b border-b-gray-400">
-        <div class="sm:ml-7">
-            <a href="/" class="text-2xl font-mono text-primary">Toby Nguyen_</a>
-        </div>
-        <div class="sm:mr-7 flex gap-5">
-            {
-                navbarItems.map((data) => (
-                    <>
-                        <a href={data.path} class="navbar-item hidden sm:block">
-                            {data.name}
-                        </a>
-                        <a href={data.path} class="navbar-item sm:hidden" title={data.name}>
-                            <i class={`${data.icon} text-xl`} />
-                        </a>
-                    </>
-                ))
-            }
-            <a
-                href="https://github.com/tobynguyen27"
-                target="_blank"
-                class="navbar-item"
-                title="GitHub"
-                ><i class="i-tabler:brand-github"></i></a
-            >
+<header class="w-full flex justify-center items-center border-b border-b-gray-400">
+    <nav class="w-11/12 flex flex-col gap-3 sm:flex-row items-center justify-between py-3">
+        <div class=""><a href="/"
+            ><AnimatedLogo /></a
+        ></div>
+        <ul class="flex flex-row gap-5">
+            {items.map(it => 
+                <li class="navbar-item">
+                    <a href={it.path} class="hidden sm:block">{it.name}</a>
+                    <a href={it.path} class="block sm:hidden"><i class={`${it.icon}`}></i></a>
+                </li>
+            )}
+            <li class="navbar-item">
+                <a href="https://github.com/tobynguyen27"><i class="i-carbon-logo-github"></i></a>
+            </li>
             <ThemeToggle />
-        </div>
-    </div>
-</nav>
+        </ul>
+    </nav>
+</header>
