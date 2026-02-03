@@ -1,23 +1,44 @@
 ---
-import Head from "@/components/base/Head.astro";
-import Footer from "@/components/Footer.astro";
+import { SEO } from "astro-seo";
 import Navbar from "@/components/Navbar.astro";
+import Footer from "../components/Footer.astro";
 
 import "@/styles/global.css";
 
-interface Props {
+type Props = {
     title: string;
     description: string;
-    overrideTitle?: boolean;
-    pubDate?: string;
-}
+};
 
-const { title, description, overrideTitle, pubDate } = Astro.props;
+const { title, description } = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <html lang="en">
     <head>
-        <Head {title} {description} {overrideTitle} {pubDate} />
+        <SEO
+            {title}
+            {description}
+            charset="UTF-8"
+            canonical={canonicalURL}
+            extend={{
+            meta: [ { name: "generator", content: Astro.generator },
+            { name: "author", content: "Toby Nguyen" },
+            { name: "viewport", content: "width=device-width, initial-scale=1.0" },
+            { name: "color-scheme", content: "dark light" },
+            { name: "theme-color", content: "#ffffff", media: "(prefers-color-scheme: light)" },
+            { name: "theme-color", content: "#000000", media: "(prefers-color-scheme: dark)" },],
+
+             link: [
+            { rel: "sitemap", href: "/sitemap-index.xml" },
+            { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
+            { rel: "icon", type: "image/png", href: "/light-favicon-96x96.png", sizes: "96x96", media: "(prefers-color-scheme: light)" },
+            { rel: "apple-touch-icon", sizes: "180x180", href: "/light-apple-touch-icon.png", media: "(prefers-color-scheme: light)" },
+            { rel: "icon", type: "image/png", href: "/dark-favicon-96x96.png", sizes: "96x96", media: "(prefers-color-scheme: dark)" },
+            { rel: "apple-touch-icon", sizes: "180x180", href: "/dark-apple-touch-icon.png", media: "(prefers-color-scheme: dark)" },
+        ],
+        }} />
     </head>
     <body class="bg-200">
         <Navbar />
