@@ -1,56 +1,53 @@
 ---
 import Badge from "@/components/Badge.astro";
-import Root from "@/layouts/Root.astro";
+import Root from "../layouts/Root.astro";
 ---
 
-<Root title="Toby Nguyen" overrideTitle description="Toby Nguyen's Portfolio">
-    <div class="w-10/12 sm:max-w-2xl mx-auto mt-12">
-        <h1 class="text-primary hidden font-mono text-3xl sm:block">Toby Nguyen</h1>
-
+<Root>
+    <div class="w-11/12 sm:w-xl mx-auto mt-12 h-full">
+        <h1 class="text-primary text-3xl font-mono">Toby Nguyen</h1>
         <p class="text-secondary my-5 italic">“A problem well stated is a problem half solved.”</p>
 
-        <p class="text-secondary">
-            Hi there 👋 I am Toby Nguyen, my Vietnamese name is
-            <span class="italic">Nguyễn Minh Thọ</span>. I am a self-taught web developer and Kotlin
-            developer.
-        </p>
+        <section class="space-y-lg">
+            <p class="text-secondary">
+                Hi there 👋 I am Toby Nguyen, my Vietnamese name is
+                <span class="italic">Nguyễn Minh Thọ</span>. I am a self-taught web developer and
+                Kotlin developer.
+            </p>
 
-        <div class="my-5 flex flex-col gap-2">
-            <div class="text-secondary h-full w-full">
-                <div class="flex h-full w-full flex-wrap items-center gap-2">
-                    <span class="text-nowrap">I know:</span>
-                    <Badge
-                        icon="i-devicon-typescript"
-                        text="TypeScript"
-                        url="https://github.com/microsoft/TypeScript" />
-                    <Badge
-                        icon="i-devicon-kotlin"
-                        text="Kotlin"
-                        url="https://github.com/JetBrains/kotlin" />
-                    <Badge icon="i-simple-icons-rust" text="Rust" url="https://rust-lang.org/" />
+            <div class="flex flex-col gap-2">
+                <div class="text-secondary h-full w-full">
+                    <div class="flex h-full w-full flex-wrap items-center gap-2">
+                        <span class="text-nowrap">I know:</span>
+                        <Badge
+                            icon="i-devicon-kotlin"
+                            text="Kotlin"
+                            url="https://github.com/JetBrains/kotlin" />
+                        <Badge
+                            icon="i-devicon-typescript"
+                            text="TypeScript"
+                            url="https://github.com/microsoft/TypeScript" />
+                    </div>
+                </div>
+                <div class="text-secondary h-full w-full">
+                    <div class="flex h-full w-full flex-wrap items-center gap-2">
+                        <span class="text-nowrap">I use:</span>
+                        <Badge
+                            icon="i-devicon-archlinux"
+                            text="Arch Linux"
+                            url="https://archlinux.org/" />
+                        <Badge
+                            icon="i-devicon-vscode"
+                            text="VSCode"
+                            url="https://github.com/microsoft/vscode" />
+                        <Badge
+                            icon="i-devicon-intellij"
+                            text="IntelliJ IDEA"
+                            url="https://github.com/JetBrains/intellij-community" />
+                    </div>
                 </div>
             </div>
-            <div class="text-secondary h-full w-full">
-                <div class="flex h-full w-full flex-wrap items-center gap-2">
-                    <span class="text-nowrap">I use:</span>
-                    <Badge icon="i-devicon-nixos" text="Nix" url="https://github.com/NixOS/nix" />
-                    <Badge
-                        icon="i-devicon-archlinux"
-                        text="Arch Linux"
-                        url="https://archlinux.org/" />
-                    <Badge
-                        icon="i-devicon-vscode"
-                        text="VSCode"
-                        url="https://github.com/microsoft/vscode" />
-                    <Badge
-                        icon="i-devicon-intellij"
-                        text="IntelliJ IDEA"
-                        url="https://github.com/JetBrains/intellij-community" />
-                </div>
-            </div>
-        </div>
 
-        <div class="flex w-full flex-col gap-3">
             <p class="text-secondary">
                 I have been studying Information Technology major at
                 <a href="https://huflit.edu.vn" target="_blank" class="underline-primary"
@@ -68,30 +65,30 @@ import Root from "@/layouts/Root.astro";
                 Outside of programming, I enjoy playing games, watching anime and movies and
                 listening to music.
             </p>
-        </div>
 
-        <div class="my-5 flex h-full w-full flex-wrap items-center">
-            <div class="flex w-full flex-wrap gap-2 items-center">
-                <span class="text-secondary">You can find me via:</span>
-                <Badge
-                    icon="i-carbon-logo-github text-secondary"
-                    text="GitHub"
-                    url="https://github.com/tobynguyen27"
-                    noBackground />
-                <Badge
-                    icon="i-carbon-logo-discord text-secondary"
-                    text="Discord"
-                    url="https://discord.com/users/1365300051932352655"
-                    noBackground />
+            <div class="flex h-full w-full flex-wrap items-center">
+                <div class="flex w-full flex-wrap gap-2 items-center">
+                    <span class="text-secondary">You can find me via:</span>
+                    <Badge
+                        icon="i-carbon-logo-github text-secondary"
+                        text="GitHub"
+                        url="https://github.com/tobynguyen27"
+                        noBackground />
+                    <Badge
+                        icon="i-carbon-logo-discord text-secondary"
+                        text="Discord"
+                        url="https://discord.com/users/1365300051932352655"
+                        noBackground />
+                </div>
+                <div class="mt-2 w-full">
+                    <p class="text-secondary">
+                        Or mail me at{" "}
+                        <a href="mailto:hi@tobynguyen.org" class="underline-primary"
+                            >hi@tobynguyen.org
+                        </a>
+                    </p>
+                </div>
             </div>
-            <div class="mt-2 w-full">
-                <p class="text-secondary">
-                    Or mail me at{" "}
-                    <a href="mailto:hi@tobynguyen.dev" class="underline-primary"
-                        >hi@tobynguyen.dev
-                    </a>
-                </p>
-            </div>
-        </div>
+        </section>
     </div>
 </Root>
