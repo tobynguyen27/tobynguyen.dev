@@ -6,7 +6,7 @@ const uses = await getCollection("uses");
 ---
 
 <Root title="Uses" description="Tools, softwares and hardwares that I am using">
-    <div class="w-10/12 sm:max-w-2xl mx-auto mt-12 flex flex-col">
+    <div class="w-10/12 sm:max-w-xl mx-auto mt-12 flex flex-col">
         <div class="">
             <h1 class="text-primary text-3xl font-semibold">Uses</h1>
 
@@ -14,8 +14,7 @@ const uses = await getCollection("uses");
         </div>
 
         <div class="flex flex-col gap-12">
-            {
-                uses.map((use) => (
+            {uses.map((use) => (
                     <div>
                         <h2 class="text-2xl font-semibold my-5 text-primary">{use.data.id}</h2>
                         <div class="flex flex-col gap-5">
@@ -34,8 +33,7 @@ const uses = await getCollection("uses");
                             ))}
                         </div>
                     </div>
-                ))
-            }
+                ))}
         </div>
     </div>
 </Root>
