@@ -7,10 +7,19 @@ import "@/styles/global.css";
 
 type Props = {
     title: string;
+    overrideTitle?: boolean;
     description: string;
+    pubDate?: string;
+    ogImage?: string;
 };
 
-const { title, description } = Astro.props;
+const {
+    title,
+    description,
+    overrideTitle = false,
+    pubDate,
+    ogImage = `${Astro.site}og/og.png`,
+} = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
@@ -18,7 +27,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 <html lang="en">
     <head>
         <SEO
-            {title}
+            title={overrideTitle ? title : `${title} - Toby Nguyen`}
             {description}
             charset="UTF-8"
             canonical={canonicalURL}
@@ -37,8 +46,19 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
             { rel: "apple-touch-icon", sizes: "180x180", href: "/light-apple-touch-icon.png", media: "(prefers-color-scheme: light)" },
             { rel: "icon", type: "image/png", href: "/dark-favicon-96x96.png", sizes: "96x96", media: "(prefers-color-scheme: dark)" },
             { rel: "apple-touch-icon", sizes: "180x180", href: "/dark-apple-touch-icon.png", media: "(prefers-color-scheme: dark)" },
-        ],
-        }} />
+            ],
+        }}
+            openGraph={{
+        basic: {
+            type: pubDate ? "article" : "website",
+            url: canonicalURL,
+            title: overrideTitle ? title : `${title} - Toby Nguyen`,
+            image: ogImage,
+        },
+        optional: { description, siteName: "Toby Nguyen" },
+        article: { publishedTime: pubDate, authors: pubDate ? ["Toby Nguyen"] : undefined },
+    }}
+            twitter={{ title: overrideTitle ? title : `${title} - Toby Nguyen`, site: "tobynguyen27", creator: "tobynguyen27" }} />
     </head>
     <body class="bg-200">
         <Navbar />

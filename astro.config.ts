@@ -4,8 +4,8 @@ import sitemap from "@astrojs/sitemap";
 import { defineConfig } from "astro/config";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import UnoCSS from "unocss/astro";
-import { remarkGenerateOgImage } from "./plugins/remark-generate-og-image";
 import { remarkReadingTime } from "./plugins/remark-reading-time";
+import react from "@astrojs/react";
 
 export default defineConfig({
     site: "https://tobynguyen.dev",
@@ -13,7 +13,7 @@ export default defineConfig({
     integrations: [
         UnoCSS(),
         mdx({
-            remarkPlugins: [remarkReadingTime, remarkGenerateOgImage],
+            remarkPlugins: [remarkReadingTime],
             rehypePlugins: [
                 rehypeHeadingIds,
                 [
@@ -24,7 +24,13 @@ export default defineConfig({
             shikiConfig: { themes: { light: "catppuccin-latte", dark: "catppuccin-mocha" } },
         }),
         sitemap(),
+        react(),
     ],
-    vite: { build: { assetsInlineLimit: 1024 } },
-    server: { port: 3000 },
+    vite: {
+        build: { assetsInlineLimit: 1024 },
+        optimizeDeps: {
+            exclude: ["@takumi-rs/core"],
+        },
+    },
+    server: { port: 5173 },
 });
