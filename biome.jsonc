@@ -10,7 +10,10 @@
     "linter": {
         "enabled": true,
         "rules": {
-            "recommended": true
+            "recommended": true,
+            "nursery": {
+                "useSortedClasses": "error"
+            }
         }
     },
 
@@ -29,11 +32,7 @@
     },
 
     "assist": {
-        "actions": {
-            "source": {
-                "organizeImports": "on"
-            }
-        }
+        "enabled": false
     },
 
     "overrides": [
@@ -41,9 +40,13 @@
             "includes": ["**/*.astro"],
             "linter": {
                 "rules": {
+                    "style": {
+                        "useConst": "off",
+                        "useImportType": "off"
+                    },
                     "correctness": {
-                        "noUnusedImports": "off",
-                        "noUnusedVariables": "off"
+                        "noUnusedVariables": "off",
+                        "noUnusedImports": "off"
                     }
                 }
             }
