@@ -1,6 +1,11 @@
 {
     "type": "module",
     "private": true,
+
+    "packageManager": "pnpm@10.30.3",
+    "engines": {
+        "node": "^25"
+    },
     "scripts": {
         "dev": "astro dev --host",
         "build": "astro build",
