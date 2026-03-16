@@ -1,0 +1,58 @@
+---
+import type { CollectionEntry } from "astro:content"
+import CopyLink from "@components/CopyLink.vue"
+import Blog from "@layouts/Blog.astro"
+import { getCollection, render } from "astro:content"
+import { format } from "date-fns"
+
+export async function getStaticPaths() {
+    const blog = await getCollection("blog")
+
+    return blog.map((post) => {
+        return {
+            params: { id: post.id },
+            props: { post },
+        }
+    })
+}
+
+type Props = {
+    post: CollectionEntry<"blog">
+}
+
+const { post } = Astro.props
+
+const { Content } = await render(post)
+const pubDate = format(post.data.pubDate, "MMMM d, yyyy")
+---
+
+<Blog title={post.data.title} description={post.data.description} {pubDate}>
+    <div class="mx-auto w-fit space-y-12" p="5 sm:12 md:24">
+        <div class="gap-5" flex="~ col">
+            <h1 class="text-5xl font-semibold text-center">
+                {post.data.title}
+            </h1>
+            <div class="justify-between" flex="~ row">
+                <div class="">
+                    <CopyLink content={Astro.url.href} client:load />
+                </div>
+                <p class="text-muted">
+                    {pubDate}
+                </p>
+            </div>
+        </div>
+        <div
+            class="prose marker:text-gray-1000 prose-a:text-blue-700 prose-td:(p-2 border border-default) prose-th:(p-2 border border-default) prose-a:decoration-none prose-table:border-collapse dark:prose-invert hover:prose-a:text-blue-800 hover:prose-a:decoration-underline"
+        >
+            <Content />
+        </div>
+        <div class="gap-3" flex="~ col">
+            <a href="/blog" class="link text-muted w-fit">
+                <span>{"> "}cd /blog</span>
+            </a>
+            <a href="/" class="link text-muted w-fit">
+                <span>{"> "}cd /home</span>
+            </a>
+        </div>
+    </div>
+</Blog>

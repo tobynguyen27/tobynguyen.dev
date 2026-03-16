@@ -1,0 +1,48 @@
+---
+import Logo from "./Logo.astro"
+import ThemeToggle from "./ThemeToggle.astro"
+
+type NavbarItem = {
+    path: string
+    name: string
+    icon: string
+}
+
+const items: NavbarItem[] = [
+    { path: "/", name: "Home", icon: "i-lucide-house" },
+    { path: "/blog", name: "Blog", icon: "i-ri-article-line" },
+    { path: "/projects", name: "Projects", icon: "i-lucide-lightbulb" },
+];
+---
+
+<header class="w-full" border-b="~ default">
+    <nav
+        class="container p-3 gap-3 items-center justify-between"
+        flex="~ col sm:row"
+    >
+        <a href="/" aria-label="Home"><Logo /></a>
+        <ul class="gap-6 items-center" flex="~ row">
+            {
+                items.map(it => (
+                    <li class="navbar-item">
+                        <a href={it.path} class="hidden sm:block">
+                            {it.name}
+                        </a>
+                        <a href={it.path} class="block sm:hidden">
+                            <i class={`${it.icon}`} />
+                        </a>
+                    </li>
+                ))
+            }
+            <li class="navbar-item">
+                <a
+                    href="https://github.com/tobynguyen27"
+                    aria-label="GitHub"
+                    target="_blank"
+                ><i class="i-carbon-logo-github"></i></a
+                >
+            </li>
+            <li class="navbar-item"><ThemeToggle /></li>
+        </ul>
+    </nav>
+</header>

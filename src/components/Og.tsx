@@ -2,8 +2,8 @@ export default function OG({
     title,
     description = "Toby Nguyen",
 }: {
-    title: string;
-    description?: string;
+    title: string
+    description?: string
 }) {
     return (
         <div tw="bg-black w-full h-full flex items-center justify-center flex-col">
@@ -12,5 +12,5 @@ export default function OG({
                 <p tw="text-[#a1a1a1] text-5xl">{description}</p>
             </div>
         </div>
-    );
+    )
 }

@@ -1,17 +1,15 @@
-import { defineCollection } from "astro:content";
-import { file, glob } from "astro/loaders";
-import { postSchema, projectSchema, usesSchema } from "./content/schema";
+import { file, glob } from "astro/loaders"
+import { defineCollection } from "astro:content"
+import { blogSchema, projectSchema } from "./contents/schema"
+
+const project = defineCollection({
+    loader: file("src/assets/data/projects.json"),
+    schema: projectSchema,
+})
 
 const blog = defineCollection({
-    loader: glob({ base: "./src/content/blog", pattern: "**/*.{md,mdx}" }),
-    schema: postSchema,
-});
+    loader: glob({ base: "src/contents/blog/", pattern: "**/*.mdx" }),
+    schema: blogSchema,
+})
 
-const projects = defineCollection({
-    loader: file("./src/content/projects/data.json"),
-    schema: projectSchema,
-});
-
-const uses = defineCollection({ loader: file("./src/content/uses/data.json"), schema: usesSchema });
-
-export const collections = { blog, projects, uses };
+export const collections = { project, blog }

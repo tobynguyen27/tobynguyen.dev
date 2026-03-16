@@ -1,41 +1,31 @@
 ---
-import { getCollection } from "astro:content";
-import PostItem from "@/components/PostItem.astro";
-import Root from "@/layouts/Root.astro";
+import Default from "@layouts/Default.astro"
+import { getCollection } from "astro:content"
+import { format } from "date-fns"
 
-const posts = (await getCollection("blog")).sort(
-    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-);
+const blog = await getCollection("blog");
 ---
 
-<Root title="Blog" description="Toby Nguyen's Blog">
-    <div class="mx-auto h-full w-11/12 sm:max-w-5xl">
-        <div class="mt-12">
-            <h1 class="text-primary py-5 text-3xl font-semibold">Blog</h1>
-        </div>
-        <div class="flex flex-col gap-5">
+<Default title="Blog">
+    <div class="container my-12 space-y-12">
+        <h1 class="text-3xl font-semibold">Blog</h1>
+        <div class="gap-5" flex="~ col">
             {
-                posts.map(({ data, id }) =>
-                    data.redirect ? (
-                        <PostItem
-                            title={data.title}
-                            date={data.pubDate}
-                            description={data.description}
-                            link={data.redirect}
-                            isRedirect
-                            isDraft={data.isDraft}
-                        />
-                    ) : (
-                        <PostItem
-                            title={data.title}
-                            date={data.pubDate}
-                            description={data.description}
-                            link={`/blog/${id}`}
-                            isDraft={data.isDraft}
-                        />
-                    ),
-                )
+                blog.map(it => (
+                    <a
+                        href={`/blog/${it.id}`}
+                        class="p-5 border border-default rounded-lg flex flex-col gap-5 duration-200 justify-start hover:(border-hover bg-gray-200 cursor-pointer)"
+                    >
+                        <div class="">
+                            <p class="text-lg font-semibold">{it.data.title}</p>
+                            <p class="text-sm text-muted">
+                                {format(it.data.pubDate, "MMMM d, yyyy")}
+                            </p>
+                        </div>
+                        <p class="">{it.data.description}</p>
+                    </a>
+                ))
             }
         </div>
     </div>
-</Root>
+</Default>

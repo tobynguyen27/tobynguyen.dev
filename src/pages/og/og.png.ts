@@ -1,6 +1,6 @@
-import OG from "@/components/react/OG";
-import ImageResponse from "@takumi-rs/image-response";
-import type { APIRoute } from "astro";
+import type { APIRoute } from "astro"
+import OG from "@components/Og"
+import ImageResponse from "@takumi-rs/image-response"
 
 export const GET = (async () => {
     return new ImageResponse(
@@ -10,5 +10,5 @@ export const GET = (async () => {
             height: 630,
             format: "webp",
         },
-    );
-}) satisfies APIRoute;
+    )
+}) satisfies APIRoute

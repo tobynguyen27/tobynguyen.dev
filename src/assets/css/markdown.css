@@ -1,0 +1,33 @@
+.prose blockquote {
+    border-left: 0.25rem solid var(--gray-500);
+    quotes: "\201C" "\201D" "\2018" "\2019";
+    font-weight: 500;
+    font-style: italic;
+}
+
+.prose blockquote p:first-of-type::before {
+    content: open-quote;
+}
+
+.prose blockquote p:last-of-type::after {
+    content: close-quote;
+}
+
+.prose :not(pre) > code {
+    background-color: var(--gray-300);
+    border-radius: 0.25rem;
+    padding: 0em 0.25em;
+    display: inline-block;
+}
+
+.prose :not(pre) > code::before {
+    content: "";
+}
+
+.prose :not(pre) > code::after {
+    content: "";
+}
+
+.prose :where(tr):not(:where(.not-prose, .not-prose *)):nth-child(2n) {
+    background: var(--bg-surface) !important;
+}

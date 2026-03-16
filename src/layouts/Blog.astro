@@ -1,0 +1,109 @@
+---
+import type { Link, Meta } from "astro-seo"
+
+import Footer from "@components/Footer.vue"
+
+import Header from "@components/Header.astro"
+import { SEO } from "astro-seo"
+import { joinURL } from "ufo"
+
+import "@assets/css/global.css"
+import "@assets/css/markdown.css"
+import "@assets/css/shiki.css"
+
+type Props = {
+    title: string
+    description: string
+    pubDate: string
+}
+
+const { title, description, pubDate } = Astro.props
+const canonicalURL = new URL(Astro.url.pathname, Astro.site)
+
+const meta: Partial<Meta>[] = [
+    { name: "generator", content: Astro.generator },
+    { name: "author", content: "Toby Nguyen" },
+    { name: "viewport", content: "width=device-width, initial-scale=1.0" },
+    { name: "color-scheme", content: "dark light" },
+    {
+        name: "theme-color",
+        content: "#ffffff",
+        media: "(prefers-color-scheme: light)",
+    },
+    {
+        name: "theme-color",
+        content: "#000000",
+        media: "(prefers-color-scheme: dark)",
+    },
+]
+
+const link: Partial<Link>[] = [
+    { rel: "sitemap", href: "/sitemap-index.xml" },
+    { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
+    {
+        rel: "icon",
+        type: "image/png",
+        href: "/light-favicon-96x96.png",
+        sizes: "96x96",
+        media: "(prefers-color-scheme: light)",
+    },
+    {
+        rel: "apple-touch-icon",
+        sizes: "180x180",
+        href: "/light-apple-touch-icon.png",
+        media: "(prefers-color-scheme: light)",
+    },
+    {
+        rel: "icon",
+        type: "image/png",
+        href: "/dark-favicon-96x96.png",
+        sizes: "96x96",
+        media: "(prefers-color-scheme: dark)",
+    },
+    {
+        rel: "apple-touch-icon",
+        sizes: "180x180",
+        href: "/dark-apple-touch-icon.png",
+        media: "(prefers-color-scheme: dark)",
+    },
+]
+
+const openGraph = {
+    basic: {
+        type: "article",
+        url: canonicalURL,
+        title,
+        image: joinURL(Astro.url.href, "og.png"),
+    },
+    optional: { description, siteName: "Toby Nguyen" },
+    article: { publishedTime: pubDate, authors: ["Toby Nguyen"] },
+}
+
+const twitter = {
+    title,
+    site: "imtobynguyen",
+    creator: "imtobynguyen",
+}
+---
+
+<html lang="en">
+    <head>
+        <SEO
+            title={`${title} - Toby Nguyen`}
+            {description}
+            charset="UTF-8"
+            canonical={canonicalURL}
+            extend={{
+                meta,
+                link,
+            }}
+            {openGraph}
+            {twitter}
+        />
+    </head>
+    <body>
+        <Header />
+        <slot />
+        <Footer />
+    </body>
+</html>

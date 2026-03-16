@@ -1,36 +1,20 @@
 ---
-import { getCollection } from "astro:content";
-import ProjectItem from "@/components/ProjectItem.astro";
-import Root from "@/layouts/Root.astro";
+import Project from "@components/Project.vue"
 
-const projects = await getCollection("projects");
+import Default from "@layouts/Default.astro"
+import { getCollection } from "astro:content"
+
+const projects = await getCollection("project");
 ---
 
-<Root title="Projects" description="Projects that Toby Nguyen created or maintaining">
-    <div class="w-full h-full flex justify-center items-center flex-col gap-5 my-12">
-        <h1 class="text-primary text-3xl text-center font-semibold">My Projects</h1>
-        <p class="text-secondary text-lg text-center">Projects that I created or maintaining.</p>
-        <div class="">
-            <a
-                href="https://github.com/tobynguyen27"
-                target="_blank"
-                class="text-secondary border-gray-400 border rounded-md hover:(text-primary cursor-pointer bg-gray-200 border-gray-500) p-2 duration-200">
-                <i class="i-tabler-brand-github"></i>
-                <span>GitHub</span>
-            </a>
+<Default title="Projects">
+    <div class="mx-auto my-12 w-11/12 space-y-12">
+        <div class="text-center space-y-2">
+            <h1 class="text-3xl font-semibold">My Projects</h1>
+            <p class="text-muted">Projects that I created or maintaining.</p>
+        </div>
+        <div class="gap-5 grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2">
+            {projects.map(it => <Project name={it.id} icon={it.data.icon} link={it.data.link} description={it.data.description} client:visible />)}
         </div>
     </div>
-    <div
-        class="grid h-full w-11/12 mx-auto grid-cols-1 place-items-center gap-5 md:grid-cols-2 lg:grid-cols-3">
-        {
-            projects.map((project) => (
-                <ProjectItem
-                    icon={project.data.icon}
-                    name={project.data.id}
-                    description={project.data.description}
-                    url={project.data.link}
-                />
-            ))
-        }
-    </div>
-</Root>
+</Default>

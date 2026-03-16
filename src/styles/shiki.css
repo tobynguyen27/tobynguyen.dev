@@ -1,7 +1,0 @@
-/** biome-ignore-all lint/complexity/noImportantStyles: This is acceptable */
-
-html.dark .astro-code,
-html.dark .astro-code span {
-    color: var(--shiki-dark) !important;
-    background-color: var(--shiki-dark-bg) !important;
-}
