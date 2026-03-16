@@ -19,6 +19,6 @@ export const GET = (async ({ params, redirect }) => {
     return new ImageResponse(OG({ title: post.data.title }), {
         width: 1200,
         height: 630,
-        format: "webp",
+        format: "png",
     })
 }) satisfies APIRoute

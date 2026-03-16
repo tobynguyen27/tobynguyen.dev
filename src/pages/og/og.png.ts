@@ -8,7 +8,7 @@ export const GET = (async () => {
         {
             width: 1200,
             height: 630,
-            format: "webp",
+            format: "png",
         },
     )
 }) satisfies APIRoute
