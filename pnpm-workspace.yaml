@@ -8,6 +8,7 @@ catalogs:
     "@astrojs/vue": ^6.0.0
     "@takumi-rs/image-response": ^0.73.1
     astro: ^6.0.4
+    wrangler: ^4.74.0
   frontend:
     "@astrojs/mdx": ^5.0.0
     "@iconify/json": ^2.2.449
@@ -36,3 +37,4 @@ onlyBuiltDependencies:
   - esbuild
   - lefthook
   - sharp
+  - workerd
