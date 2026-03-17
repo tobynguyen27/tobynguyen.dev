@@ -4,6 +4,7 @@ import CopyLink from "@components/CopyLink.vue"
 import Blog from "@layouts/Blog.astro"
 import { getCollection, render } from "astro:content"
 import { format } from "date-fns"
+import readingTime from "reading-time"
 
 export async function getStaticPaths() {
     const blog = await getCollection("blog")
@@ -24,6 +25,7 @@ const { post } = Astro.props
 
 const { Content } = await render(post)
 const pubDate = format(post.data.pubDate, "MMMM d, yyyy")
+const readingMins = Math.round(readingTime(post.body || "").minutes)
 ---
 
 <Blog title={post.data.title} description={post.data.description} {pubDate}>
@@ -33,8 +35,11 @@ const pubDate = format(post.data.pubDate, "MMMM d, yyyy")
                 {post.data.title}
             </h1>
             <div class="justify-between" flex="~ row">
-                <div class="">
-                    <CopyLink content={Astro.url.href} client:load />
+                <div class="flex gap-3">
+                    <div class="text-muted flex gap-1 items-center justify-center">
+                        <i class="i-solar-stopwatch-linear"></i> <p>{readingMins} mins read</p>
+                    </div>
+                    <div class="hidden sm:block"><CopyLink content={Astro.url.href} client:load /></div>
                 </div>
                 <p class="text-muted">
                     {pubDate}
