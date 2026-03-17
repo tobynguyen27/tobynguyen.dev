@@ -47,7 +47,7 @@ export default defineConfig({
         presetWind4({ preflights: { reset: true } }),
         presetWebFonts({
             provider: "fontsource",
-            fonts: { mono: "Geist Mono", sans: "Geist" },
+            fonts: { mono: "Geist Mono", sans: "Geist", serif: "IBM Plex Serif" },
         }),
         presetIcons({
             extraProperties: {
