@@ -73,8 +73,6 @@ export default defineConfig({
         "text-default": "text-gray-1000",
         "text-muted": "text-gray-900",
 
-        "navbar-item": "hover:(cursor-pointer text-default) text-muted duration-200",
-
         "link": "text-muted hover:(text-default underline-gray-1000) underline underline-gray-900/30 duration-200 decoration-offset-5",
     },
 })

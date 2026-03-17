@@ -12,37 +12,31 @@ const items: NavbarItem[] = [
     { path: "/", name: "Home", icon: "i-lucide-house" },
     { path: "/blog", name: "Blog", icon: "i-ri-article-line" },
     { path: "/projects", name: "Projects", icon: "i-lucide-lightbulb" },
-];
+]
+
+const currentPath = `/${Astro.url.pathname.split("/")[1]}`
 ---
 
 <header class="w-full" border-b="~ default">
     <nav
-        class="container p-3 gap-3 items-center justify-between"
+        class="container p-5 gap-3 items-center justify-between"
         flex="~ col sm:row"
     >
         <a href="/" aria-label="Home"><Logo /></a>
-        <ul class="gap-6 items-center" flex="~ row">
+        <ul class="gap-8 items-center" flex="~ row">
             {
                 items.map(it => (
-                    <li class="navbar-item">
-                        <a href={it.path} class="hidden sm:block">
+                    <li class="">
+                        <a href={it.path} class={`hidden sm:block ${currentPath === it.path ? "line-through" : "hover:line-through"} uppercase`}>
                             {it.name}
                         </a>
-                        <a href={it.path} class="block sm:hidden">
+                        <a href={it.path} class={`block sm:hidden ${currentPath === it.path ? "text-default" : "text-muted hover:text-default"}`}>
                             <i class={`${it.icon}`} />
                         </a>
                     </li>
                 ))
             }
-            <li class="navbar-item">
-                <a
-                    href="https://github.com/tobynguyen27"
-                    aria-label="GitHub"
-                    target="_blank"
-                ><i class="i-carbon-logo-github"></i></a
-                >
-            </li>
-            <li class="navbar-item"><ThemeToggle /></li>
+            <li class=""><ThemeToggle /></li>
         </ul>
     </nav>
 </header>
