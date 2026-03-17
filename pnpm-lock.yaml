@@ -46,6 +46,9 @@ catalogs:
     react:
       specifier: ^19.2.4
       version: 19.2.4
+    reading-time:
+      specifier: ^1.5.0
+      version: 1.5.0
     ufo:
       specifier: ^1.6.3
       version: 1.6.3
@@ -123,7 +126,7 @@ importers:
         specifier: catalog:frontend
         version: 19.2.4
       reading-time:
-        specifier: ^1.5.0
+        specifier: catalog:frontend
         version: 1.5.0
       ufo:
         specifier: catalog:frontend
