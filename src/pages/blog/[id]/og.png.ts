@@ -1,5 +1,5 @@
 import type { APIRoute } from "astro"
-import OG from "@components/Og"
+import OG from "@components/og/BlogOg"
 import ImageResponse from "@takumi-rs/image-response"
 import { getCollection } from "astro:content"
 
@@ -16,7 +16,7 @@ export const GET = (async ({ params, redirect }) => {
         return redirect("/404")
     }
 
-    return new ImageResponse(OG({ title: post.data.title }), {
+    return new ImageResponse(OG({ title: post.data.title, description: post.data.description }), {
         width: 1200,
         height: 630,
         format: "png",
