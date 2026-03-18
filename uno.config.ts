@@ -69,6 +69,7 @@ export default defineConfig({
 
         "container": "w-full max-w-5xl px-5 mx-auto",
         "container-sm": "w-full max-w-2xl px-5 mx-auto",
+        "container-lg": "w-full max-w-7xl px-5 mx-auto",
 
         "text-default": "text-gray-1000",
         "text-muted": "text-gray-900",

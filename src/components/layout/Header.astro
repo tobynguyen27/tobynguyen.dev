@@ -17,9 +17,9 @@ const items: NavbarItem[] = [
 const currentPath = `/${Astro.url.pathname.split("/")[1]}`
 ---
 
-<header class="w-full" border-b="~ default">
+<header class="bg-base w-full top-0 fixed" border-b="~ default">
     <nav
-        class="container p-5 gap-3 items-center justify-between"
+        class="mx-auto p-5 gap-3 w-11/12 items-center justify-between"
         flex="~ col sm:row"
     >
         <a href="/" aria-label="Home"><Logo /></a>
