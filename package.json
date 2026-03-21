@@ -16,6 +16,7 @@
     "dependencies": {
         "@astrojs/compiler-rs": "catalog:build",
         "@astrojs/mdx": "catalog:frontend",
+        "@astrojs/sitemap": "catalog:frontend",
         "@astrojs/vue": "catalog:build",
         "@takumi-rs/image-response": "catalog:build",
         "@unocss/astro": "catalog:frontend",
