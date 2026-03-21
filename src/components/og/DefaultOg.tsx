@@ -25,7 +25,7 @@ export default function DefaultOg() {
                 <div tw="flex flex-row items-center gap-12">
                     <div tw="flex flex-col">
                         <span tw="text-[#a1a1a1]" style={{ fontFamily: "Geist Mono" }}>WEBSITE</span>
-                        <span tw="text-[#a1a1a1]">tobynguyen.org</span>
+                        <span tw="text-[#a1a1a1]">tobynguyen.net</span>
                     </div>
                     <div tw="flex flex-col">
                         <span tw="text-[#a1a1a1]" style={{ fontFamily: "Geist Mono" }}>X</span>

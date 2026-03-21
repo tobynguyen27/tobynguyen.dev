@@ -15,7 +15,7 @@ export default defineConfig({
         },
     },
 
-    site: "https://tobynguyen.org",
+    site: "https://tobynguyen.net",
     output: "static",
 
     server: { port: 5173 },
