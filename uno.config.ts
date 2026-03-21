@@ -21,6 +21,9 @@ const colors = {
     base: "var(--bg-base)",
     surface: "var(--bg-surface)",
     ...paletteColors,
+
+    curseforge: "#f16436",
+    modrinth: "#1bd96a",
 }
 
 function generateBorderClasses(): Record<string, string> {

@@ -1,0 +1,33 @@
+[
+    {
+        "id": "Astral Generators",
+        "description": "A Minecraft mod that I made for a Create: Astral, a Minecraft modpack. Designed to add more new generators and crafting recipes to the game.",
+        "icon": "https://cdn.jsdelivr.net/gh/tobynguyen27/astral-generators@main/src/main/resources/assets/astralgenerators/icon.png",
+        "curseforge": "https://www.curseforge.com/minecraft/mc-mods/astral-generators-for-create-astral",
+        "github": "https://github.com/tobynguyen27/astral-generators"
+    },
+    {
+        "id": "CodeBebeLib",
+        "description": "A fork of a Minecraft library mod named CodeChickenLib for Fabric.",
+        "curseforge": "https://www.curseforge.com/minecraft/mc-mods/codebebelib",
+        "icon": "https://cdn.jsdelivr.net/gh/tobynguyen27/CodeBebeLib@main/src/main/resources/assets/codebebelib/icon.png",
+        "github": "https://github.com/tobynguyen27/CodeBebeLib"
+    },
+
+    {
+        "id": "Dangerous Glass",
+        "description": "A Minecraft mod that adds new mechanism to glass blocks in Minecraft, players will be poisoned and blinded for a few seconds when standing near and breaking them",
+        "curseforge": "https://modrinth.com/mod/dangerousglass",
+        "icon": "https://cdn.jsdelivr.net/gh/tobynguyen27/DangerousGlass@main/src/main/resources/assets/logo.png",
+        "github": "https://github.com/tobynguyen27/DangerousGlass",
+        "modrinth": "https://modrinth.com/mod/dangerousglass"
+    },
+    {
+        "id": "Sense",
+        "description": "A Minecraft mod library designed to simplify mod development. It offers a collection of utilities, enabling developers to create mods more efficiently with cleaner, more concise code.",
+        "curseforge": "https://github.com/tobynguyen27/Sense",
+        "icon": "https://cdn.jsdelivr.net/gh/tobynguyen27/Sense@main/src/main/resources/assets/sense/icon.png",
+        "github": "https://github.com/tobynguyen27/Sense",
+        "modrinth": "https://modrinth.com/mod/sense"
+    }
+]

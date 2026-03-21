@@ -1,20 +1,35 @@
 ---
-import Project from "@components/Project.vue"
-
+import FeaturedProject from "@components/FeaturedProject.vue"
+import MinecraftMod from "@components/MinecraftMod.vue"
 import Default from "@layouts/Default.astro"
 import { getCollection } from "astro:content"
 
-const projects = await getCollection("project");
+const featuredProjects = await getCollection("featuredProject")
+const minecraftMods = await getCollection("minecraftMod")
 ---
 
 <Default title="Projects">
-    <div class="mx-auto my-12 w-11/12 space-y-12">
-        <div class="text-center space-y-2">
-            <h1 class="text-3xl font-semibold">My Projects</h1>
-            <p class="text-muted">Projects that I created or maintaining.</p>
-        </div>
-        <div class="gap-5 grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2">
-            {projects.map(it => <Project name={it.id} icon={it.data.icon} link={it.data.link} description={it.data.description} client:visible />)}
-        </div>
+    <div class="container-lg mb-24 mt-36 space-y-32">
+
+        <div class="space-y-12">
+            <h1 class="text-6xl font-serif">Featured Projects</h1>
+
+            <div class="">
+                {
+                    featuredProjects.map(it => <FeaturedProject name={it.id} description={it.data.description} image={it.data.image} tags={it.data.tags} releaseYear={it.data.releaseYear} />)
+                }
+            </div>
+       </div>
+
+       <div class="space-y-12">
+            <h1 class="text-6xl font-serif">Minecraft Mods</h1>
+
+            <div class="gap-8 grid grid-cols-1 lg:grid-cols-2">
+                {
+                    minecraftMods.map(it => <MinecraftMod name={it.id} description={it.data.description} icon={it.data.icon} curseforge={it.data.curseforge} modrinth={it.data.modrinth} github={it.data.github} client:visible />)
+                }
+            </div>
+       </div>
+
     </div>
 </Default>
