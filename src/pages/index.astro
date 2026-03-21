@@ -1,50 +1,10 @@
 ---
-import Social from "@components/Social.vue"
-import TechStack from "@components/TechStack.vue"
+import Hero from "@components/Hero.vue"
 import Default from "@layouts/Default.astro";
 ---
 
-<Default
-    title="Toby Nguyen"
-    overrideTitle
-><div class="container-sm mt-12">
-        <div class=""><h1 class="text-3xl font-semibold">Toby Nguyen</h1></div>
-        <div class="text-muted mt-5 space-y-5">
-            <div class="">
-                <p class="italic">“A problem well stated is a problem half solved.”</p>
-            </div>
-            <div class="">
-                <p>
-                    Hi there 👋 I am Toby Nguyen, my Vietnamese name is Nguyễn Minh Thọ. I am a
-                    self-taught web developer and Kotlin developer.
-                </p>
-            </div>
-            <div class="space-y-2"><TechStack /></div>
-            <div class="">
-                <p>
-                    I have been studying Computer Science at
-                    <a
-                        href="https://huflit.edu.vn/"
-                        target="_blank"
-                        class="link"
-                    >Ho Chi Minh City University of Foreign Languages and Information Technology</a
-                    >
-                    since 2025.
-                </p>
-            </div>
-            <div class="">
-                <p>
-                    Outside of programming, I enjoy playing games, watching anime and movies and
-                    listening to music.
-                </p>
-            </div>
-            <div class="">
-                <Social />
-                <p>
-                    Or mail me at
-                    <a href="mailto:hi@tobynguyen.org" class="link">hi@tobynguyen.org</a>.
-                </p>
-            </div>
-        </div>
-    </div></Default
->
+<Default title="Toby Nguyen" overrideTitle>
+    <div class="container-lg">
+        <Hero />
+    </div>
+</Default>
