@@ -14,7 +14,7 @@ const { copy, copied } = useClipboard()
     <button
         :disabled="copied"
         flex="~ row"
-        class="text-blue-700 gap-1 items-center justify-center hover:cursor-pointer"
+        class="text-blue-700 font-mono gap-1 items-center justify-center hover:cursor-pointer"
         @click="copy(content)"
     >
         <i class="i-lucide-link size-4" />{{ copied ? "Copied to clipboard" : "Copy URL" }}

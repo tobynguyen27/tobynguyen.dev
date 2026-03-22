@@ -29,28 +29,28 @@ const readingMins = Math.round(readingTime(post.body || "").minutes)
 ---
 
 <Blog title={post.data.title} description={post.data.description} {pubDate}>
-    <div class="mx-auto w-fit space-y-12" p="5 sm:12 md:24">
+    <div class="container-lg mb-24 mt-36 space-y-12">
         <div class="gap-5" flex="~ col">
+            <div class="flex flex-row gap-3 items-center justify-center lg:gap-5">
+                <p class="text-muted font-mono">
+                    {pubDate}
+                </p>
+                •
+                <div class="text-muted font-mono flex flex-row gap-1 items-center justify-center">
+                    <i class="i-solar-stopwatch-linear"></i> <p>{readingMins} mins read</p>
+                </div>
+                <span class="hidden sm:block">•</span>
+                <div class="hidden sm:block"><CopyLink content={Astro.url.href} client:load /></div>
+            </div>
             <h1 class="text-5xl font-serif text-center">
                 {post.data.title}
             </h1>
-            <div class="justify-between" flex="~ row">
-                <div class="flex gap-3">
-                    <div class="text-muted flex gap-1 items-center justify-center">
-                        <i class="i-solar-stopwatch-linear"></i> <p>{readingMins} mins read</p>
-                    </div>
-                    <div class="hidden sm:block"><CopyLink content={Astro.url.href} client:load /></div>
-                </div>
-                <p class="text-muted">
-                    {pubDate}
-                </p>
-            </div>
         </div>
-        <div
-            class="prose prose-base marker:text-gray-1000 prose-a:text-blue-700 prose-headings:font-serif prose-td:(p-2 border border-default) prose-th:(p-2 border border-default) prose-a:decoration-none prose-table:border-collapse lg:prose-lg xl:prose-xl dark:prose-invert hover:prose-a:text-blue-800 hover:prose-a:decoration-underline"
+        <article
+            class="mx-auto prose prose-base marker:text-gray-1000 prose-a:text-blue-700 prose-headings:font-serif prose-td:(p-2 border border-default) prose-th:(p-2 border border-default) prose-a:decoration-none prose-table:border-collapse lg:prose-lg xl:prose-xl dark:prose-invert hover:prose-a:text-blue-800 hover:prose-a:decoration-underline"
         >
             <Content />
-        </div>
+        </article>
         <div class="gap-3" flex="~ col">
             <a href="/blog" class="link text-muted w-fit">
                 <span>{"> "}cd /blog</span>
