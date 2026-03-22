@@ -25,7 +25,7 @@ const items: Method[] = [
 </script>
 
 <template>
-    <div class="container-lg mb-24 mt-36 space-y-12">
+    <div class="mb-24 mt-36 w-full space-y-12">
         <h1 class="text-5xl font-serif">
             Methodology
         </h1>
