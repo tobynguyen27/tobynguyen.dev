@@ -25,6 +25,9 @@ catalogs:
     '@astrojs/mdx':
       specifier: ^5.0.0
       version: 5.0.0
+    '@astrojs/sitemap':
+      specifier: ^3.7.1
+      version: 3.7.1
     '@iconify/json':
       specifier: ^2.2.449
       version: 2.2.449
@@ -99,7 +102,7 @@ importers:
         specifier: catalog:frontend
         version: 5.0.0(astro@6.0.4(@types/node@24.12.0)(jiti@2.6.1)(rollup@4.59.0)(typescript@5.9.3)(yaml@2.8.2))
       '@astrojs/sitemap':
-        specifier: ^3.7.1
+        specifier: catalog:frontend
         version: 3.7.1
       '@astrojs/vue':
         specifier: catalog:build
