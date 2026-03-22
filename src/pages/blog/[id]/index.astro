@@ -35,11 +35,11 @@ const readingMins = Math.round(readingTime(post.body || "").minutes)
                 <p class="text-muted font-mono">
                     {pubDate}
                 </p>
-                •
+                <span class="text-muted">•</span>
                 <div class="text-muted font-mono flex flex-row gap-1 items-center justify-center">
                     <i class="i-solar-stopwatch-linear"></i> <p>{readingMins} mins read</p>
                 </div>
-                <span class="hidden sm:block">•</span>
+                <span class="text-muted hidden sm:block">•</span>
                 <div class="hidden sm:block"><CopyLink content={Astro.url.href} client:load /></div>
             </div>
             <h1 class="text-5xl font-serif text-center">
