@@ -29,7 +29,7 @@ const readingMins = Math.round(readingTime(post.body || "").minutes)
 ---
 
 <Blog title={post.data.title} description={post.data.description} {pubDate}>
-    <div class="container-lg mb-24 mt-36 space-y-12">
+    <div class="container-lg mb-24 mt-36">
         <div class="gap-5" flex="~ col">
             <div class="flex flex-row gap-3 items-center justify-center lg:gap-5">
                 <p class="text-muted font-mono">
@@ -51,13 +51,5 @@ const readingMins = Math.round(readingTime(post.body || "").minutes)
         >
             <Content />
         </article>
-        <div class="gap-3" flex="~ col">
-            <a href="/blog" class="link text-muted w-fit">
-                <span>{"> "}cd /blog</span>
-            </a>
-            <a href="/" class="link text-muted w-fit">
-                <span>{"> "}cd /home</span>
-            </a>
-        </div>
     </div>
 </Blog>
