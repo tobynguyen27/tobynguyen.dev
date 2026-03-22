@@ -4,7 +4,7 @@
     <div class="flex flex-col gap-18 min-h-screen items-start justify-center">
         <div class="">
             <h1 class="text-7xl font-serif md:text-9xl sm:text-8xl">
-                Toby <br> Nguyen
+                Toby <br> <span class="italic">Nguyen</span>
             </h1>
         </div>
         <div class="text-xl flex flex-row w-full items-center justify-between">
